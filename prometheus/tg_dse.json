@@ -1,0 +1,10 @@
+[
+  {
+    "targets": [ 
+      "127.0.0.1:9103" 
+    ],
+    "labels": {
+      "cluster": "test_cluster"
+    }
+  }
+]

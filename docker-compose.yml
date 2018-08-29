@@ -7,14 +7,14 @@ services:
     volumes:
       - "prometheus:/prometheus"
       - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
-      - "./prometheus/tg_cassandra.json:/etc/prometheus/tg_cassandra.json"
-      - "./prometheus/tg_node.json:/etc/prometheus/tg_node.json"
+      - "./prometheus/tg_dse.json:/etc/prometheus/tg_dse.json"
   grafana:
     image: "grafana/grafana"
     ports:
       - "3000:3000"
     environment:
       GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
     volumes:
       - "grafana:/var/lib/grafana"
       - "./grafana/prometheus-datasource.yaml:/etc/grafana/provisioning/datasources/prometheus-datasource.yaml"
