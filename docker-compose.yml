@@ -8,6 +8,7 @@ services:
       - "prometheus:/prometheus"
       - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
       - "./prometheus/tg_dse.json:/etc/prometheus/tg_dse.json"
+    network_mode: "host"
   grafana:
     image: "grafana/grafana"
     ports:
@@ -19,7 +20,8 @@ services:
       - "grafana:/var/lib/grafana"
       - "./grafana/prometheus-datasource.yaml:/etc/grafana/provisioning/datasources/prometheus-datasource.yaml"
       - "./grafana/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml"
-      - "./grafana/dashboards:/var/lib/grafana/dashboards"
+      - "./grafana/dashboards:/var/lib/grafana/dashboards:ro"
+    network_mode: "host"
 volumes:
   grafana:
-  prometheus:  
+  prometheus:
