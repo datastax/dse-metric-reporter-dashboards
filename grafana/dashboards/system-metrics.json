@@ -2,6 +2,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:87",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -16,7 +17,7 @@
   "editable": true,
   "gnetId": 1860,
   "graphTooltip": 0,
-  "iteration": 1535659419944,
+  "iteration": 1535742254947,
   "links": [],
   "panels": [
     {
@@ -97,7 +98,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "100 - sum(irate(collectd_cpu_total{instance='$host',type='idle'}[1m])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
+          "expr": "100 - (sum(irate(collectd_cpu_total{instance='$host',type='idle'}[$rate])) / count(collectd_cpu_total{instance='$host',type='idle'}))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -130,7 +131,7 @@
       ],
       "datasource": "prometheus",
       "decimals": null,
-      "description": "Busy state of all CPU cores together",
+      "description": "Amount of memory used (ignoring page cache)",
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -183,7 +184,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "100 - sum(irate(collectd_cpu_total{instance='$host',type='idle'}[1m])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
+          "expr": "100 * ((sum(collectd_memory{instance=\"$host\", memory=\"free\"}) + sum(collectd_memory{instance=\"$host\", memory=\"cached\"}) + sum(collectd_memory{instance=\"$host\", memory=\"buffered\"})) / sum(collectd_memory{instance=\"$host\"}))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -193,7 +194,7 @@
         }
       ],
       "thresholds": "85,95",
-      "title": "CPU Busy",
+      "title": "Memory Used",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -439,6 +440,7 @@
       "tableColumn": "",
       "targets": [
         {
+          "$$hashKey": "object:775",
           "expr": "avg(collectd_load_shortterm{instance='$host'}) / count(count(collectd_cpu_total{instance='$host'}) by (cpu)) * 100",
           "format": "time_series",
           "hide": false,
@@ -1168,7 +1170,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='system'}[1m])) / count(collectd_cpu_total{instance='$host',type='idle'})",
+          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='system'}[$rate])) / count(collectd_cpu_total{instance='$host',type='idle'})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1178,7 +1180,7 @@
           "step": 240
         },
         {
-          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='user'}[1m])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
+          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='user'}[$rate])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 2,
@@ -1187,7 +1189,7 @@
           "step": 240
         },
         {
-          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='wait'}[1m])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
+          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='wait'}[$rate])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Busy Iowait",
@@ -1195,7 +1197,7 @@
           "step": 240
         },
         {
-          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='softirq'}[1m])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
+          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='softirq'}[$rate])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Busy IRQs",
@@ -1203,7 +1205,7 @@
           "step": 240
         },
         {
-          "expr": "sum(rate(collectd_cpu_total{instance='$host',type!='idle',type!='system',type!='user',type!='wait',type!='softirq'}[1m])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
+          "expr": "sum(rate(collectd_cpu_total{instance='$host',type!='idle',type!='system',type!='user',type!='wait',type!='softirq'}[$rate])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Busy Other",
@@ -1211,7 +1213,7 @@
           "step": 240
         },
         {
-          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='idle'}[1m])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
+          "expr": "sum(irate(collectd_cpu_total{instance='$host',type='idle'}[$rate])) / count(collectd_cpu_total{instance='$host',type='idle'}) ",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Idle",
@@ -1540,7 +1542,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(collectd_interface_if_octets_rx_total{instance='$host'}[1m])",
+          "$$hashKey": "object:291",
+          "expr": "irate(collectd_interface_if_octets_rx_total{instance='$host'}[$rate])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1549,7 +1552,8 @@
           "step": 240
         },
         {
-          "expr": "irate(collectd_interface_if_octets_tx_total{instance='$host'}[1m])",
+          "$$hashKey": "object:292",
+          "expr": "irate(collectd_interface_if_octets_tx_total{instance='$host'}[$rate])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{interface}} write",
@@ -1650,7 +1654,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(collectd_disk_disk_ops_read_total{instance=\"$host\",disk=~\".*\"}[5m])",
+          "$$hashKey": "object:217",
+          "expr": "irate(collectd_disk_disk_ops_read_total{instance=\"$host\",disk=~\".*\"}[$rate])",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -1659,7 +1664,8 @@
           "step": 240
         },
         {
-          "expr": "irate(collectd_disk_disk_ops_write_total{instance=\"$host\",disk=~\".*\"}[5m])",
+          "$$hashKey": "object:218",
+          "expr": "irate(collectd_disk_disk_ops_write_total{instance=\"$host\",disk=~\".*\"}[$rate])",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -1949,6 +1955,7 @@
       "tableColumn": "",
       "targets": [
         {
+          "$$hashKey": "object:728",
           "expr": "sum(dse_client_connected_native_clients{instance='$host'})",
           "format": "time_series",
           "hide": false,
@@ -1978,7 +1985,7 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": null,
+      "datasource": "prometheus",
       "gridPos": {
         "h": 5,
         "w": 12,
@@ -1994,7 +2001,8 @@
       "links": [],
       "targets": [
         {
-          "expr": "sum(increase(dse_table_write_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[1m])) by (le)",
+          "$$hashKey": "object:453",
+          "expr": "sum(rate(dse_table_write_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[$rate])) by (le)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -2112,6 +2120,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "$$hashKey": "object:365",
           "expr": "sum(dse_jvm_memory_max{instance=\"$host\", memory_type='total'})",
           "format": "time_series",
           "hide": false,
@@ -2121,6 +2130,7 @@
           "step": 240
         },
         {
+          "$$hashKey": "object:366",
           "expr": "sum(dse_jvm_memory_used{instance=\"$host\", memory_type=\"non_heap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -2129,6 +2139,7 @@
           "step": 240
         },
         {
+          "$$hashKey": "object:367",
           "expr": "sum(dse_jvm_memory_used{instance=\"$host\", memory_type=\"heap\"})",
           "format": "time_series",
           "hide": false,
@@ -2191,7 +2202,7 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": null,
+      "datasource": "prometheus",
       "gridPos": {
         "h": 6,
         "w": 12,
@@ -2207,7 +2218,8 @@
       "links": [],
       "targets": [
         {
-          "expr": "sum(increase(dse_table_read_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[5m])) by (le)",
+          "$$hashKey": "object:553",
+          "expr": "sum(increase(dse_table_read_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[$rate])) by (le)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -2241,17 +2253,91 @@
       "yBucketSize": null
     }
   ],
-  "refresh": false,
+  "refresh": "10s",
   "schemaVersion": 16,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "dse"
+  ],
   "templating": {
     "list": [
       {
+        "auto": false,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "text": "1m",
+          "value": "1m"
+        },
+        "hide": 0,
+        "label": "Rate",
+        "name": "rate",
+        "options": [
+          {
+            "selected": false,
+            "text": "30s",
+            "value": "30s"
+          },
+          {
+            "selected": true,
+            "text": "1m",
+            "value": "1m"
+          },
+          {
+            "selected": false,
+            "text": "10m",
+            "value": "10m"
+          },
+          {
+            "selected": false,
+            "text": "30m",
+            "value": "30m"
+          },
+          {
+            "selected": false,
+            "text": "1h",
+            "value": "1h"
+          },
+          {
+            "selected": false,
+            "text": "6h",
+            "value": "6h"
+          },
+          {
+            "selected": false,
+            "text": "12h",
+            "value": "12h"
+          },
+          {
+            "selected": false,
+            "text": "1d",
+            "value": "1d"
+          },
+          {
+            "selected": false,
+            "text": "7d",
+            "value": "7d"
+          },
+          {
+            "selected": false,
+            "text": "14d",
+            "value": "14d"
+          },
+          {
+            "selected": false,
+            "text": "30d",
+            "value": "30d"
+          }
+        ],
+        "query": "30s,1m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
+        "refresh": 2,
+        "type": "interval"
+      },
+      {
         "allValue": null,
         "current": {
-          "text": "10.200.176.208",
-          "value": "10.200.176.208"
+          "text": "127.0.0.1",
+          "value": "127.0.0.1"
         },
         "datasource": "prometheus",
         "hide": 0,
@@ -2273,7 +2359,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -2302,7 +2388,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "DSE Node Metrics",
+  "title": "DSE System & Node Metrics",
   "uid": "eNNm2Lciz",
-  "version": 3
+  "version": 5
 }
