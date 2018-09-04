@@ -2,7 +2,7 @@
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:87",
+        "$$hashKey": "object:3279",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -17,16 +17,31 @@
   "editable": true,
   "gnetId": 1860,
   "graphTooltip": 0,
-  "iteration": 1535742254947,
+  "iteration": 1536083850991,
   "links": [],
   "panels": [
+    {
+      "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/templates/dist/images/logo-header.png\"/></a>",
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 0
+      },
+      "id": 280,
+      "links": [],
+      "mode": "html",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
     {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 3
       },
       "id": 261,
       "panels": [],
@@ -58,7 +73,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 1
+        "y": 4
       },
       "id": 20,
       "interval": null,
@@ -144,7 +159,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 1
+        "y": 4
       },
       "id": 271,
       "interval": null,
@@ -230,7 +245,7 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 1
+        "y": 4
       },
       "id": 21,
       "interval": null,
@@ -315,7 +330,7 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 1
+        "y": 4
       },
       "id": 154,
       "interval": null,
@@ -400,7 +415,7 @@
         "h": 4,
         "w": 4,
         "x": 16,
-        "y": 1
+        "y": 4
       },
       "id": 19,
       "interval": null,
@@ -440,7 +455,6 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:775",
           "expr": "avg(collectd_load_shortterm{instance='$host'}) / count(count(collectd_cpu_total{instance='$host'}) by (cpu)) * 100",
           "format": "time_series",
           "hide": false,
@@ -487,7 +501,7 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 1
+        "y": 4
       },
       "id": 155,
       "interval": null,
@@ -555,7 +569,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 8
       },
       "id": 262,
       "panels": [],
@@ -586,7 +600,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 6
+        "y": 9
       },
       "id": 14,
       "interval": null,
@@ -671,7 +685,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 6
+        "y": 9
       },
       "id": 75,
       "interval": null,
@@ -756,7 +770,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 6
+        "y": 9
       },
       "id": 18,
       "interval": null,
@@ -841,7 +855,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 6
+        "y": 9
       },
       "id": 23,
       "interval": null,
@@ -927,7 +941,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 6
+        "y": 9
       },
       "id": 17,
       "interval": null,
@@ -1013,7 +1027,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 6
+        "y": 9
       },
       "hideTimeOverride": true,
       "id": 15,
@@ -1081,7 +1095,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 12
       },
       "id": 263,
       "panels": [],
@@ -1117,7 +1131,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 10
+        "y": 13
       },
       "id": 77,
       "legend": {
@@ -1295,7 +1309,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 13
       },
       "id": 78,
       "legend": {
@@ -1434,7 +1448,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 20
       },
       "id": 264,
       "panels": [],
@@ -1478,7 +1492,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 21
       },
       "id": 74,
       "legend": {
@@ -1542,7 +1556,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:291",
           "expr": "irate(collectd_interface_if_octets_rx_total{instance='$host'}[$rate])",
           "format": "time_series",
           "interval": "",
@@ -1552,7 +1565,6 @@
           "step": 240
         },
         {
-          "$$hashKey": "object:292",
           "expr": "irate(collectd_interface_if_octets_tx_total{instance='$host'}[$rate])",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1616,7 +1628,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 21
       },
       "height": "",
       "id": 152,
@@ -1654,7 +1666,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:217",
           "expr": "irate(collectd_disk_disk_ops_read_total{instance=\"$host\",disk=~\".*\"}[$rate])",
           "format": "time_series",
           "instant": false,
@@ -1664,7 +1675,6 @@
           "step": 240
         },
         {
-          "$$hashKey": "object:218",
           "expr": "irate(collectd_disk_disk_ops_write_total{instance=\"$host\",disk=~\".*\"}[$rate])",
           "format": "time_series",
           "instant": false,
@@ -1720,7 +1730,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 28
       },
       "id": 266,
       "panels": [],
@@ -1752,7 +1762,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 26
+        "y": 29
       },
       "hideTimeOverride": false,
       "id": 16,
@@ -1833,7 +1843,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 26
+        "y": 29
       },
       "hideTimeOverride": false,
       "id": 272,
@@ -1914,7 +1924,7 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 26
+        "y": 29
       },
       "hideTimeOverride": false,
       "id": 273,
@@ -1955,7 +1965,6 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:728",
           "expr": "sum(dse_client_connected_native_clients{instance='$host'})",
           "format": "time_series",
           "hide": false,
@@ -1990,7 +1999,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 26
+        "y": 29
       },
       "heatmap": {},
       "highlightCards": true,
@@ -2001,7 +2010,7 @@
       "links": [],
       "targets": [
         {
-          "$$hashKey": "object:453",
+          "$$hashKey": "object:3407",
           "expr": "sum(rate(dse_table_write_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[$rate])) by (le)",
           "format": "time_series",
           "interval": "",
@@ -2068,7 +2077,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 30
+        "y": 33
       },
       "id": 269,
       "legend": {
@@ -2120,7 +2129,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:365",
           "expr": "sum(dse_jvm_memory_max{instance=\"$host\", memory_type='total'})",
           "format": "time_series",
           "hide": false,
@@ -2130,7 +2138,6 @@
           "step": 240
         },
         {
-          "$$hashKey": "object:366",
           "expr": "sum(dse_jvm_memory_used{instance=\"$host\", memory_type=\"non_heap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -2139,7 +2146,6 @@
           "step": 240
         },
         {
-          "$$hashKey": "object:367",
           "expr": "sum(dse_jvm_memory_used{instance=\"$host\", memory_type=\"heap\"})",
           "format": "time_series",
           "hide": false,
@@ -2207,7 +2213,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 31
+        "y": 34
       },
       "heatmap": {},
       "highlightCards": true,
@@ -2218,7 +2224,6 @@
       "links": [],
       "targets": [
         {
-          "$$hashKey": "object:553",
           "expr": "sum(increase(dse_table_read_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[$rate])) by (le)",
           "format": "time_series",
           "interval": "",
@@ -2390,5 +2395,5 @@
   "timezone": "browser",
   "title": "DSE System & Node Metrics",
   "uid": "eNNm2Lciz",
-  "version": 5
+  "version": 8
 }
