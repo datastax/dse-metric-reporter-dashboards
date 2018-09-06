@@ -91,6 +91,8 @@ Now you'll need to add your cluster nodes into the dashboard containers
 Find the `prometheus/tg_dse.json` file.
 Add your nodes into a file like so:
 
+**note the `cluster` needs to match your cluster name**
+
 ```
 # cat prometheus/tg_dse.json
 [
