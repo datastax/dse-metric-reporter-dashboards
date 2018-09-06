@@ -118,6 +118,7 @@ Once you have everything running again go to your dashboard and then check you s
 Here are some things you can check to help troubleshooting:
 
 http://<dashboard ip>:9090/targets - this should show each of your DSE node as a target
+
 http://<dashboard ip>:3000/datasources/edit/1 - this should show the local prometheus container as a data source
   
   
