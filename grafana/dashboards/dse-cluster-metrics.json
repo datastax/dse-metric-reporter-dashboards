@@ -784,7 +784,7 @@
       "valueName": "avg"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -792,1017 +792,1018 @@
         "y": 7
       },
       "id": 14,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 0,
+            "y": 8
+          },
+          "id": 6,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(dse_client_request_latency_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by ($by, request_type)",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{$by}}:{{request_type}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Requests Served / $by / $rate",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 8,
+            "y": 8
+          },
+          "id": 45,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "$$hashKey": "object:639",
+              "expr": "sum(dse_client_connected_native_clients{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}) by ($by)",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{$by}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Clients Connected / $by",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 16,
+            "y": 8
+          },
+          "id": 46,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "$$hashKey": "object:726",
+              "expr": "sum(irate(dse_client_request_timeouts_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by ($by)",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{$by}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Client Timeouts / $by / $rate",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 0,
+            "y": 17
+          },
+          "id": 51,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "$$hashKey": "object:2027",
+              "expr": "histogram_quantile(0.50, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P50 ",
+              "refId": "B"
+            },
+            {
+              "$$hashKey": "object:2028",
+              "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P75",
+              "refId": "A"
+            },
+            {
+              "$$hashKey": "object:2029",
+              "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P90",
+              "refId": "C"
+            },
+            {
+              "$$hashKey": "object:2030",
+              "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P95",
+              "refId": "D"
+            },
+            {
+              "$$hashKey": "object:2031",
+              "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P99",
+              "refId": "E"
+            },
+            {
+              "$$hashKey": "object:2032",
+              "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P999",
+              "refId": "F"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Coordinator Write Latency / $by / $rate",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": null,
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 8,
+            "y": 17
+          },
+          "id": 11,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "$$hashKey": "object:2027",
+              "expr": "histogram_quantile(0.50, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P50 ",
+              "refId": "B"
+            },
+            {
+              "$$hashKey": "object:2028",
+              "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P75",
+              "refId": "A"
+            },
+            {
+              "$$hashKey": "object:2029",
+              "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P90",
+              "refId": "C"
+            },
+            {
+              "$$hashKey": "object:2030",
+              "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P95",
+              "refId": "D"
+            },
+            {
+              "$$hashKey": "object:2031",
+              "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P99",
+              "refId": "E"
+            },
+            {
+              "$$hashKey": "object:2032",
+              "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P999",
+              "refId": "F"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Coordinator Write Latency / $by / $rate",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": null,
+              "format": "µs",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 16,
+            "y": 17
+          },
+          "id": 21,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.50, sum(irate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P50 ",
+              "refId": "B"
+            },
+            {
+              "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P75",
+              "refId": "A"
+            },
+            {
+              "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P90",
+              "refId": "C"
+            },
+            {
+              "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P95",
+              "refId": "D"
+            },
+            {
+              "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P99",
+              "refId": "E"
+            },
+            {
+              "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P999",
+              "refId": "F"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Coordinator Range Read Latency / $by / $rate",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": null,
+              "format": "µs",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": "foo",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 0,
+            "y": 26
+          },
+          "id": 22,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "$$hashKey": "object:786",
+              "expr": "histogram_quantile(0.50, sum(irate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P50 ",
+              "refId": "B"
+            },
+            {
+              "$$hashKey": "object:787",
+              "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P75",
+              "refId": "A"
+            },
+            {
+              "$$hashKey": "object:788",
+              "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P90",
+              "refId": "C"
+            },
+            {
+              "$$hashKey": "object:789",
+              "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P95",
+              "refId": "D"
+            },
+            {
+              "$$hashKey": "object:790",
+              "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P99",
+              "refId": "E"
+            },
+            {
+              "$$hashKey": "object:791",
+              "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P999",
+              "refId": "F"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Coordinator CAS Read Latency / $by / $rate",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": null,
+              "format": "µs",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": "foo",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 8,
+            "y": 26
+          },
+          "id": 48,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.50, sum(irate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P50 ",
+              "refId": "B"
+            },
+            {
+              "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P75",
+              "refId": "A"
+            },
+            {
+              "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P90",
+              "refId": "C"
+            },
+            {
+              "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P95",
+              "refId": "D"
+            },
+            {
+              "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P99",
+              "refId": "E"
+            },
+            {
+              "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P999",
+              "refId": "F"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Coordinator CAS Read Latency / $by / $rate",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": null,
+              "format": "µs",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": "foo",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 8,
+            "x": 16,
+            "y": 26
+          },
+          "id": 47,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "$$hashKey": "object:319",
+              "expr": "histogram_quantile(0.50, sum(irate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P50 ",
+              "refId": "B"
+            },
+            {
+              "$$hashKey": "object:320",
+              "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P75",
+              "refId": "A"
+            },
+            {
+              "$$hashKey": "object:321",
+              "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P90",
+              "refId": "C"
+            },
+            {
+              "$$hashKey": "object:322",
+              "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P95",
+              "refId": "D"
+            },
+            {
+              "$$hashKey": "object:323",
+              "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P99",
+              "refId": "E"
+            },
+            {
+              "$$hashKey": "object:324",
+              "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 1,
+              "legendFormat": "$by:{{$by}} P999",
+              "refId": "F"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Coordinator View Write Latency / $by / $rate",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": null,
+              "format": "µs",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": "foo",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
       "title": "Coordinator Metrics (no keyspace/table filters apply)",
       "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 0,
-        "y": 8
-      },
-      "id": 6,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "sum(irate(dse_client_request_latency_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by ($by, request_type)",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{$by}}:{{request_type}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Requests Served / $by / $rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ]
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 8,
-        "y": 8
-      },
-      "id": 45,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:639",
-          "expr": "sum(dse_client_connected_native_clients{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}) by ($by)",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{$by}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Clients Connected / $by",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ]
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 16,
-        "y": 8
-      },
-      "id": 46,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:726",
-          "expr": "sum(irate(dse_client_request_timeouts_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by ($by)",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{$by}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Client Timeouts / $by / $rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ]
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 0,
-        "y": 17
-      },
-      "id": 51,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:2027",
-          "expr": "histogram_quantile(0.50, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P50 ",
-          "refId": "B"
-        },
-        {
-          "$$hashKey": "object:2028",
-          "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P75",
-          "refId": "A"
-        },
-        {
-          "$$hashKey": "object:2029",
-          "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P90",
-          "refId": "C"
-        },
-        {
-          "$$hashKey": "object:2030",
-          "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P95",
-          "refId": "D"
-        },
-        {
-          "$$hashKey": "object:2031",
-          "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P99",
-          "refId": "E"
-        },
-        {
-          "$$hashKey": "object:2032",
-          "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P999",
-          "refId": "F"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Coordinator Write Latency / $by / $rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "µs",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ]
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 8,
-        "y": 17
-      },
-      "id": 11,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:2027",
-          "expr": "histogram_quantile(0.50, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P50 ",
-          "refId": "B"
-        },
-        {
-          "$$hashKey": "object:2028",
-          "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P75",
-          "refId": "A"
-        },
-        {
-          "$$hashKey": "object:2029",
-          "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P90",
-          "refId": "C"
-        },
-        {
-          "$$hashKey": "object:2030",
-          "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P95",
-          "refId": "D"
-        },
-        {
-          "$$hashKey": "object:2031",
-          "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P99",
-          "refId": "E"
-        },
-        {
-          "$$hashKey": "object:2032",
-          "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P999",
-          "refId": "F"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Coordinator Write Latency / $by / $rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "µs",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ]
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 16,
-        "y": 17
-      },
-      "id": 21,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "histogram_quantile(0.50, sum(irate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P50 ",
-          "refId": "B"
-        },
-        {
-          "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P75",
-          "refId": "A"
-        },
-        {
-          "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P90",
-          "refId": "C"
-        },
-        {
-          "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P95",
-          "refId": "D"
-        },
-        {
-          "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P99",
-          "refId": "E"
-        },
-        {
-          "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"range_slice\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P999",
-          "refId": "F"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Coordinator Range Read Latency / $by / $rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "µs",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "foo",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ]
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 0,
-        "y": 26
-      },
-      "id": 22,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:786",
-          "expr": "histogram_quantile(0.50, sum(irate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P50 ",
-          "refId": "B"
-        },
-        {
-          "$$hashKey": "object:787",
-          "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P75",
-          "refId": "A"
-        },
-        {
-          "$$hashKey": "object:788",
-          "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P90",
-          "refId": "C"
-        },
-        {
-          "$$hashKey": "object:789",
-          "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P95",
-          "refId": "D"
-        },
-        {
-          "$$hashKey": "object:790",
-          "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P99",
-          "refId": "E"
-        },
-        {
-          "$$hashKey": "object:791",
-          "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P999",
-          "refId": "F"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Coordinator CAS Read Latency / $by / $rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "µs",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "foo",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ]
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 8,
-        "y": 26
-      },
-      "id": 48,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "histogram_quantile(0.50, sum(irate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P50 ",
-          "refId": "B"
-        },
-        {
-          "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P75",
-          "refId": "A"
-        },
-        {
-          "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P90",
-          "refId": "C"
-        },
-        {
-          "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P95",
-          "refId": "D"
-        },
-        {
-          "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P99",
-          "refId": "E"
-        },
-        {
-          "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"cas_read\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P999",
-          "refId": "F"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Coordinator CAS Read Latency / $by / $rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "µs",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "foo",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ]
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 16,
-        "y": 26
-      },
-      "id": 47,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:319",
-          "expr": "histogram_quantile(0.50, sum(irate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P50 ",
-          "refId": "B"
-        },
-        {
-          "$$hashKey": "object:320",
-          "expr": "histogram_quantile(0.75, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P75",
-          "refId": "A"
-        },
-        {
-          "$$hashKey": "object:321",
-          "expr": "histogram_quantile(0.90, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P90",
-          "refId": "C"
-        },
-        {
-          "$$hashKey": "object:322",
-          "expr": "histogram_quantile(0.95, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P95",
-          "refId": "D"
-        },
-        {
-          "$$hashKey": "object:323",
-          "expr": "histogram_quantile(0.99, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P99",
-          "refId": "E"
-        },
-        {
-          "$$hashKey": "object:324",
-          "expr": "histogram_quantile(0.999, sum(rate(dse_client_request_latency_bucket{request_type=\"view_write\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, $by))",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "legendFormat": "$by:{{$by}} P999",
-          "refId": "F"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Coordinator View Write Latency / $by / $rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "µs",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "foo",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ]
     },
     {
       "collapsed": false,
@@ -1810,7 +1811,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 8
       },
       "id": 43,
       "panels": [],
@@ -1828,7 +1829,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 36
+        "y": 9
       },
       "id": 15,
       "legend": {
@@ -1958,7 +1959,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 36
+        "y": 9
       },
       "id": 49,
       "legend": {
@@ -2088,7 +2089,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 36
+        "y": 9
       },
       "id": 23,
       "legend": {
@@ -2218,7 +2219,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 45
+        "y": 18
       },
       "id": 52,
       "legend": {
@@ -2349,7 +2350,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 45
+        "y": 18
       },
       "id": 53,
       "legend": {
@@ -2479,7 +2480,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 45
+        "y": 18
       },
       "id": 50,
       "legend": {
@@ -2544,6 +2545,14 @@
           "intervalFactor": 2,
           "legendFormat": "{{$by}} : Flushes",
           "refId": "D"
+        },
+        {
+          "$$hashKey": "object:4841",
+          "expr": "sum(idelta(dse_table_pending_flushes_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{$by}} : Pending Flushes",
+          "refId": "E"
         }
       ],
       "thresholds": [],
@@ -2591,7 +2600,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 27
       },
       "id": 25,
       "panels": [],
@@ -2609,7 +2618,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 55
+        "y": 28
       },
       "id": 54,
       "legend": {
@@ -2687,7 +2696,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 37
       },
       "id": 39,
       "panels": [],
@@ -2700,7 +2709,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 65
+        "y": 38
       },
       "id": 41,
       "panels": [],
@@ -2713,7 +2722,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 66
+        "y": 39
       },
       "id": 31,
       "panels": [],
@@ -2726,7 +2735,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 67
+        "y": 40
       },
       "id": 29,
       "panels": [],
@@ -2739,7 +2748,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 68
+        "y": 41
       },
       "id": 37,
       "panels": [],
@@ -2752,7 +2761,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 69
+        "y": 42
       },
       "id": 35,
       "panels": [],
@@ -2765,7 +2774,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 43
       },
       "id": 33,
       "panels": [],
@@ -2778,7 +2787,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 44
       },
       "id": 27,
       "panels": [],
@@ -3008,8 +3017,8 @@
     ]
   },
   "time": {
-    "from": "2018-09-05T20:51:45.653Z",
-    "to": "2018-09-05T20:56:45.654Z"
+    "from": "2018-09-05T20:42:53.625Z",
+    "to": "2018-09-05T21:02:00.081Z"
   },
   "timepicker": {
     "refresh_intervals": [
