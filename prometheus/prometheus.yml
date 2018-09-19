@@ -50,209 +50,220 @@ scrape_configs:
        replacement: +Inf
      #Table Metrics *ALL* we can drop
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.table.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.table\.(\w+)
        action: drop
      #Table Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.table.([^\.]+).([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.table\.(\w+)\.(\w+)\.(\w+)
        target_label: table
        replacement: ${3}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.table.([^\.]+).([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.table\.(\w+)\.(\w+)\.(\w+)
        target_label: keyspace
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.table.([^\.]+).([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.table\.(\w+)\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_table_${1}
      #Keyspace Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.keyspace.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.keyspace\.(\w+)\.(\w+)
        target_label: keyspace
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.keyspace.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.keyspace\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_keyspace_${1}
      #ThreadPool Metrics (one type is repair.task so we just ignore the second part)
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.thread_pools.([^\.]+).([^\.]+).([^\.]+).*
+       regex: org\.apache\.cassandra\.metrics\.thread_pools\.(\w+)\.(\w+)\.(\w+).*
        target_label: pool_type
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.thread_pools.([^\.]+).([^\.]+).([^\.]+).*
+       regex: org\.apache\.cassandra\.metrics\.thread_pools\.(\w+)\.(\w+)\.(\w+).*
        target_label: pool_name
        replacement: ${3}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.thread_pools.([^\.]+).([^\.]+).([^\.]+).*
+       regex: org\.apache\.cassandra\.metrics\.thread_pools\.(\w+)\.(\w+)\.(\w+).*
        target_label: __name__
        replacement: dse_thread_pools_${1}
      #ClientRequest Metrics
-     #org.apache.cassandra.metrics.client_request.latency.read.each_quorum
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.client_request.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.client_request\.(\w+)\.(\w+)$
        target_label: request_type
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.client_request.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.client_request\.(\w+)\.(\w+)$
        target_label: __name__
        replacement: dse_client_request_${1}
+     - source_labels: ["dse"]
+       regex: org\.apache\.cassandra\.metrics\.client_request\.(\w+)\.(\w+)\.(\w+)$
+       target_label: cl
+       replacement: ${3}
+     - source_labels: ["dse"]
+       regex: org\.apache\.cassandra\.metrics\.client_request\.(\w+)\.(\w+)\.(\w+)$
+       target_label: request_type
+       replacement: ${2}
+     - source_labels: ["dse"]
+       regex: org\.apache\.cassandra\.metrics\.client_request\.(\w+)\.(\w+)\.(\w+)$
+       target_label: __name__
+       replacement: dse_client_request_${1}_cl
      #Cache Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.cache.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.cache\.(\w+)\.(\w+)
        target_label: cache_name
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.cache.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.cache\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_cache_${1}
      #CQL Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.cql.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.cql\.(\w+)
        target_label: __name__
        replacement: dse_cql_${1}
      #Dropped Message Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.dropped_message.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.dropped_message\.(\w+)\.(\w+)
        target_label: message_type
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.dropped_message.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.dropped_message\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_dropped_message_${1}
      #Streaming Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.streaming.([^\.]+).(.+)
+       regex: org\.apache\.cassandra\.metrics\.streaming\.(\w+)\.(.+)
        target_label: peer_ip
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.streaming.([^\.]+).(.+)
+       regex: org\.apache\.cassandra\.metrics\.streaming\.(\w+)\.(.+)
        target_label: __name__
        replacement: dse_streaming_${1}
      #CommitLog Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.commit_log.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.commit_log\.(\w+)
        target_label: __name__
        replacement: dse_commit_log_${1}
      #Compaction Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.compaction.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.compaction\.(\w+)
        target_label: __name__
        replacement: dse_compaction_${1}
      #Storage Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.storage.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.storage\.(\w+)
        target_label: __name__
        replacement: dse_storage_${1}
      #Batch Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.batch.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.batch\.(\w+)
        target_label: __name__
        replacement: dse_batch_${1}
      #Client Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.client.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.client\.(\w+)
        target_label: __name__
        replacement: dse_client_${1}
      #BufferPool Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.buffer_pool.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.buffer_pool\.(\w+)
        target_label: __name__
        replacement: dse_buffer_pool_${1}
      #Index Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.index.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.index\.(\w+)
        target_label: __name__
        replacement: dse_sstable_index_${1}
      #HintService Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.hinted_hand_off_manager.([^\-]+)-([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.hinted_hand_off_manager\.([^\-]+)-(\w+)
        target_label: peer_ip
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.hinted_hand_off_manager.([^\-]+)-([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.hinted_hand_off_manager\.([^\-]+)-(\w+)
        target_label: __name__
        replacement: dse_hints_${1}
      #HintService Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.hints_service.hints_delays-([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.hints_service\.hints_delays\-(\w+)
        target_label: peer_ip
        replacement: ${1}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.hints_service.hints_delays-([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.hints_service\.hints_delays\-(\w+)
        target_label: __name__
        replacement: dse_hints_hints_delays
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.hints_service.([^\-]+)
+       regex: org\.apache\.cassandra\.metrics\.hints_service\.([^\-]+)
        target_label: __name__
        replacement: dse_hints_${1}
      #NodeSync Metrics
      - source_labels: ["dse"]
-       regex: com.datastax.nodesync.node_sync_metrics.([^\.]+)
+       regex: com\.datastax\.nodesync\.node_sync_metrics\.(\w+)
        target_label: __name__
        replacement: dse_node_sync_${1}
      #ContinuousPaging Metrics
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.continuous_paging.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.continuous_paging\.(\w+)
        target_label: __name__
        replacement: dse_continuous_paging_${1}
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.continuous_paging.([^\.]+).([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.continuous_paging\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_continuous_paging_${2}_${1}
      # Misc
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.memtable_pool.([^\.]+)
+       regex: org\.apache\.cassandra\.metrics\.memtable_pool\.(\w+)
        target_label: __name__
        replacement: dse_memtable_pool_${1}
      - source_labels: ["dse"]
-       regex: com.datastax.bdp.type.performance_objects.name.cql_slow_log.metrics.queries_latency
+       regex: com\.datastax\.bdp\.type\.performance_objects\.name\.cql_slow_log\.metrics\.queries_latency
        target_label: __name__
        replacement: dse_cql_slow_log_query_latency
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.read_coordination.(.*)
+       regex: org\.apache\.cassandra\.metrics\.read_coordination\.(.*)
        target_label: read_type
        replacement: $1
      - source_labels: ["dse"]
-       regex: org.apache.cassandra.metrics.read_coordination.(.*)
+       regex: org\.apache\.cassandra\.metrics\.read_coordination\.(.*)
        target_label: __name__
        replacement: dse_read_coordination_requests
      #GC Metrics
      - source_labels: ["dse"]
-       regex: jvm.gc.([^\.]+).([^\.]+)
+       regex: jvm\.gc\.(\w+)\.(\w+)
        target_label: collector_type
        replacement: ${1}
      - source_labels: ["dse"]
-       regex: jvm.gc.([^\.]+).([^\.]+)
+       regex: jvm\.gc\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_jvm_gc_${2}
      #JVM Metrics
      - source_labels: ["dse"]
-       regex: jvm.memory.([^\.]+).([^\.]+)
+       regex: jvm\.memory\.(\w+)\.(\w+)
        target_label: memory_type
        replacement: ${1}
      - source_labels: ["dse"]
-       regex: jvm.memory.([^\.]+).([^\.]+)
+       regex: jvm\.memory\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_jvm_memory_${2}
      - source_labels: ["dse"]
-       regex: jvm.memory.pools.([^\.]+).([^\.]+)
+       regex: jvm\.memory\.pools\.(\w+)\.(\w+)
        target_label: pool_name
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: jvm.memory.pools.([^\.]+).([^\.]+)
+       regex: jvm\.memory\.pools\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_jvm_memory_pool_${2}
      - source_labels: ["dse"]
-       regex: jvm.fd.usage
+       regex: jvm\.fd\.usage
        target_label: __name__
        replacement: dse_jvm_fd_usage
      - source_labels: ["dse"]
-       regex: jvm.buffers.([^\.]+).([^\.]+)
+       regex: jvm\.buffers\.(\w+)\.(\w+)
        target_label: buffer_type
        replacement: ${1}
      - source_labels: ["dse"]
-       regex: jvm.buffers.([^\.]+).([^\.]+)
+       regex: jvm\.buffers\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_jvm_buffer_${2}
      #Append the prom types back to formatted names
