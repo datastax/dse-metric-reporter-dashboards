@@ -3017,8 +3017,8 @@
     ]
   },
   "time": {
-    "from": "2018-09-05T20:42:53.625Z",
-    "to": "2018-09-05T21:02:00.081Z"
+    "from": "now-30m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
