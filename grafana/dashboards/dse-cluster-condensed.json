@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1536261430321,
+  "iteration": 1537371031145,
   "links": [],
   "panels": [
     {
@@ -37,11 +37,12 @@
       "colorBackground": false,
       "colorValue": true,
       "colors": [
-        "#7eb26d",
+        "#d44a3a",
         "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
+        "#7eb26d"
       ],
       "datasource": "prometheus",
+      "decimals": null,
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -94,14 +95,14 @@
       "targets": [
         {
           "$$hashKey": "object:2386",
-          "expr": "count(up{job=\"dse\", cluster=~\"$cluster\"}) or vector(0)",
+          "expr": "count(up{job=\"dse\", cluster=~\"$cluster\"} != 0) or vector(0)",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "thresholds": "1000",
+      "thresholds": "1,1,1999",
       "title": "Nodes Up",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -1444,8 +1445,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "test_cluster",
-          "value": "test_cluster"
+          "isNone": true,
+          "text": "None",
+          "value": ""
         },
         "datasource": "prometheus",
         "hide": 0,
@@ -1513,8 +1515,8 @@
       {
         "allValue": ".*",
         "current": {
-          "text": "keyspace1",
-          "value": "keyspace1"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "prometheus",
         "hide": 0,
@@ -1536,8 +1538,8 @@
       {
         "allValue": ".*",
         "current": {
-          "text": "standard1",
-          "value": "standard1"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": "prometheus",
         "hide": 0,
@@ -1618,8 +1620,8 @@
     ]
   },
   "time": {
-    "from": "2018-09-04T20:21:19.997Z",
-    "to": "2018-09-04T21:05:24.895Z"
+    "from": "now-30m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -1649,5 +1651,6 @@
   "timezone": "",
   "title": "DSE Cluster Condensed",
   "uid": "MLPRcY2izdw",
-  "version": 30
+  "version": 33
 }
+
