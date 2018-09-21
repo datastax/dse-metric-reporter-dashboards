@@ -1374,6 +1374,13 @@
           "intervalFactor": 3,
           "legendFormat": "{{$by}} : Pending Compaction",
           "refId": "E"
+        },
+        {
+          "expr": "sum(irate(dse_compaction_completed_tasks{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by ($by)",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{$by}} : Completed Compaction",
+          "refId": "B"
         }
       ],
       "thresholds": [],
