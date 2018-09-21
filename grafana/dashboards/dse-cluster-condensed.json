@@ -274,7 +274,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -355,7 +355,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -534,12 +534,12 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
       "colorBackground": false,
-      "colorValue": false,
+      "colorValue": true,
       "colors": [
         "#299c46",
         "rgba(237, 129, 40, 0.89)",
@@ -606,6 +606,8 @@
         }
       ],
       "thresholds": "10,100,100000",
+      "timeFrom": null,
+      "timeShift": null,
       "title": "Client Timeouts / $rate",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -616,7 +618,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -680,7 +682,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(dse_storage_total_hints_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}) - sum(dse_hints_hints_succeeded_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"})",
+          "expr": "sum(dse_storage_hints_on_disk_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -698,7 +700,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -780,7 +782,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "collapsed": false,
@@ -987,7 +989,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "fill": 1,
+      "fill": 3,
       "gridPos": {
         "h": 9,
         "w": 8,
@@ -1017,7 +1019,8 @@
           "alias": "/.*Flushes/",
           "bars": true,
           "lines": false,
-          "yaxis": 2
+          "yaxis": 2,
+          "zindex": -3
         }
       ],
       "spaceLength": 10,
@@ -1318,7 +1321,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "fill": 1,
+      "fill": 8,
       "gridPos": {
         "h": 9,
         "w": 8,
@@ -1348,7 +1351,8 @@
           "alias": "/.*Compaction/",
           "bars": true,
           "lines": false,
-          "yaxis": 2
+          "yaxis": 2,
+          "zindex": -3
         }
       ],
       "spaceLength": 10,
@@ -1356,24 +1360,18 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(dse_table_compaction_bytes_written_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
+          "expr": "sum(irate(dse_table_compaction_bytes_written_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{$by}} : Bytes Compacted",
           "refId": "A"
         },
         {
-          "expr": "sum(idelta(dse_table_live_ss_table_count{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by) - sum(idelta(dse_table_memtable_switch_count_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
+          "expr": "sum(dse_table_pending_compactions{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}) by ($by)",
           "format": "time_series",
           "instant": false,
-          "intervalFactor": 2,
-          "legendFormat": "{{$by}} : Compaction",
-          "refId": "D"
-        },
-        {
-          "expr": "sum(idelta(dse_table_pending_compactions{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
-          "format": "time_series",
-          "intervalFactor": 1,
+          "interval": "",
+          "intervalFactor": 3,
           "legendFormat": "{{$by}} : Pending Compaction",
           "refId": "E"
         }
@@ -1398,7 +1396,7 @@
       "yaxes": [
         {
           "format": "Bps",
-          "label": null,
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
@@ -1407,10 +1405,10 @@
         {
           "decimals": 0,
           "format": "short",
-          "label": "Flushes",
+          "label": "Count",
           "logBase": 1,
           "max": null,
-          "min": "0",
+          "min": null,
           "show": true
         }
       ],
