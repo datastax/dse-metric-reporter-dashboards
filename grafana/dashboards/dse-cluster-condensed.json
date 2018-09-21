@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1537536976134,
+  "iteration": 1537559428136,
   "links": [],
   "panels": [
     {
@@ -1112,6 +1112,98 @@
       "gridPos": {
         "h": 9,
         "w": 8,
+        "x": 0,
+        "y": 14
+      },
+      "id": 56,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(irate(dse_streaming_total_incoming_bytes_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by ($by)",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{$by}}: Incoming Stream",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(irate(dse_streaming_total_outgoing_bytes_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by ($by)",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{$by}}: Outgoing Stream",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Streaming / $by / $rate",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "Bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
         "x": 8,
         "y": 14
       },
@@ -1305,7 +1397,7 @@
       },
       "yaxes": [
         {
-          "format": "bytes",
+          "format": "Bps",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1373,7 +1465,6 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "tags": [],
           "text": "1m",
           "value": "1m"
         },
@@ -1504,7 +1595,7 @@
         "multi": false,
         "name": "keyspace",
         "options": [],
-        "query": "label_values(dse_table_read_latency{cluster=~\"$cluster\"}, keyspace)",
+        "query": "label_values(dse_table_read_latency_total{cluster=~\"$cluster\"}, keyspace)",
         "refresh": 2,
         "regex": "",
         "sort": 0,
@@ -1527,7 +1618,7 @@
         "multi": false,
         "name": "table",
         "options": [],
-        "query": "label_values(dse_table_read_latency{keyspace=~\"$keyspace\"}, table)",
+        "query": "label_values(dse_table_read_latency_total{keyspace=~\"$keyspace\"}, table)",
         "refresh": 2,
         "regex": "",
         "sort": 1,
@@ -1540,7 +1631,7 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
+          "selected": true,
           "text": "0.90",
           "value": "0.90"
         },
@@ -1623,5 +1714,5 @@
   "timezone": "",
   "title": "DSE Cluster Condensed",
   "uid": "MLPRcY2izdw",
-  "version": 1
+  "version": 2
 }
