@@ -133,11 +133,15 @@ scrape_configs:
        replacement: dse_dropped_message_${1}
      #Streaming Metrics
      - source_labels: ["dse"]
-       regex: org\.apache\.cassandra\.metrics\.streaming\.(\w+)\.(.+)
+       regex: org\.apache\.cassandra\.metrics\.streaming\.(\w+)\.(.+)$
        target_label: peer_ip
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: org\.apache\.cassandra\.metrics\.streaming\.(\w+)\.(.+)
+       regex: org\.apache\.cassandra\.metrics\.streaming\.(\w+)\.(.+)$
+       target_label: __name__
+       replacement: dse_streaming_${1}
+     - source_labels: ["dse"]
+       regex: org\.apache\.cassandra\.metrics\.streaming\.(\w+)$
        target_label: __name__
        replacement: dse_streaming_${1}
      #CommitLog Metrics

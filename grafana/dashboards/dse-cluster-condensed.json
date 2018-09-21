@@ -2,7 +2,6 @@
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:102",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -16,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1537371031145,
+  "iteration": 1537536976134,
   "links": [],
   "panels": [
     {
@@ -94,8 +93,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:2386",
-          "expr": "count(up{job=\"dse\", cluster=~\"$cluster\"} != 0) or vector(0)",
+          "expr": "count(dse_compaction_completed_tasks{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"} >= 0) or vector(0)",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -176,8 +174,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:2433",
-          "expr": "count(up{job=\"dse\", cluster=~\"$cluster\"}==0) OR absent(count(up{job=\"dse\", cluster=~\"$cluster\"})) OR vector(0)",
+          "expr": "count(absent(sum(rate(dse_compaction_completed_tasks{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[2m])))) OR vector(0)",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -422,7 +419,6 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:2514",
           "expr": "sum(irate(dse_table_dropped_mutations_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate]))",
           "format": "time_series",
           "intervalFactor": 1,
@@ -684,7 +680,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(dse_storage_total_hints_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"})",
+          "expr": "sum(dse_storage_total_hints_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}) - sum(dse_hints_hints_succeeded_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -766,7 +762,6 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:218",
           "expr": "sum(dse_table_live_disk_space_used_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"})",
           "format": "time_series",
           "intervalFactor": 1,
@@ -833,7 +828,6 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "$$hashKey": "object:2223",
           "alias": "/.*Connected/",
           "stack": false,
           "yaxis": 2
@@ -844,7 +838,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:2068",
           "expr": "sum(irate(dse_client_request_latency_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by ($by, request_type)",
           "format": "time_series",
           "intervalFactor": 1,
@@ -852,7 +845,6 @@
           "refId": "A"
         },
         {
-          "$$hashKey": "object:2089",
           "expr": "sum(dse_client_connected_native_clients{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}) by ($by)",
           "format": "time_series",
           "intervalFactor": 1,
@@ -879,7 +871,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:2114",
           "decimals": null,
           "format": "short",
           "label": null,
@@ -889,7 +880,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:2115",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -897,7 +887,11 @@
           "min": "0",
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -937,7 +931,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:2027",
           "expr": "histogram_quantile($latency, sum(rate(dse_client_request_latency_bucket{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[$rate])) by (le, request_type, $by))",
           "format": "time_series",
           "hide": false,
@@ -982,7 +975,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -1017,7 +1014,6 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "$$hashKey": "object:4048",
           "alias": "/.*Flushes/",
           "bars": true,
           "lines": false,
@@ -1029,7 +1025,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:639",
           "expr": "sum(dse_table_memtable_off_heap_size{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}) by ($by)",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1037,7 +1032,6 @@
           "refId": "A"
         },
         {
-          "$$hashKey": "object:3423",
           "expr": "sum(dse_table_memtable_on_heap_size{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}) by ($by)",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1045,7 +1039,6 @@
           "refId": "B"
         },
         {
-          "$$hashKey": "object:3554",
           "expr": "sum(dse_table_memtable_live_data_size{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}) by ($by)",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1053,7 +1046,6 @@
           "refId": "C"
         },
         {
-          "$$hashKey": "object:3963",
           "expr": "sum(idelta(dse_table_memtable_switch_count_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
           "format": "time_series",
           "instant": false,
@@ -1062,7 +1054,6 @@
           "refId": "D"
         },
         {
-          "$$hashKey": "object:4841",
           "expr": "sum(idelta(dse_table_pending_flushes_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1089,7 +1080,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:3296",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -1098,7 +1088,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:3297",
           "decimals": 0,
           "format": "short",
           "label": "Flushes",
@@ -1107,7 +1096,11 @@
           "min": "0",
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -1147,7 +1140,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:945",
           "expr": "histogram_quantile($latency, sum(irate(dse_table_range_latency_bucket{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by (le, $by))",
           "format": "time_series",
           "hide": false,
@@ -1156,7 +1148,6 @@
           "refId": "B"
         },
         {
-          "$$hashKey": "object:946",
           "expr": "histogram_quantile($latency, sum(irate(dse_table_read_latency_bucket{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by (le, $by))",
           "format": "time_series",
           "hide": false,
@@ -1165,7 +1156,6 @@
           "refId": "A"
         },
         {
-          "$$hashKey": "object:947",
           "expr": "histogram_quantile($latency, sum(irate(dse_table_write_latency_bucket{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by (le, $by))",
           "format": "time_series",
           "hide": false,
@@ -1174,7 +1164,6 @@
           "refId": "C"
         },
         {
-          "$$hashKey": "object:1642",
           "expr": "histogram_quantile($latency, sum(irate(dse_table_coordinator_read_latency_bucket{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by (le, $by))",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1182,7 +1171,6 @@
           "refId": "D"
         },
         {
-          "$$hashKey": "object:1663",
           "expr": "histogram_quantile($latency, sum(irate(dse_table_coordinator_scan_latency_bucket{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by (le, $by))",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1226,7 +1214,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -1261,7 +1253,6 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "$$hashKey": "object:4048",
           "alias": "/.*Compaction/",
           "bars": true,
           "lines": false,
@@ -1273,7 +1264,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:639",
           "expr": "sum(rate(dse_table_compaction_bytes_written_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1281,7 +1271,6 @@
           "refId": "A"
         },
         {
-          "$$hashKey": "object:3963",
           "expr": "sum(idelta(dse_table_live_ss_table_count{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by) - sum(idelta(dse_table_memtable_switch_count_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
           "format": "time_series",
           "instant": false,
@@ -1290,7 +1279,6 @@
           "refId": "D"
         },
         {
-          "$$hashKey": "object:4841",
           "expr": "sum(idelta(dse_table_pending_compactions{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\"}[$rate])) by ($by)",
           "format": "time_series",
           "intervalFactor": 1,
@@ -1317,7 +1305,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:3296",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -1326,7 +1313,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:3297",
           "decimals": 0,
           "format": "short",
           "label": "Flushes",
@@ -1335,10 +1321,14 @@
           "min": "0",
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
-  "refresh": false,
+  "refresh": "30s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
@@ -1361,19 +1351,16 @@
         "name": "by",
         "options": [
           {
-            "$$hashKey": "object:271",
             "selected": true,
             "text": "Cluster",
             "value": "cluster"
           },
           {
-            "$$hashKey": "object:272",
             "selected": false,
             "text": "DC",
             "value": "dc"
           },
           {
-            "$$hashKey": "object:273",
             "selected": false,
             "text": "Node",
             "value": "instance"
@@ -1397,43 +1384,36 @@
         "name": "rate",
         "options": [
           {
-            "$$hashKey": "object:4450",
             "selected": true,
             "text": "1m",
             "value": "1m"
           },
           {
-            "$$hashKey": "object:4451",
             "selected": false,
             "text": "5m",
             "value": "5m"
           },
           {
-            "$$hashKey": "object:4452",
             "selected": false,
             "text": "10m",
             "value": "10m"
           },
           {
-            "$$hashKey": "object:4453",
             "selected": false,
             "text": "30m",
             "value": "30m"
           },
           {
-            "$$hashKey": "object:4454",
             "selected": false,
             "text": "1h",
             "value": "1h"
           },
           {
-            "$$hashKey": "object:4455",
             "selected": false,
             "text": "6h",
             "value": "6h"
           },
           {
-            "$$hashKey": "object:4456",
             "selected": false,
             "text": "12h",
             "value": "12h"
@@ -1445,9 +1425,8 @@
       {
         "allValue": null,
         "current": {
-          "isNone": true,
-          "text": "None",
-          "value": ""
+          "text": "insights-test",
+          "value": "insights-test"
         },
         "datasource": "prometheus",
         "hide": 0,
@@ -1572,43 +1551,36 @@
         "name": "latency",
         "options": [
           {
-            "$$hashKey": "object:1056",
             "selected": false,
             "text": "0.5",
             "value": "0.5"
           },
           {
-            "$$hashKey": "object:1057",
             "selected": false,
             "text": "0.75",
             "value": "0.75"
           },
           {
-            "$$hashKey": "object:1058",
             "selected": true,
             "text": "0.90",
             "value": "0.90"
           },
           {
-            "$$hashKey": "object:1059",
             "selected": false,
             "text": "0.95",
             "value": "0.95"
           },
           {
-            "$$hashKey": "object:1060",
             "selected": false,
             "text": "0.98",
             "value": "0.98"
           },
           {
-            "$$hashKey": "object:1061",
             "selected": false,
             "text": "0.99",
             "value": "0.99"
           },
           {
-            "$$hashKey": "object:1062",
             "selected": false,
             "text": "0.999",
             "value": "0.999"
@@ -1651,6 +1623,5 @@
   "timezone": "",
   "title": "DSE Cluster Condensed",
   "uid": "MLPRcY2izdw",
-  "version": 33
+  "version": 1
 }
-
