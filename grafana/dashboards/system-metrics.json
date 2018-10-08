@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 1860,
   "graphTooltip": 0,
-  "iteration": 1539018070790,
+  "iteration": 1539031410071,
   "links": [],
   "panels": [
     {
@@ -2815,6 +2815,118 @@
       }
     },
     {
+      "aliasColors": {
+        "Busy": "#EAB839",
+        "Busy Iowait": "#890F02",
+        "Busy other": "#1F78C1",
+        "Idle": "#052B51",
+        "Idle - Waiting for something to happen": "#052B51",
+        "guest": "#9AC48A",
+        "idle": "#052B51",
+        "iowait": "#EAB839",
+        "irq": "#BF1B00",
+        "nice": "#C15C17",
+        "softirq": "#E24D42",
+        "steal": "#FCE2DE",
+        "system": "#508642",
+        "user": "#5195CE"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 2,
+      "description": "",
+      "fill": 4,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 56
+      },
+      "id": 290,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "sideWidth": 250,
+        "sort": null,
+        "sortDesc": null,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "minSpan": 4,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "collectd_tcpconns_tcp_connections{instance=\"$host\", tcpconns=~\"(70|90).*\"}",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{tcpconns}} - {{type}}",
+          "refId": "C",
+          "step": 240
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "TCP Connections",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transparent": false,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
@@ -3453,7 +3565,7 @@
     ]
   },
   "time": {
-    "from": "now-30",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -3484,5 +3596,5 @@
   "timezone": "browser",
   "title": "DSE System & Node Metrics",
   "uid": "eNNm2Lciz",
-  "version": 1
+  "version": 3
 }
