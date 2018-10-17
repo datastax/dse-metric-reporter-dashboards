@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 1860,
   "graphTooltip": 0,
-  "iteration": 1539092728147,
+  "iteration": 1539790176399,
   "links": [],
   "panels": [
     {
@@ -2000,6 +2000,443 @@
         "x": 0,
         "y": 35
       },
+      "id": 295,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 36
+          },
+          "id": 297,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(rate(collectd_cpu_total{instance=\"$host\", type=\"user\"}[$rate])) by (cpu)",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{cpu}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU User",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": "100",
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 36
+          },
+          "id": 298,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(rate(collectd_cpu_total{instance=\"$host\", type=\"system\"}[$rate])) by (cpu)",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{cpu}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU System",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": "100",
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 43
+          },
+          "id": 299,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(rate(collectd_cpu_total{instance=\"$host\", type=\"wait\"}[$rate])) by (cpu)",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{cpu}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU IOWait",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": "100",
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 43
+          },
+          "id": 300,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(rate(collectd_cpu_total{instance=\"$host\", type=\"softirq\"}[$rate])) by (cpu)",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{cpu}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU SoftIRQ",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": "100",
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 50
+          },
+          "id": 301,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(rate(collectd_cpu_total{instance=\"$host\", type=~\"(interrupt|nice|steal)\"}[$rate])) by (cpu, type)",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{cpu}} - {{type}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU Other",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": "100",
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "CPU Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
       "id": 293,
       "panels": [
         {
@@ -2030,7 +2467,7 @@
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 36
+            "y": 51
           },
           "id": 281,
           "legend": {
@@ -2140,7 +2577,7 @@
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 36
+            "y": 51
           },
           "id": 288,
           "legend": {
@@ -2251,7 +2688,7 @@
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 43
+            "y": 58
           },
           "id": 284,
           "legend": {
@@ -2363,7 +2800,7 @@
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 43
+            "y": 58
           },
           "id": 290,
           "legend": {
@@ -2475,7 +2912,7 @@
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 50
+            "y": 65
           },
           "id": 283,
           "legend": {
@@ -2587,7 +3024,7 @@
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 50
+            "y": 65
           },
           "id": 291,
           "legend": {
@@ -2699,7 +3136,7 @@
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 57
+            "y": 72
           },
           "id": 282,
           "legend": {
@@ -2838,7 +3275,7 @@
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 57
+            "y": 72
           },
           "id": 285,
           "legend": {
@@ -2950,7 +3387,7 @@
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 64
+            "y": 79
           },
           "id": 289,
           "legend": {
@@ -3058,7 +3495,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 37
       },
       "id": 266,
       "panels": [],
@@ -3090,7 +3527,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 37
+        "y": 38
       },
       "hideTimeOverride": false,
       "id": 16,
@@ -3171,7 +3608,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 37
+        "y": 38
       },
       "hideTimeOverride": false,
       "id": 272,
@@ -3252,7 +3689,7 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 37
+        "y": 38
       },
       "hideTimeOverride": false,
       "id": 273,
@@ -3327,7 +3764,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 37
+        "y": 38
       },
       "heatmap": {},
       "highlightCards": true,
@@ -3404,7 +3841,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 42
       },
       "id": 269,
       "legend": {
@@ -3540,7 +3977,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 43
       },
       "heatmap": {},
       "highlightCards": true,
@@ -3668,8 +4105,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "10.200.156.21",
-          "value": "10.200.156.21"
+          "tags": [],
+          "text": "10.200.178.224",
+          "value": "10.200.178.224"
         },
         "datasource": "prometheus",
         "hide": 0,
@@ -3722,5 +4160,5 @@
   "timezone": "browser",
   "title": "DSE System & Node Metrics",
   "uid": "eNNm2Lciz",
-  "version": 5
+  "version": 6
 }
