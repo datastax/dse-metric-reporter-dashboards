@@ -12,10 +12,11 @@
       }
     ]
   },
+  "description": "",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1537559428136,
+  "iteration": 1541085490839,
   "links": [],
   "panels": [
     {
@@ -1122,6 +1123,8 @@
       "legend": {
         "avg": false,
         "current": false,
+        "hideEmpty": false,
+        "hideZero": true,
         "max": false,
         "min": false,
         "show": true,
@@ -1138,7 +1141,7 @@
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": true,
+      "stack": false,
       "steppedLine": false,
       "targets": [
         {
@@ -1436,14 +1439,12 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "tags": [],
           "text": "Cluster",
           "value": "cluster"
         },
         "hide": 0,
         "includeAll": false,
-        "label": "Display By",
+        "label": "Group By",
         "multi": false,
         "name": "by",
         "options": [
@@ -1459,11 +1460,17 @@
           },
           {
             "selected": false,
+            "text": "Rack",
+            "value": "rack"
+          },
+          {
+            "selected": false,
             "text": "Node",
             "value": "instance"
           }
         ],
-        "query": "cluster,dc,instance",
+        "query": "cluster,dc,rack,instance",
+        "skipUrlSync": false,
         "type": "custom"
       },
       {
@@ -1516,13 +1523,15 @@
           }
         ],
         "query": "1m,5m,10m,30m,1h,6h,12h",
+        "skipUrlSync": false,
         "type": "custom"
       },
       {
         "allValue": null,
         "current": {
-          "text": "insights-test",
-          "value": "insights-test"
+          "isNone": true,
+          "text": "None",
+          "value": ""
         },
         "datasource": "prometheus",
         "hide": 0,
@@ -1534,6 +1543,7 @@
         "query": "label_values(collectd_cpu_total, cluster)",
         "refresh": 2,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -1557,6 +1567,7 @@
         "query": "label_values(collectd_cpu_total{cluster=~\"$cluster\"}, dc)",
         "refresh": 2,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -1580,6 +1591,7 @@
         "query": "label_values(collectd_cpu_total{cluster=~\"$cluster\", dc=~\"$dc\"}, rack)",
         "refresh": 2,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -1603,6 +1615,7 @@
         "query": "label_values(dse_table_read_latency_total{cluster=~\"$cluster\"}, keyspace)",
         "refresh": 2,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -1626,6 +1639,7 @@
         "query": "label_values(dse_table_read_latency_total{keyspace=~\"$keyspace\"}, table)",
         "refresh": 2,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -1683,6 +1697,7 @@
           }
         ],
         "query": "0.5,0.75,0.90,0.95,0.98,0.99,0.999",
+        "skipUrlSync": false,
         "type": "custom"
       }
     ]
@@ -1719,5 +1734,5 @@
   "timezone": "",
   "title": "DSE Cluster Condensed",
   "uid": "MLPRcY2izdw",
-  "version": 2
+  "version": 1
 }
