@@ -24,5 +24,5 @@ The following screenshots illustrate the preconfigured dashboards in this reposi
 #### DSE Cluster Latest
 ![DSE Cluster Latest](DSEMetricsCollectorDashboardLatest.png)
 
-#### Promtheus Statistics
+#### Prometheus Statistics
 ![Promtheus Statistics](DSEMetricsCollectorDashboardPrometheus.png)
