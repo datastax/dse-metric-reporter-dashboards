@@ -2,7 +2,7 @@
 
 This repository contains preconfigured Grafana dashboards that integrate with DSE Metrics Collector. Use DSE Metrics Collector to export DSE metrics to a monitoring tool like Prometheus, and then visualize DSE metrics in the Grafana dashboards.
 
-Use Docker and modify the provided Prometheus configuration file, or manually export DSE metrics to an existing Prometheus server. Although the examples use Promtheus as the monitoring tool, you can export the aggregated metrics to other tools like Graphite and Splunk.
+Use Docker and modify the provided Prometheus configuration file, or manually export DSE metrics to an existing Prometheus server. Although the examples in the linked documentation use Promtheus as the monitoring tool, you can export the aggregated metrics to other tools like Graphite and Splunk.
 
 ## Getting started
 
