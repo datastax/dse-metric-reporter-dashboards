@@ -11,6 +11,9 @@ Clone this repository and then follow the instructions in the DataStax documenta
 * [Export and visualize metrics with Prometheus and Docker](https://docs.datastax.com/en/dse/6.7/dse-dev/datastax_enterprise/tools/metricsCollector/mcExportMetricsDocker.html)
 * [Manually export and visualize metrics with Prometheus](https://docs.datastax.com/en/dse/6.7/dse-dev/datastax_enterprise/tools/metricsCollector/mcExportMetricsManually.html)
 
+## License
+Please refer to [LICENSE](LICENSE.md) file.
+
 ## Examples
 
 The following screenshots illustrate the preconfigured dashboards in this repository.
