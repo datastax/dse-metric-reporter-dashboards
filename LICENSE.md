@@ -24,11 +24,17 @@ To the fullest extent permitted by applicable law, in no event shall DataStax be
 
 ### 8. Miscellaneous
 8.1. Assignment. You may not assign this Agreement by operation of law or otherwise. DataStax may assign this Agreement upon written notice.
+
 8.2. Entire Agreement. This Agreement constitutes the complete Agreement between the parties and supersedes all prior or contemporaneous agreements or representations, written or oral, concerning the subject matter of this Agreement. No modification of this Agreement will be binding, unless in writing and signed by an authorized representative of each party.
+
 8.3. Export Controls. By using the Licensed Software, you agree to comply with all import, export, and re-export restrictions and regulations of the United States and other countries.
+
 8.4. Inspection. During the term of this Agreement and for one year thereafter, DataStax or its designated agent may inspect your facilities and records to verify your compliance with the Agreement. Any such inspection will take place only during your normal business hours and upon no less than 15 days prior written notice.
+
 8.5. Governing Law. This Agreement is to be construed in accordance with the laws of the State of California and controlling U.S. federal laws, without regard to the choice of law rules of any jurisdiction.
+
 8.6. Severability and Waiver. If any provision of this Agreement (or any portion hereof) is held to be unenforceable, this Agreement will remain in effect with the provision omitted, unless omission would frustrate the intent of the parties. The waiver by either party of any default or breach of this Agreement will not constitute a waiver of any other or subsequent default or breach.
+
 8.7. Third Party Code. Additional copyright notices and license terms that may be applicable to portions of the Licensed Software are set forth, if any, in a license.txt file.
 
 ### 9. Questions
