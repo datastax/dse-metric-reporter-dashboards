@@ -2,7 +2,7 @@
 
 This repository contains preconfigured Grafana dashboards that integrate with DSE Metrics Collector. Use DSE Metrics Collector to export DSE metrics to a monitoring tool like Prometheus, and then visualize DSE metrics in the Grafana dashboards.
 
-Use Docker and modify the provided Prometheus configuration file, or manually export DSE metrics to an existing Prometheus server. Although the examples in the linked documentation use Promtheus as the monitoring tool, you can export the aggregated metrics to other tools like Graphite and Splunk.
+Use Docker and modify the provided Prometheus configuration file, or manually export DSE metrics to an existing Prometheus server. Although the examples in the linked documentation use Prometheus as the monitoring tool, you can export the aggregated metrics to other tools like Graphite and Splunk.
 
 ## Getting started
 
@@ -10,9 +10,6 @@ Clone this repository and then follow the instructions in the DataStax documenta
 
 * [Export and visualize metrics with Prometheus and Docker](https://docs.datastax.com/en/dse/6.7/dse-dev/datastax_enterprise/tools/metricsCollector/mcExportMetricsDocker.html)
 * [Manually export and visualize metrics with Prometheus](https://docs.datastax.com/en/dse/6.7/dse-dev/datastax_enterprise/tools/metricsCollector/mcExportMetricsManually.html)
-
-## License
-Please refer to [LICENSE](LICENSE.md) file.
 
 ## Examples
 
@@ -28,4 +25,10 @@ The following screenshots illustrate the preconfigured dashboards in this reposi
 ![DSE Cluster Latest](DSEMetricsCollectorDashboardLatest.png)
 
 #### Prometheus Statistics
-![Promtheus Statistics](DSEMetricsCollectorDashboardPrometheus.png)
+![Prometheus Statistics](DSEMetricsCollectorDashboardPrometheus.png)
+
+## License
+Please refer to [LICENSE](LICENSE.md) file.
+
+## Support
+The code, examples, and snippets provided in this repository are not "Supported Software" under any DataStax subscriptions or other agreements.
