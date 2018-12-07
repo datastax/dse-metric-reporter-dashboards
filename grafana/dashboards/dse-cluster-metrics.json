@@ -680,7 +680,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(dse_storage_total_hints_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"})",
+          "expr": "sum(dse_storage_hints_on_disk_total{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
