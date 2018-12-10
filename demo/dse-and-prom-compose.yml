@@ -1,0 +1,51 @@
+version: "3"
+networks:
+  bridge:
+    external: false
+services:
+  prometheus:
+    networks:
+      bridge:
+    container_name: dse-metric-dashboards_prometheus_1
+    image: "prom/prometheus:v2.4.3"
+    ports:
+      - "9090:9090"
+    volumes:
+      - "${PROMETHEUS_DATA_DIR:-prometheus}:/prometheus"
+      - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "./prometheus/tg_dse.json:/etc/prometheus/tg_dse.json"
+  grafana:
+    networks:
+      bridge:
+    container_name: dse-metric-dashboards_grafana_1
+    image: "grafana/grafana:5.3.2"
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+    volumes:
+      - "${GRAFANA_DATA_DIR:-grafana}:/var/lib/grafana"
+      - "./grafana/prometheus-datasource.yaml:/etc/grafana/provisioning/datasources/prometheus-datasource.yaml"
+      - "./grafana/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml"
+      - "./grafana/dashboards:/var/lib/grafana/dashboards:ro"
+  dse:
+    networks:
+      bridge:
+        aliases:
+          - dse-server
+    container_name: dse-server
+    image: "datastax/dse-server:6.7.0"
+    environment:
+      - DS_LICENSE=accept
+    # Allow DSE to lock memory with mlock
+    cap_add:
+    - IPC_LOCK
+    ulimits:
+      memlock: -1
+    ports:
+      - "9042:9042"
+      - "9103:9103"
+volumes:
+  grafana:
+  prometheus:
