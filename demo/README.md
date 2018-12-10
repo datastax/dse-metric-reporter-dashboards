@@ -44,7 +44,7 @@ cd dse-metric-reporter-dashboards-master/demo
 Next start the containers with `docker-compose` using the downloaded insights-compose.yaml 
 
 ```
-docker-compose -f dse-and-prom-compose.yml up -d 
+docker-compose docker-compose.yml up -d 
 ```
 
 The dse-and-prom-compose.yml 
@@ -85,13 +85,13 @@ http://localhost:3000/dashboards or http://docker-host-ip:3000/dashboards if run
 Destroying the demo is as simple as running the command 
 
 ```
-docker-compose -f  dse-and-prom-compose.yml down
+docker-compose docker-compose.yml down
 ```
 
 All the config files are still located on your host so if you decided to run the demo again, as long as you do not delete the data in `~/insights` all you have to do is run the below command again from the `~/insights/dse-metric-reporter-dashboards/demo` directory and you will be back where you were prior to destroying.
 
 ```
-docker-compose -f  dse-and-prom-compose.yml up -d 
+docker-compose up -d 
 ```
 
 ## Whats Next
