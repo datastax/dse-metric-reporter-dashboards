@@ -1,0 +1,10 @@
+[
+  {
+    "targets": [ 
+      "dse-server:9103" 
+    ],
+    "labels": {
+      "cluster": "Test_Cluster"
+    }
+  }
+]
