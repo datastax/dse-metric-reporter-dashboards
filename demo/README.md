@@ -18,11 +18,10 @@ This Demo is created using a DSE 6.7, Prometheus 2.4.3 and Grafana 5.3.2 contain
 
 ## Getting Started
 
-To run this demo we need to first get the demo data, we do this by 
+To run this demo we need to first get the demo, we do this by 
 
-1. Cloning this repo.
-2. Unzip the repo.
-3. From a CLI cd to the demo directory  
+1. Clone or [download](https://github.com/datastax/dse-metric-reporter-dashboards/archive/master.zip) this repo.
+2. From the CLI, cd to the demo directory.  
 
 
 ## Starting the Containers
