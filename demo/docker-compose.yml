@@ -46,6 +46,9 @@ services:
     ports:
       - "9042:9042"
       - "9103:9103"
+    volumes:
+      - "./prometheus.conf:/opt/dse/resources/dse/collectd/etc/collectd/prometheus.conf"
 volumes:
   grafana:
   prometheus:
+  dse:
