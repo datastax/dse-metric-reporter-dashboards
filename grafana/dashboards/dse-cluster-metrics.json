@@ -3947,7 +3947,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Pending Completed / node / $rate",
+          "title": "Completed Compactions / node / $rate",
           "tooltip": {
             "shared": true,
             "sort": 0,
