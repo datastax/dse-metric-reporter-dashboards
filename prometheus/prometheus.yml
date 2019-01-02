@@ -203,9 +203,9 @@ scrape_configs:
        replacement: dse_hints_${1}
      #NodeSync Metrics
      - source_labels: ["dse"]
-       regex: com\.datastax\.nodesync\.node_sync_metrics\.(\w+)
+       regex: com\.datastax\.nodesync\.node_sync_metrics\.(node_sync_)?(\w+)
        target_label: __name__
-       replacement: dse_node_sync_${1}
+       replacement: dse_node_sync_${2}
      #ContinuousPaging Metrics
      - source_labels: ["dse"]
        regex: org\.apache\.cassandra\.metrics\.continuous_paging\.(\w+)
