@@ -1136,7 +1136,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Coordinator Write Latency / $by / $rate",
+      "title": "Coordinator Read Latency / $by / $rate",
       "tooltip": {
         "shared": true,
         "sort": 0,
