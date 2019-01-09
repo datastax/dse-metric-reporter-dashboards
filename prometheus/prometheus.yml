@@ -32,9 +32,6 @@ scrape_configs:
      - source_labels: [__name__]
        regex: .*rate_(mean|1m|5m|15m)
        action: drop
-     - source_labels: [__name__]
-       regex: .*_histogram_(p\d+|min|max|mean|stddev|count_total)
-       action: drop
      #save the original name for all metrics
      - source_labels: [__name__]
        regex: (collectd_dse_.+)
@@ -48,6 +45,18 @@ scrape_configs:
        regex: .+_bucket_inf
        target_label: le
        replacement: +Inf
+     - source_labels: ["prom_name"]
+       regex: .*_histogram_p(\d+)
+       target_label: quantile
+       replacement: .${1}
+     - source_labels: ["prom_name"]
+       regex: .*_histogram_min
+       target_label: quantile
+       replacement: "0"
+     - source_labels: ["prom_name"]
+       regex: .*_histogram_max
+       target_label: quantile
+       replacement: "1"
      #Table Metrics *ALL* we can drop
      - source_labels: ["dse"]
        regex: org\.apache\.cassandra\.metrics\.table\.(\w+)
@@ -272,7 +281,7 @@ scrape_configs:
        replacement: dse_jvm_buffer_${2}
      #Append the prom types back to formatted names
      - source_labels: [__name__, "prom_name"]
-       regex: (dse_.*);.*(_micros_bucket|_bucket|_micros_count_total|_count_total|_total|_micros_sum|_sum).*
+       regex: (dse_.*);.*(_micros_bucket|_bucket|_micros_count_total|_count_total|_total|_micros_sum|_sum|_stddev).*
        separator: ;
        target_label: __name__
        replacement: ${1}${2}
