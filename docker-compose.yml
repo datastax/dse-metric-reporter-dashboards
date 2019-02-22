@@ -3,6 +3,10 @@ services:
   prometheus:
     container_name: dse-metric-dashboards_prometheus_1
     image: "prom/prometheus:v2.4.3"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention=31d'
     ports:
       - "9090:9090"
     volumes:
