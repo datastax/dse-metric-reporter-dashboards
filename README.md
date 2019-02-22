@@ -4,6 +4,10 @@ This repository contains preconfigured Grafana dashboards that integrate with DS
 
 Use Docker and modify the provided Prometheus configuration file, or manually export DSE metrics to an existing Prometheus server. Although the examples in the linked documentation use Prometheus as the monitoring tool, you can export the aggregated metrics to other tools like Graphite and Splunk.
 
+## WARNING
+
+Before start using the Docker examples provided in this repository, make sure you have a good understanding of Prometheus's default data rention period and how to adjust it, **to avoid unexpected metrics data lost**. By default, Prometheus is configured to only retain 15 days worth of data. If you want to keep longer history of your metrics data, you will need to revise the docker-compose.yml to add `--storage.tsdb.retention=` flag onto the prometheus runtime command line.
+
 ## Getting started
 
 Clone this repository and then follow the instructions in the DataStax documentation based on your implementation:
