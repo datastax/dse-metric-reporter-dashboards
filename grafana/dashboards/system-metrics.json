@@ -2087,12 +2087,190 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 35
+      },
+      "id": 304,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "irate(collectd_disk_disk_io_time_weighted_io_time_total{instance=\"$host\",disk=~\".*[0-9]+\"}[$rate]) / 1000",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Disk Queue Size",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 42
+      },
+      "id": 306,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "-irate(collectd_disk_disk_time_read_total{instance='$host',disk=~\".*[0-9]+\"}[$rate])",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}} - Reads",
+          "refId": "A"
+        },
+        {
+          "expr": "irate(collectd_disk_disk_time_write_total{instance='$host',disk=~\".*[0-9]+\"}[$rate])",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}} - Writes",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Disk Latency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "ms",
+          "label": "read (-) / write (+)",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 48
       },
       "id": 295,
       "panels": [],
@@ -2110,7 +2288,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 49
       },
       "id": 297,
       "legend": {
@@ -2195,7 +2373,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 43
+        "y": 49
       },
       "id": 298,
       "legend": {
@@ -2279,7 +2457,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 56
       },
       "id": 299,
       "legend": {
@@ -2363,7 +2541,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 56
       },
       "id": 300,
       "legend": {
@@ -2447,7 +2625,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 57
+        "y": 63
       },
       "id": 301,
       "legend": {
@@ -2524,12 +2702,74 @@
       }
     },
     {
+      "cards": {
+        "cardPadding": null,
+        "cardRound": null
+      },
+      "color": {
+        "cardColor": "#b4ff00",
+        "colorScale": "sqrt",
+        "colorScheme": "interpolateSpectral",
+        "exponent": 0.5,
+        "mode": "spectrum"
+      },
+      "dataFormat": "timeseries",
+      "datasource": "prometheus",
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 12,
+        "y": 63
+      },
+      "heatmap": {},
+      "highlightCards": true,
+      "id": 277,
+      "legend": {
+        "show": false
+      },
+      "links": [],
+      "targets": [
+        {
+          "expr": "sum(rate(dse_table_write_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[$rate])) by (le)",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{le}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Local Write Latency",
+      "tooltip": {
+        "show": true,
+        "showHistogram": false
+      },
+      "tooltipDecimals": null,
+      "type": "heatmap",
+      "xAxis": {
+        "show": true
+      },
+      "xBucketNumber": null,
+      "xBucketSize": null,
+      "yAxis": {
+        "decimals": null,
+        "format": "µs",
+        "logBase": 1,
+        "max": null,
+        "min": null,
+        "show": true,
+        "splitFactor": null
+      },
+      "yBucketBound": "auto",
+      "yBucketNumber": null,
+      "yBucketSize": null
+    },
+    {
       "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 70
       },
       "id": 293,
       "panels": [
@@ -3589,7 +3829,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 65
+        "y": 71
       },
       "id": 266,
       "panels": [],
@@ -3621,7 +3861,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 66
+        "y": 72
       },
       "hideTimeOverride": false,
       "id": 16,
@@ -3702,7 +3942,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 66
+        "y": 72
       },
       "hideTimeOverride": false,
       "id": 272,
@@ -3783,7 +4023,7 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 66
+        "y": 72
       },
       "hideTimeOverride": false,
       "id": 273,
@@ -3855,29 +4095,29 @@
       "dataFormat": "timeseries",
       "datasource": "prometheus",
       "gridPos": {
-        "h": 5,
+        "h": 6,
         "w": 12,
         "x": 12,
-        "y": 66
+        "y": 72
       },
       "heatmap": {},
       "highlightCards": true,
-      "id": 277,
+      "id": 278,
       "legend": {
         "show": false
       },
       "links": [],
       "targets": [
         {
-          "expr": "sum(rate(dse_table_write_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[$rate])) by (le)",
+          "expr": "sum(increase(dse_table_read_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[$rate])) by (le)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{le}}",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Local Write Latency",
+      "title": "Local Read Latency",
       "tooltip": {
         "show": true,
         "showHistogram": false
@@ -3935,7 +4175,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 70
+        "y": 76
       },
       "id": 269,
       "legend": {
@@ -4052,68 +4292,6 @@
         "align": false,
         "alignLevel": null
       }
-    },
-    {
-      "cards": {
-        "cardPadding": null,
-        "cardRound": null
-      },
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateSpectral",
-        "exponent": 0.5,
-        "mode": "spectrum"
-      },
-      "dataFormat": "timeseries",
-      "datasource": "prometheus",
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 71
-      },
-      "heatmap": {},
-      "highlightCards": true,
-      "id": 278,
-      "legend": {
-        "show": false
-      },
-      "links": [],
-      "targets": [
-        {
-          "expr": "sum(increase(dse_table_read_latency_bucket{table=~'.*', keyspace=~'.*', instance='$host'}[$rate])) by (le)",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Local Read Latency",
-      "tooltip": {
-        "show": true,
-        "showHistogram": false
-      },
-      "tooltipDecimals": null,
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "xBucketNumber": null,
-      "xBucketSize": null,
-      "yAxis": {
-        "decimals": null,
-        "format": "µs",
-        "logBase": 1,
-        "max": null,
-        "min": null,
-        "show": true,
-        "splitFactor": null
-      },
-      "yBucketBound": "auto",
-      "yBucketNumber": null,
-      "yBucketSize": null
     }
   ],
   "refresh": "30s",
