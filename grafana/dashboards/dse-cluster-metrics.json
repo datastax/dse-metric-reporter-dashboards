@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1562878798024,
+  "iteration": 1562880467860,
   "links": [],
   "panels": [
     {
@@ -6272,7 +6272,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "TPC Read Tasks Active",
+      "title": "TPC Read Tasks Active [max pool size]",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -6366,7 +6366,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "TPC Write Tasks Active",
+      "title": "TPC Write Tasks Active [max pool size]",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -6497,7 +6497,7 @@
       }
     }
   ],
-  "refresh": "30s",
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
@@ -6712,7 +6712,6 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": true,
           "text": "All",
           "value": "$__all"
         },
@@ -6761,8 +6760,8 @@
     ]
   },
   "time": {
-    "from": "now-30m",
-    "to": "now"
+    "from": "2019-07-11T20:00:57.203Z",
+    "to": "2019-07-11T20:29:59.399Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -6792,5 +6791,5 @@
   "timezone": "",
   "title": "DSE Cluster",
   "uid": "MLPRcY2iz",
-  "version": 4
+  "version": 6
 }
