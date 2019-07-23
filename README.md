@@ -12,8 +12,8 @@ By default, Prometheus is configured to retain 15 days' worth of data only. **To
 
 Clone this repository and then follow the instructions in the DataStax documentation based on your implementation:
 
-* [Export and visualize metrics with Prometheus and Docker](https://docs.datastax.com/en/dse/6.7/dse-dev/datastax_enterprise/tools/metricsCollector/mcExportMetricsDocker.html)
-* [Manually export and visualize metrics with Prometheus](https://docs.datastax.com/en/dse/6.7/dse-dev/datastax_enterprise/tools/metricsCollector/mcExportMetricsManually.html)
+* [Export and visualize metrics with Prometheus and Docker](https://docs.datastax.com/en/dse/6.7/dse-admin/datastax_enterprise/tools/metricsCollector/mcExportMetricsDocker.html)
+* [Manually export and visualize metrics with Prometheus](https://docs.datastax.com/en/dse/6.7/dse-admin/datastax_enterprise/tools/metricsCollector/mcExportMetricsManually.html)
 
 ### Generation of the tg_dse.json file
 
