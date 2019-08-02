@@ -6791,7 +6791,7 @@
       "type": "row"
     }
   ],
-  "refresh": "30m",
+  "refresh": "30s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
