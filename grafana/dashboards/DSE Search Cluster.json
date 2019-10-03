@@ -20,12 +20,28 @@
   "links": [],
   "panels": [
     {
+      "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/content/graphics/logo/DS-logo-2019-White.png\"/></a>",
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 9,
+        "y": 0
+      },
+      "id": 131,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
       "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 3
       },
       "id": 4,
       "panels": [
@@ -52,7 +68,7 @@
             "h": 3,
             "w": 2,
             "x": 0,
-            "y": 4
+            "y": 1
           },
           "id": 8,
           "interval": null,
@@ -134,7 +150,7 @@
             "h": 3,
             "w": 2,
             "x": 2,
-            "y": 4
+            "y": 1
           },
           "id": 9,
           "interval": null,
@@ -217,7 +233,7 @@
             "h": 3,
             "w": 2,
             "x": 4,
-            "y": 4
+            "y": 1
           },
           "id": 16,
           "interval": null,
@@ -299,7 +315,7 @@
             "h": 3,
             "w": 3,
             "x": 6,
-            "y": 4
+            "y": 1
           },
           "id": 10,
           "interval": null,
@@ -382,7 +398,7 @@
             "h": 3,
             "w": 3,
             "x": 9,
-            "y": 4
+            "y": 1
           },
           "id": 17,
           "interval": null,
@@ -465,7 +481,7 @@
             "h": 3,
             "w": 3,
             "x": 12,
-            "y": 4
+            "y": 1
           },
           "id": 18,
           "interval": null,
@@ -548,7 +564,7 @@
             "h": 3,
             "w": 3,
             "x": 15,
-            "y": 4
+            "y": 1
           },
           "id": 19,
           "interval": null,
@@ -631,7 +647,7 @@
             "h": 3,
             "w": 3,
             "x": 18,
-            "y": 4
+            "y": 1
           },
           "id": 20,
           "interval": null,
@@ -714,7 +730,7 @@
             "h": 3,
             "w": 3,
             "x": 21,
-            "y": 4
+            "y": 1
           },
           "id": 44,
           "interval": null,
@@ -784,7 +800,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 1
+        "y": 4
       },
       "id": 147,
       "panels": [
@@ -814,7 +830,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 2
+        "y": 5
       },
       "id": 129,
       "panels": [
@@ -1480,7 +1496,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 3
+        "y": 6
       },
       "id": 167,
       "panels": [
@@ -1497,7 +1513,7 @@
             "h": 5,
             "w": 24,
             "x": 0,
-            "y": 35
+            "y": 7
           },
           "id": 165,
           "legend": {
@@ -1587,7 +1603,7 @@
             "h": 5,
             "w": 24,
             "x": 0,
-            "y": 40
+            "y": 12
           },
           "id": 163,
           "legend": {
@@ -1677,7 +1693,7 @@
             "h": 5,
             "w": 24,
             "x": 0,
-            "y": 45
+            "y": 17
           },
           "id": 161,
           "legend": {
@@ -1753,22 +1769,6 @@
             "align": false,
             "alignLevel": null
           }
-        },
-        {
-          "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/content/graphics/logo/DS-logo-2019-White.png\"/></a>",
-          "gridPos": {
-            "h": 3,
-            "w": 4,
-            "x": 9,
-            "y": 50
-          },
-          "id": 131,
-          "links": [],
-          "mode": "html",
-          "options": {},
-          "title": "",
-          "transparent": true,
-          "type": "text"
         }
       ],
       "title": "Search Query Metrics",
@@ -1780,7 +1780,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 7
       },
       "id": 187,
       "panels": [
@@ -1972,7 +1972,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 8
       },
       "id": 181,
       "panels": [
@@ -2256,7 +2256,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 9
       },
       "id": 173,
       "panels": [
@@ -2449,7 +2449,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 10
       },
       "id": 159,
       "panels": [
