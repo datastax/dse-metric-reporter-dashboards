@@ -279,6 +279,32 @@ scrape_configs:
        regex: jvm\.buffers\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_jvm_buffer_${2}
+     #Solr Table Metrics with metrics
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: table
+       replacement: ${3}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: keyspace
+       replacement: ${2}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: __name__
+       replacement: dse_solr_metric_${1}_${4}
+     #Solr Table Metrics
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)
+       target_label: table
+       replacement: ${3}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)
+       target_label: keyspace
+       replacement: ${2}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)
+       target_label: __name__
+       replacement: dse_solr_core_table_${1}
      #Append the prom types back to formatted names
      - source_labels: [__name__, "prom_name"]
        regex: (dse_.*);.*(_micros_bucket|_bucket|_micros_count_total|_count_total|_total|_micros_sum|_sum|_stddev).*

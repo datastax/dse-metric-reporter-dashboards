@@ -19,7 +19,7 @@
   "links": [],
   "panels": [
     {
-      "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/templates/dist/images/logo-header.png\"/></a>",
+      "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/content/graphics/logo/DS-logo-2019-White.png\"/></a>",
       "gridPos": {
         "h": 3,
         "w": 4,
@@ -3144,7 +3144,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(dse_table_ss_tables_per_read_histogram{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\", quantile=~\".\\\\d+\"}) by (quantile, instance) * 1000",
+              "expr": "avg(dse_table_ss_tables_per_read_histogram{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", keyspace=~\"$keyspace\", table=~\"$table\", quantile=~\".\\\\d+\"}) by (quantile, instance)",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6791,7 +6791,7 @@
       "type": "row"
     }
   ],
-  "refresh": "30m",
+  "refresh": "30s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
