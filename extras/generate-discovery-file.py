@@ -20,7 +20,7 @@ metadata = cluster.metadata
 
 host_list = [host.broadcast_address + ':' + port for host in metadata.all_hosts()]
 
-data = {'labels': {'cluster': metadata.cluster_name}, 'targets': host_list}
+data = [{'labels': {'cluster': metadata.cluster_name}, 'targets': host_list}]
 filename = sys.argv[2] + '.tmp'
 with open(filename, 'w') as f:
     json.dump(data, f)
