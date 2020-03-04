@@ -85,3 +85,12 @@ task build: [:clean] do |t|
         f.puts YAML::dump(k8s_service_monitor, options = {line_width: -1})
     end
 end
+
+task package: [:build] do |t|
+    File.open "VERSION.txt" do |f|
+        version = f.read
+        
+        Dir.chdir "dist"
+        exec "zip -r -9 dse-metrics-reporter-dashboards-#{version}.zip ."
+    end
+end
