@@ -55,3 +55,7 @@ The following screenshots illustrate the preconfigured dashboards in this reposi
 #### Prometheus Statistics
 ![Prometheus Statistics](doc/DSEMetricsCollectorDashboardPrometheus.png)
 
+## Kubernetes Support
+These dashboards and prometheus configuration files may be transformed via the collection of Python scripts under `bin/`.
+
+Specifically run `bin/clean.py && bin/build.py` to generate appropriate files in the `dist` directory. These files integrate with the Custom Resources defined by the [Prometheus](https://operatorhub.io/operator/prometheus) and [Grafana](https://operatorhub.io/operator/grafana-operator) operators available on Operator Hub.
