@@ -1,5 +1,7 @@
 require 'yaml'
 
+task default: [:build]
+
 task :set_version, [:new_version] do |t, args|
     File.open("VERSION.txt", "w") do |f|
         f.write(args.new_version)
@@ -7,7 +9,9 @@ task :set_version, [:new_version] do |t, args|
 end
 
 task :clean do |t|
-    FileUtils.rm_r "dist"
+    if File.exists? "dist"
+        FileUtils.rm_r "dist"
+    end
 end
 
 task build: [:clean] do |t|
