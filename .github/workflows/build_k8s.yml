@@ -44,11 +44,12 @@ jobs:
       env:
         GA_PRIVATE_KEY: ${{ secrets.GA_PRIVATE_KEY }}
       run: |
+        git diff --no-ext-diff
         if ! git diff --no-ext-diff --quiet --exit-code; then
           git add .
           git config --local user.email "christopher.bradford@datastax.com"
           git config --local user.name "GitHub Actions"
-          git commit -a -m "update"
+          git commit -a -m "(re)generated kubernetes resources"
           git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
           eval `ssh-agent -t 60 -s`
           echo "$GA_PRIVATE_KEY" | ssh-add -
