@@ -13,16 +13,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.7]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.7
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -39,10 +36,9 @@ jobs:
       env:
         GA_PRIVATE_KEY: ${{ secrets.GA_PRIVATE_KEY }}
       run: |
-        cd k8s-build
-        bin/clean.py
-        bin/build.py
-        
+        k8s-build/bin/clean.py
+        k8s-build/bin/build.py
+
         git diff --no-ext-diff
         if ! git diff --no-ext-diff --quiet --exit-code; then
           git add .
