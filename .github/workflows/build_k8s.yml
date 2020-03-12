@@ -36,8 +36,10 @@ jobs:
           k8s-build/bin/clean.py
           k8s-build/bin/build.py
           
-          which git
-          git --version
-          git diff --no-ext-diff --quiet 2>&1
           git status
-          echo $0
+          git diff --no-ext-diff --quiet --exit-code
+          if [ $? -ne 0 ] then
+            git status
+          else
+            git diff
+          fi
