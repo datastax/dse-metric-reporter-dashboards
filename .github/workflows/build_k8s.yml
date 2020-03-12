@@ -38,7 +38,9 @@ jobs:
           
           git status
           git diff --no-ext-diff --quiet --exit-code
-          if [ $? -ne 0 ] then
+          
+          if [[ $? -ne 0 ]] 
+          then
             git status
           else
             git diff
