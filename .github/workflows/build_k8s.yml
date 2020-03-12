@@ -39,7 +39,7 @@ jobs:
         k8s-build/bin/clean.py
         k8s-build/bin/build.py
 
-        git diff --no-ext-diff
+        git diff --no-ext-diff --quiet 2>&1
         if ! git diff --no-ext-diff --quiet --exit-code; then
           git add .
           git config --local user.email "christopher.bradford@datastax.com"
