@@ -609,3 +609,4 @@ spec:
     \  \"timezone\": \"\",\n  \"title\": \"DSE Cluster Condensed\",\n  \"uid\": \"\
     MLPRcY2izdw\",\n  \"version\": 1\n}\n"
   name: dse-cluster-condensed.json
+  url: https://raw.githubusercontent.com/datastax/dse-metric-reporter-dashboards/master/grafana/dashboards/dse-cluster-condensed.json

@@ -1237,3 +1237,4 @@ spec:
     ,\n  \"title\": \"DSE Search Cluster\",\n  \"uid\": \"MLPRcY2iz1\",\n  \"version\"\
     : 2\n}\n"
   name: dse-search-cluster.json
+  url: https://raw.githubusercontent.com/datastax/dse-metric-reporter-dashboards/master/grafana/dashboards/dse-search-cluster.json

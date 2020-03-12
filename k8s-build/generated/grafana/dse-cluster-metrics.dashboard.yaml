@@ -2788,3 +2788,4 @@ spec:
     ,\n  \"title\": \"DSE Cluster\",\n  \"uid\": \"MLPRcY2iz\",\n  \"version\": 1\n\
     }\n"
   name: dse-cluster-metrics.json
+  url: https://raw.githubusercontent.com/datastax/dse-metric-reporter-dashboards/master/grafana/dashboards/dse-cluster-metrics.json

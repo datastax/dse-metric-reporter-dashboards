@@ -2345,3 +2345,4 @@ spec:
       "version": 18
     }
   name: dse-analytics.json
+  url: https://raw.githubusercontent.com/datastax/dse-metric-reporter-dashboards/master/grafana/dashboards/dse-analytics.json

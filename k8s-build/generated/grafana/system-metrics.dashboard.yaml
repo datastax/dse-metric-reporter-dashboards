@@ -1556,3 +1556,4 @@ spec:
     ,\n      \"30d\"\n    ]\n  },\n  \"timezone\": \"browser\",\n  \"title\": \"DSE\
     \ System & Node Metrics\",\n  \"uid\": \"eNNm2Lciz\",\n  \"version\": 1\n}\n"
   name: system-metrics.json
+  url: https://raw.githubusercontent.com/datastax/dse-metric-reporter-dashboards/master/grafana/dashboards/system-metrics.json

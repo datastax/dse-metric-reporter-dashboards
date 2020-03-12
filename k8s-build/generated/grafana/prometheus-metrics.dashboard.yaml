@@ -1255,3 +1255,4 @@ spec:
       "version": 1
     }
   name: prometheus-metrics.json
+  url: https://raw.githubusercontent.com/datastax/dse-metric-reporter-dashboards/master/grafana/dashboards/prometheus-metrics.json
