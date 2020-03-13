@@ -1,0 +1,44 @@
+name: Package Kubernetes Resources
+
+on:
+  push:
+    branches: 
+      - master
+      - k8s-packaging
+  pull_request:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+          architecture: x64
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r k8s-build/requirements.txt
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 k8s-build --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 k8s-build --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Build resources
+        run: |
+          k8s-build/bin/clean.py
+          k8s-build/bin/build.py
+      - name: Publish generated resources
+        run: |
+          git status
+          git add .
+          git config --global user.email "christopher.bradford@datastax.com"
+          git config --global user.name "GitHub Actions"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git commit -m "Generated updated K8s templates"
+          git push origin $BRANCH

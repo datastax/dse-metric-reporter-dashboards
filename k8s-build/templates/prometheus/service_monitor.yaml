@@ -1,0 +1,22 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: dse-cluster
+  labels:
+    com.datastax.dse.cluster: dse-cluster
+    monitoring: dse-cluster
+spec:
+  selector:
+    matchLabels:
+      com.datastax.dse.cluster: dse-cluster
+  targetLabel:
+  - com.datastax.dse.cluster
+  - com.datastax.dse.datacenter
+  endpoints:
+  - targetPort: 9103
+    scheme: http
+    path: /metrics
+    scrapeTimeout: 15s
+    interval: 15s
+    metricRelabelings: []
