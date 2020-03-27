@@ -1,23 +1,23 @@
 version: "3"
 services:
   prometheus:
-    container_name: dse-metric-dashboards_prometheus_1
+    container_name: "dse-metric-dashboards_prometheus_1${PROMETHEUS_PORT:-}"
     image: "prom/prometheus:v2.4.3"
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
       - '--storage.tsdb.retention=31d'
     ports:
-      - "9090:9090"
+      - "${PROMETHEUS_PORT:-9090}:9090"
     volumes:
       - "${PROMETHEUS_DATA_DIR:-prometheus}:/prometheus"
       - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
       - "./prometheus/tg_dse.json:/etc/prometheus/tg_dse.json"
   grafana:
-    container_name: dse-metric-dashboards_grafana_1
+    container_name: "dse-metric-dashboards_grafana_1${GRAFANA_PORT:-}"
     image: "grafana/grafana:5.3.2"
     ports:
-      - "3000:3000"
+      - "${GRAFANA_PORT:-3000}:3000"
     environment:
       GF_SECURITY_ADMIN_PASSWORD: admin
       GF_AUTH_ANONYMOUS_ENABLED: "true"
