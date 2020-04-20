@@ -4,7 +4,7 @@ on:
   push:
     branches: 
       - master
-      - k8s-packaging
+      - k8s-actions-fix
   pull_request:
     branches: 
       - master
