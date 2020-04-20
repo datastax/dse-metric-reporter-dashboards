@@ -4,7 +4,6 @@ on:
   push:
     branches: 
       - master
-      - k8s-packaging
   pull_request:
     branches: 
       - master
@@ -35,10 +34,13 @@ jobs:
           k8s-build/bin/build.py
       - name: Publish generated resources
         run: |
-          git status
-          git add .
-          git config --global user.email "christopher.bradford@datastax.com"
-          git config --global user.name "GitHub Actions"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git commit -m "Generated updated K8s templates"
-          git push origin $BRANCH
+          STATUS_CHECK=`git status | grep "nothing to commit, working tree clean" | wc -l`
+          if [ $STATUS_CHECK -eq 0 ]; then
+            git status
+            git add .
+            git config --global user.email "christopher.bradford@datastax.com"
+            git config --global user.name "GitHub Actions"
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+            git commit -m "Generated updated K8s templates"
+            git push origin $BRANCH
+          fi
