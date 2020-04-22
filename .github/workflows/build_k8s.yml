@@ -30,13 +30,15 @@ jobs:
           flake8 k8s-build --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Build resources
         run: |
-          k8s-build/bin/clean.py
-          k8s-build/bin/build.py
+          if [ $GITHUB_REF == "master" ]; then
+            k8s-build/bin/clean.py
+            k8s-build/bin/build.py
+          fi
       - name: Publish generated resources (if this is the master branch)
         run: |
           CLEAN_CHECK=`git status | grep "nothing to commit, working tree clean" | wc -l`
 
-          if [ $STATUS_CHECK -eq 0 ] && [ $GITHUB_REF == "master" ]; then
+          if [ $CLEAN_CHECK -eq 0 ]; then
             git status
             git add .
             git config --global user.email "christopher.bradford@datastax.com"
