@@ -64,7 +64,7 @@ The following screenshots illustrate the preconfigured dashboards in this reposi
 ## Kubernetes Support
 These dashboards and prometheus configuration files may be transformed via the collection of Python scripts under `bin/`.
 
-Specifically run `bin/clean.py && bin/build.py` to generate appropriate files in the `dist` directory. These files integrate with the Custom Resources defined by the [Prometheus](https://operatorhub.io/operator/prometheus) and [Grafana](https://operatorhub.io/operator/grafana-operator) operators available on Operator Hub.
+Specifically run `bin/clean.py && bin/build.py` to generate appropriate files in the `k8s-build/generated` directory. These files integrate with the Custom Resources defined by the [Prometheus](https://operatorhub.io/operator/prometheus) and [Grafana](https://operatorhub.io/operator/grafana-operator) operators available on Operator Hub.
 
 
 ### Prometheus
@@ -78,31 +78,35 @@ The [Prometheus Operator](https://operatorhub.io/operator/prometheus) handles th
 
 1. Install the Prometheus Operator
    
-   `kubectl create -f dist/prometheus/k8s/operator.yaml`
+   `kubectl create -f k8s-build/generated/prometheus/operator.yaml`
 
    This will pull down and start the Prometheus operator. The operator is installed in a new namespace `prometheus-operator` along with a configuration indicating it should watch the `default` namespace for resources it manages. Should the installation require different namespaces change the values within this file and re-apply it to the cluster.
 
 1. Configure and install the Service Monitor
    
-   Before installation edit the service monitor's YAML to include the appropriate labels that match your cluster's service. For example if your cluster service has the label `com.datastax.dse.cluster: dse-cluster` this mapping would be included in the service monitor yaml under `spec.selector.matchLabels`. As a convenience we have included the example here in the generated `service_monitor.yaml`.
+   Before installation edit the service monitor's YAML to include the appropriate labels that match your cluster's service. For example if your cluster service has the label `cassandra.datastax.com/cluster: cluster-name` this mapping would be included in the service monitor yaml under `spec.selector.matchLabels`. As a convenience we have included the example here in the generated `service_monitor.yaml`.
+
+   _Note: To check the labels on your service run the following command_
+
+   `kubectl get svc --all-namespaces --show-labels=true`
    
    With the configuration file updated apply the resource to the cluster.
    
-   `kubectl apply -f dist/prometheus/k8s/service_monitor.yaml`
+   `kubectl apply -f k8s-build/generated/prometheus/service_monitor.yaml`
 
 1. Configure and install the Prometheus deployment
    
-   Similar to the service and service monitor mapping, the instance must be provided with a set of labels to match service monitors to Prometheus deployments. The following section in the `Prometheus` custom resource maps the deployment to all service monitors with the label `monitoring=dse-cluster`
+   Similar to the service and service monitor mapping, the instance must be provided with a set of labels to match service monitors to Prometheus deployments. The following section in the `Prometheus` custom resource maps the deployment to all service monitors with the label `cassandra.datastax.com/cluster: cluster-name`
   
    ```
      serviceMonitorSelector:
        matchLabels:
-         monitoring: dse-cluster
+         cassandra.datastax.com/cluster: cluster-name
    ```
    
    After adjustments apply this file to the cluster
 
-   `kubectl apply -f dist/prometheus/k8s/instance.yaml`
+   `kubectl apply -f k8s-build/generated/prometheus/instance.yaml`
 
 
 ### Grafana
@@ -116,7 +120,7 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
 
 1. Install the Grafana Operator
    
-   `kubectl create -f dist/grafana/k8s/operator.yaml`
+   `kubectl create -f k8s-build/generated/grafana/operator.yaml`
 
    This will pull down and start the Grafana operator. The operator is installed in a new namespace `grafana-operator` along with a configuration indicating it should watch the `default` namespace for resources it manages. Should the installation require different namespaces change the values within this file and re-apply it to the cluster.
 
@@ -126,13 +130,13 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
    
    With the configuration file updated apply the resource to the cluster.
    
-   `kubectl apply -f dist/grafana/k8s/datasource.yaml`
+   `kubectl apply -f k8s-build/generated/grafana/datasource.yaml`
 
 1. Configure and install the `GrafanaDashboard`
    
    Before installation edit the YAML with appropriate labels. In this example a label of `app=grafana` is used. With the configuration file updated apply the resource to the cluster.
    
-   `kubectl apply -f dist/grafana/k8s/*.dashboard.yaml`
+   `kubectl apply -f k8s-build/generated/grafana/*.dashboard.yaml`
 
 1. Configure and install the Grafana deployment
    
@@ -149,4 +153,4 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
    
    After adjustments apply this file to the cluster
 
-   `kubectl apply -f dist/grafana/k8s/instance.yaml`
+   `kubectl apply -f k8s-build/generated/grafana/instance.yaml`
