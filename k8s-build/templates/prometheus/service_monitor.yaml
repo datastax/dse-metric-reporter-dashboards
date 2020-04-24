@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       cassandra.datastax.com/cluster: cluster-name
-  targetLabel:
+  targetLabels:
   - cassandra.datastax.com/cluster
   - cassandra.datastax.com/datacenter
   endpoints:

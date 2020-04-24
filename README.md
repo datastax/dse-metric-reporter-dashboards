@@ -78,7 +78,7 @@ The [Prometheus Operator](https://operatorhub.io/operator/prometheus) handles th
 
 1. Install the Prometheus Operator
    
-   `kubectl create -f k8s-build/generated/prometheus/operator.yaml`
+   `kubectl create -n cass-operator -f k8s-build/generated/prometheus/operator.yaml`
 
    This will pull down and start the Prometheus operator. The operator is installed in a new namespace `prometheus-operator` along with a configuration indicating it should watch the `default` namespace for resources it manages. Should the installation require different namespaces change the values within this file and re-apply it to the cluster.
 
@@ -88,11 +88,11 @@ The [Prometheus Operator](https://operatorhub.io/operator/prometheus) handles th
 
    _Note: To check the labels on your service run the following command_
 
-   `kubectl get svc --all-namespaces --show-labels=true`
+   `kubectl get svc -n cass-operator --show-labels=true`
    
    With the configuration file updated apply the resource to the cluster.
    
-   `kubectl apply -f k8s-build/generated/prometheus/service_monitor.yaml`
+   `kubectl apply -n cass-operator -f k8s-build/generated/prometheus/service_monitor.yaml`
 
 1. Configure and install the Prometheus deployment
    
@@ -106,7 +106,7 @@ The [Prometheus Operator](https://operatorhub.io/operator/prometheus) handles th
    
    After adjustments apply this file to the cluster
 
-   `kubectl apply -f k8s-build/generated/prometheus/instance.yaml`
+   `kubectl apply -n cass-operator -f k8s-build/generated/prometheus/instance.yaml`
 
 
 ### Grafana
@@ -120,7 +120,7 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
 
 1. Install the Grafana Operator
    
-   `kubectl create -f k8s-build/generated/grafana/operator.yaml`
+   `kubectl create -n cass-operator -f k8s-build/generated/grafana/operator.yaml`
 
    This will pull down and start the Grafana operator. The operator is installed in a new namespace `grafana-operator` along with a configuration indicating it should watch the `default` namespace for resources it manages. Should the installation require different namespaces change the values within this file and re-apply it to the cluster.
 
@@ -130,13 +130,13 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
    
    With the configuration file updated apply the resource to the cluster.
    
-   `kubectl apply -f k8s-build/generated/grafana/datasource.yaml`
+   `kubectl apply -n cass-operator -f k8s-build/generated/grafana/datasource.yaml`
 
 1. Configure and install the `GrafanaDashboard`
    
    Before installation edit the YAML with appropriate labels. In this example a label of `app=grafana` is used. With the configuration file updated apply the resource to the cluster.
    
-   `kubectl apply -f k8s-build/generated/grafana/*.dashboard.yaml`
+   `kubectl apply -n cass-operator -f k8s-build/generated/grafana/*.dashboard.yaml`
 
 1. Configure and install the Grafana deployment
    
@@ -153,4 +153,8 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
    
    After adjustments apply this file to the cluster
 
-   `kubectl apply -f k8s-build/generated/grafana/instance.yaml`
+   `kubectl apply -n cass-operator -f k8s-build/generated/grafana/instance.yaml`
+
+1. Port forward to the grafana instance and check it out at http://127.0.0.1:3000/ (username: admin, password: secret)
+   
+   `kubectl port-forward -n cass-operator svc/grafana-service 3000`
