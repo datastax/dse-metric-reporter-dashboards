@@ -305,6 +305,15 @@ scrape_configs:
        regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_solr_core_table_${1}
+     #SSB&R Metrics
+     - source_labels: ["dse"]
+       regex: com\.datastax\.backups\.(\w+)\.(\w+)\.(\w+)
+       target_label: __name__
+       replacement: dse_backup_store_${2}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.backups\.(\w+)\.(\w+)
+       target_label: __name__
+       replacement: dse_${1}_${2}
      #Append the prom types back to formatted names
      - source_labels: [__name__, "prom_name"]
        regex: (dse_.*);.*(_micros_bucket|_bucket|_micros_count_total|_count_total|_total|_micros_sum|_sum|_stddev).*
