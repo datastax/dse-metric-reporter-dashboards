@@ -61,4 +61,4 @@ The following screenshots illustrate the preconfigured dashboards in this reposi
 ![Prometheus Statistics](doc/DSEMetricsCollectorDashboardPrometheus.png)
 
 ## Kubernetes Support
-Check out the [k8s-build](https://github.com/datastax/dse-metric-reporter-dashboards/tree/master/k8s-build) directory for a guide on using this project along with Kubernetes.
+Check out the [k8s-build](k8s-build) directory for a guide on using this project along with Kubernetes.
