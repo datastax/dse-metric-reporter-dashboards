@@ -136,7 +136,7 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
    
    Before installation edit the YAML with appropriate labels. In this example a label of `app=grafana` is used. With the configuration file updated apply the resource to the cluster.
    
-   `kubectl apply -n cass-operator -f k8s-build/generated/grafana/*.dashboard.yaml`
+   `kubectl apply -n cass-operator -f k8s-build/generated/grafana/`
 
 1. Configure and install the Grafana deployment
    

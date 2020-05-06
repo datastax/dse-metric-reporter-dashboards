@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - master
+      - k8s-*
   pull_request:
     branches: 
       - master
@@ -30,11 +31,9 @@ jobs:
           flake8 k8s-build --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Build resources
         run: |
-          if [ $GITHUB_REF == "master" ]; then
-            k8s-build/bin/clean.py
-            k8s-build/bin/build.py
-          fi
-      - name: Publish generated resources (if this is the master branch)
+          k8s-build/bin/clean.py
+          k8s-build/bin/build.py
+      - name: Commit generated resources
         run: |
           CLEAN_CHECK=`git status | grep "nothing to commit, working tree clean" | wc -l`
 
