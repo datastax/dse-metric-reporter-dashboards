@@ -322,6 +322,16 @@ spec:
       sourceLabels:
       - dse
       targetLabel: __name__
+    - regex: com\.datastax\.backups\.(\w+)\.(\w+)\.(\w+)
+      replacement: dse_backup_store_${2}
+      sourceLabels:
+      - dse
+      targetLabel: __name__
+    - regex: com\.datastax\.backups\.(\w+)\.(\w+)
+      replacement: dse_${1}_${2}
+      sourceLabels:
+      - dse
+      targetLabel: __name__
     - regex: (dse_.*);.*(_micros_bucket|_bucket|_micros_count_total|_count_total|_total|_micros_sum|_sum|_stddev).*
       replacement: ${1}${2}
       separator: ;
