@@ -13,7 +13,7 @@ spec:
       regex: .*rate_(mean|1m|5m|15m)
       sourceLabels:
       - __name__
-    - regex: (collectd_dse_.+)
+    - regex: (collectd_(dse|mcac)_.+)
       replacement: ${1}
       sourceLabels:
       - __name__
@@ -43,6 +43,13 @@ spec:
       sourceLabels:
       - prom_name
       targetLabel: quantile
+    - regex: (.+)
+      replacement: ${1}
+      sourceLabels:
+      - mcac
+      targetLabel: dse
+    - action: labeldrop
+      regex: mcac
     - action: drop
       regex: org\.apache\.cassandra\.metrics\.table\.(\w+)
       sourceLabels:
