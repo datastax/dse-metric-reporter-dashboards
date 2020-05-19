@@ -34,7 +34,7 @@ scrape_configs:
        action: drop
      #save the original name for all metrics
      - source_labels: [__name__]
-       regex: (collectd_dse_.+)
+       regex: (collectd_(dse|mcac)_.+)
        target_label: prom_name
        replacement: ${1}
      - source_labels: ["prom_name"]
@@ -57,6 +57,13 @@ scrape_configs:
        regex: .*_histogram_max
        target_label: quantile
        replacement: "1"
+     #Convert from MCAC
+     - source_labels: ["mcac"]
+       regex: (.+)
+       target_label: dse
+       replacement: ${1}
+     - regex: mcac
+       action: labeldrop
      #Table Metrics *ALL* we can drop
      - source_labels: ["dse"]
        regex: org\.apache\.cassandra\.metrics\.table\.(\w+)
