@@ -12,7 +12,8 @@ generated_path = os.path.join(base_path, "generated")
 
 # Helper method to allow for `literal` YAML syntax
 def str_presenter(dumper, data):
-    if len(data.splitlines()) > 1:  # check for multiline string
+    is_multiline = lambda s: len(s.splitlines()) > 1
+    if is_multiline(data):  # check for multiline string
         return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
     return dumper.represent_scalar('tag:yaml.org,2002:str', data)
 
@@ -58,7 +59,7 @@ with open(dashboard_template_path, "r") as template_file:
         print(f"Templating {json_dashboard} => {dashboard_output_path}")
 
         with open(dashboard_output_path, "w") as k8s_file:
-            k8s_file.write(yaml.dump(k8s_dashboard))
+            k8s_file.write(yaml.dump(k8s_dashboard, explicit_start=True))
 
 # Delete original template from distribution
 print("Removing template from generated directory")
@@ -116,4 +117,4 @@ with open(service_monitor_path, "r") as template_file:
     with open(service_monitor_path, "w") as service_monitor_file:
         print("Writing out service monitor configuration")
         print(service_monitor_path)
-        yaml.dump(k8s_service_monitor, service_monitor_file)
+        yaml.dump(k8s_service_monitor, service_monitor_file, explicit_start=True)

@@ -1,0 +1,8 @@
+extends: default
+rules:
+  indentation:
+    spaces: consistent
+    indent-sequences: consistent
+  
+  # Unfortunately our input data has lines that are too long
+  line-length: disable
