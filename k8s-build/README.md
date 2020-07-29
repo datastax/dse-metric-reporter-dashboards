@@ -10,7 +10,7 @@ The [Prometheus Operator](https://operatorhub.io/operator/prometheus) handles th
 
 1. Install the OperatorHub Lifecycle Manager (OLM)
    
-   `curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.14.1/install.sh | bash -s 0.14.1`
+   `curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.15.1/install.sh | bash -s 0.15.1`
    
    This installs a number of custom resource definitions and an operator that handles installing _other_ operators.
 
@@ -18,7 +18,7 @@ The [Prometheus Operator](https://operatorhub.io/operator/prometheus) handles th
    
    `kubectl create -n cass-operator -f k8s-build/generated/prometheus/operator.yaml`
 
-   This will pull down and start the Prometheus operator. The operator is installed in a new namespace `prometheus-operator` along with a configuration indicating it should watch the `default` namespace for resources it manages. Should the installation require different namespaces change the values within this file and re-apply it to the cluster.
+   This will pull down and start the Prometheus operator along with a configuration indicating it should watch the `default` namespace for resources it manages. Should the installation require different namespaces change the values within this file and re-apply it to the cluster.
 
 1. Configure and install the Service Monitor
    
@@ -52,7 +52,7 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
 
 1. Install the OperatorHub Lifecycle Manager (OLM) if you haven't already
    
-   `curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.14.1/install.sh | bash -s 0.14.1`
+   `curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.15.1/install.sh | bash -s 0.15.1`
    
    This installs a number of custom resource definitions and an operator that handles installing _other_ operators.
 
@@ -60,7 +60,7 @@ The [Grafana Operator](https://operatorhub.io/operator/grafana-operator) handles
    
    `kubectl create -n cass-operator -f k8s-build/generated/grafana/operator.yaml`
 
-   This will pull down and start the Grafana operator. The operator is installed in a new namespace `grafana-operator` along with a configuration indicating it should watch the `default` namespace for resources it manages. Should the installation require different namespaces change the values within this file and re-apply it to the cluster.
+   This will pull down and start the Grafana operator along with a configuration indicating it should watch the `default` namespace for resources it manages. Should the installation require different namespaces change the values within this file and re-apply it to the cluster.
 
 1. Configure and install the `GrafanaDataSource`
    
