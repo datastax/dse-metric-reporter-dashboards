@@ -1,0 +1,47 @@
+name: Build, lint, and commit Kubernetes resources
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-k8s:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+          architecture: x64
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r k8s-build/requirements.txt
+      - name: Lint Python scripts with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 k8s-build --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 k8s-build --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Build resources
+        run: |
+          k8s-build/bin/clean.py
+          k8s-build/bin/build.py
+      - name: Lint generated YAML files
+        run: |
+          yamllint k8s-build/templates
+          yamllint k8s-build/generated
+      - name: Commit generated resources
+        run: |
+          CLEAN_CHECK=`git status | grep "nothing to commit, working tree clean" | wc -l`
+
+          if [ $CLEAN_CHECK -eq 0 ]; then
+            git status
+            git add .
+            git config --global user.email "christopher.bradford@datastax.com"
+            git config --global user.name "GitHub Actions"
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+            git commit -m "Generated updated K8s templates"
+            git push origin $BRANCH
+          fi

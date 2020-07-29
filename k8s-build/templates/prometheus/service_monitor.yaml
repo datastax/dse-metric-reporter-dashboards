@@ -4,15 +4,14 @@ kind: ServiceMonitor
 metadata:
   name: dse-cluster
   labels:
-    com.datastax.dse.cluster: dse-cluster
-    monitoring: dse-cluster
+    cassandra.datastax.com/cluster: cluster-name
 spec:
   selector:
     matchLabels:
-      com.datastax.dse.cluster: dse-cluster
-  targetLabel:
-  - com.datastax.dse.cluster
-  - com.datastax.dse.datacenter
+      cassandra.datastax.com/cluster: cluster-name
+  targetLabels:
+  - cassandra.datastax.com/cluster
+  - cassandra.datastax.com/datacenter
   endpoints:
   - targetPort: 9103
     scheme: http
