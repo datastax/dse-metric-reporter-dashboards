@@ -30,6 +30,7 @@ jobs:
           k8s-build/bin/build.py
       - name: Lint generated YAML files
         run: |
+          yamllint k8s-build/templates
           yamllint k8s-build/generated
       - name: Commit generated resources
         run: |
