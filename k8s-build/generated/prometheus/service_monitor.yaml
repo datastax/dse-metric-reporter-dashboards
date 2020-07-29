@@ -1,3 +1,4 @@
+---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -190,6 +191,46 @@ spec:
       targetLabel: __name__
     - regex: org\.apache\.cassandra\.metrics\.index\.(\w+)
       replacement: dse_sstable_index_${1}
+      sourceLabels:
+      - dse
+      targetLabel: __name__
+    - regex: org\.apache\.cassandra\.metrics\.storage_attached_index\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${4}
+      sourceLabels:
+      - dse
+      targetLabel: index
+    - regex: org\.apache\.cassandra\.metrics\.storage_attached_index\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${3}
+      sourceLabels:
+      - dse
+      targetLabel: table
+    - regex: org\.apache\.cassandra\.metrics\.storage_attached_index\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${2}
+      sourceLabels:
+      - dse
+      targetLabel: keyspace
+    - regex: org\.apache\.cassandra\.metrics\.storage_attached_index\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: dse_storage_attached_index_${5}_${6}
+      sourceLabels:
+      - dse
+      targetLabel: __name__
+    - regex: org\.apache\.cassandra\.metrics\.storage_attached_index\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${3}
+      sourceLabels:
+      - dse
+      targetLabel: table
+    - regex: org\.apache\.cassandra\.metrics\.storage_attached_index\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${2}
+      sourceLabels:
+      - dse
+      targetLabel: keyspace
+    - regex: org\.apache\.cassandra\.metrics\.storage_attached_index\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: dse_storage_attached_index_${4}_${5}
+      sourceLabels:
+      - dse
+      targetLabel: __name__
+    - regex: org\.apache\.cassandra\.metrics\.storage_attached_index\.(\w+)
+      replacement: dse_storage_attached_index_${1}
       sourceLabels:
       - dse
       targetLabel: __name__
