@@ -339,17 +339,32 @@ spec:
       sourceLabels:
       - dse
       targetLabel: __name__
-    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)$
       replacement: ${3}
       sourceLabels:
       - dse
       targetLabel: table
-    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)$
       replacement: ${2}
       sourceLabels:
       - dse
       targetLabel: keyspace
-    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)$
+      replacement: dse_solr_metric_${1}_${4}
+      sourceLabels:
+      - dse
+      targetLabel: __name__
+    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${3}
+      sourceLabels:
+      - dse
+      targetLabel: table
+    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${2}
+      sourceLabels:
+      - dse
+      targetLabel: keyspace
+    - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
       replacement: dse_solr_metric_${1}_${4}
       sourceLabels:
       - dse
@@ -366,6 +381,36 @@ spec:
       targetLabel: keyspace
     - regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)
       replacement: dse_solr_core_table_${1}
+      sourceLabels:
+      - dse
+      targetLabel: __name__
+    - regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${2}
+      sourceLabels:
+      - dse
+      targetLabel: table
+    - regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: ${1}
+      sourceLabels:
+      - dse
+      targetLabel: keyspace
+    - regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+      replacement: dse_solr_core_table_${3}_${4}
+      sourceLabels:
+      - dse
+      targetLabel: __name__
+    - regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)$
+      replacement: ${2}
+      sourceLabels:
+      - dse
+      targetLabel: table
+    - regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)$
+      replacement: ${1}
+      sourceLabels:
+      - dse
+      targetLabel: keyspace
+    - regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)$
+      replacement: dse_solr_core_table_${3}
       sourceLabels:
       - dse
       targetLabel: __name__
