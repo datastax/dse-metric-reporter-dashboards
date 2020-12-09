@@ -319,20 +319,34 @@ scrape_configs:
        regex: jvm\.buffers\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_jvm_buffer_${2}
-     #Solr Table Metrics with metrics
+     #Solr Table Metrics with metrics for 5.1 and 6.0.10
      - source_labels: ["dse"]
-       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)$
        target_label: table
        replacement: ${3}
      - source_labels: ["dse"]
-       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)$
        target_label: keyspace
        replacement: ${2}
      - source_labels: ["dse"]
-       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)$
        target_label: __name__
        replacement: dse_solr_metric_${1}_${4}
-     #Solr Table Metrics
+     #Solr Table Metrics with metrics for 6.7/6.8
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: table
+       replacement: ${3}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: keyspace
+       replacement: ${2}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: __name__
+       replacement: dse_solr_metric_${1}_${4}
+      # replacement: dse_solr_metric_${1}_${4}_${5}
+     #Solr Table Metrics for 5.1 and 6.0.x
      - source_labels: ["dse"]
        regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)
        target_label: table
@@ -345,6 +359,32 @@ scrape_configs:
        regex: com\.datastax\.bdp\.search\.(\w+)\.(\w+)\.(\w+)
        target_label: __name__
        replacement: dse_solr_core_table_${1}
+     #Solr Table Metrics for 6.7/6/8 (for index_pool string)
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: table
+       replacement: ${2}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: keyspace
+       replacement: ${1}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)\.(\w+)
+       target_label: __name__
+       replacement: dse_solr_core_table_${3}_${4}
+     #Solr Table Metrics for 6.7/6.8 (for index_pool string with only 3 element)
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)$
+       target_label: table
+       replacement: ${2}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)$
+       target_label: keyspace
+       replacement: ${1}
+     - source_labels: ["dse"]
+       regex: com\.datastax\.bdp\.search\.index_pool\.(\w+)\.(\w+)\.(\w+)$
+       target_label: __name__
+       replacement: dse_solr_core_table_${3}
      #SSB&R Metrics
      - source_labels: ["dse"]
        regex: com\.datastax\.backups\.(\w+)\.(\w+)\.(\w+)
