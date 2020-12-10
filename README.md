@@ -36,7 +36,7 @@ These scripts can also be used for periodic refresh of the `tg_dse.json` file to
 
 The code, examples, and snippets provided in this repository are not "Supported Software" under any DataStax subscriptions or other agreements.
 
-Slack - https://academy.datastax.com/slack #dse-metric-collector
+If you have any questions or need assistance, visit [DataStax Community](https://community.datastax.com).
 
 
 ## License
