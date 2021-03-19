@@ -16,12 +16,17 @@
   "editable": true,
   "gnetId": 1860,
   "graphTooltip": 0,
-  "id": 4,
-  "iteration": 1562770447155,
+  "iteration": 1616179585960,
   "links": [],
   "panels": [
     {
-      "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/2020-12/datastax-logotype-negative.png\"/></a>",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 3,
         "w": 5,
@@ -30,13 +35,18 @@
       },
       "id": 280,
       "links": [],
-      "mode": "html",
+      "options": {
+        "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/2020-12/datastax-logotype-negative.png\"/></a>",
+        "mode": "html"
+      },
+      "pluginVersion": "7.4.5",
       "title": "",
       "transparent": true,
       "type": "text"
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -58,9 +68,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Busy state of all CPU cores together",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -90,7 +106,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 2,
+      "maxPerRow": 12,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -145,9 +161,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Amount of memory used (ignoring page cache)",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -177,7 +199,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 2,
+      "maxPerRow": 12,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -231,9 +253,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Used Swap",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -263,7 +291,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -316,9 +344,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Used Root FS",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -348,7 +382,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -401,9 +435,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Busy state of all CPU cores together (1 min average)",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -433,7 +473,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 2,
+      "maxPerRow": 12,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -487,9 +527,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Busy state of all CPU cores together (5 min average)",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -519,7 +565,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 2,
+      "maxPerRow": 12,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -566,6 +612,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -587,8 +634,14 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Total number of CPU cores",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "short",
       "gauge": {
         "maxValue": 100,
@@ -618,7 +671,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -671,9 +724,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Total RAM",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -703,7 +762,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -756,9 +815,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Total SWAP",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -788,7 +853,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -841,9 +906,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Total RootFS",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -873,7 +944,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -927,9 +998,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "System Load (1m avg)",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "short",
       "gauge": {
         "maxValue": 100,
@@ -959,7 +1036,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 2,
+      "maxPerRow": 12,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -1013,9 +1090,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "description": "System uptime",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "s",
       "gauge": {
         "maxValue": 100,
@@ -1078,7 +1161,6 @@
       ],
       "thresholds": "",
       "title": "Uptime",
-      "transparent": false,
       "type": "singlestat",
       "valueFontSize": "50%",
       "valueMaps": [
@@ -1092,6 +1174,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1124,16 +1207,24 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Basic CPU info",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 4,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
         "y": 13
       },
+      "hiddenSeries": false,
       "id": 77,
       "legend": {
         "alignAsTable": false,
@@ -1152,9 +1243,13 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": true,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1238,6 +1333,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU Basic",
       "tooltip": {
@@ -1245,7 +1341,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -1302,16 +1397,24 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Basic memory usage",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 4,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
         "y": 13
       },
+      "hiddenSeries": false,
       "id": 78,
       "legend": {
         "alignAsTable": false,
@@ -1328,9 +1431,13 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1405,6 +1512,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Memory Basic",
       "tooltip": {
@@ -1445,6 +1553,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1486,15 +1595,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Basic network info per interface",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 4,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
         "y": 21
       },
+      "hiddenSeries": false,
       "id": 74,
       "legend": {
         "alignAsTable": true,
@@ -1515,7 +1632,11 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1576,6 +1697,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Network Traffic Basic",
       "tooltip": {
@@ -1583,7 +1705,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -1645,15 +1766,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Basic network info per interface",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 4,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
         "y": 21
       },
+      "hiddenSeries": false,
       "id": 287,
       "legend": {
         "alignAsTable": true,
@@ -1674,7 +1803,11 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1735,6 +1868,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Network Packets",
       "tooltip": {
@@ -1742,7 +1876,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -1780,10 +1913,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "Read/Write bytes/sec",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 4,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
@@ -1791,6 +1931,7 @@
         "y": 28
       },
       "height": "",
+      "hiddenSeries": false,
       "id": 286,
       "legend": {
         "alignAsTable": false,
@@ -1810,9 +1951,13 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1846,6 +1991,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Disk Rate / sec",
       "tooltip": {
@@ -1890,10 +2036,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "description": "iops",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 4,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
@@ -1901,6 +2054,7 @@
         "y": 28
       },
       "height": "",
+      "hiddenSeries": false,
       "id": 152,
       "legend": {
         "alignAsTable": false,
@@ -1919,9 +2073,13 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1955,6 +2113,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Disk IOPS",
       "tooltip": {
@@ -1999,14 +2158,22 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
         "y": 35
       },
+      "hiddenSeries": false,
       "id": 302,
       "legend": {
         "avg": false,
@@ -2021,7 +2188,11 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2046,6 +2217,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Disk Used",
       "tooltip": {
@@ -2091,14 +2263,22 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
         "y": 35
       },
+      "hiddenSeries": false,
       "id": 304,
       "legend": {
         "avg": false,
@@ -2113,7 +2293,11 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2133,6 +2317,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Disk Queue Size",
       "tooltip": {
@@ -2176,7 +2361,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -2199,6 +2390,7 @@
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2266,6 +2458,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2282,7 +2475,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -2305,6 +2504,7 @@
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2367,7 +2567,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -2390,6 +2596,7 @@
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2451,7 +2658,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -2474,6 +2687,7 @@
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2535,7 +2749,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -2558,6 +2778,7 @@
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2619,7 +2840,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -2644,6 +2871,7 @@
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2714,7 +2942,13 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 5,
         "w": 12,
@@ -2765,6 +2999,7 @@
     },
     {
       "collapsed": true,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2793,7 +3028,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -2821,7 +3056,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
@@ -2903,7 +3138,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -2932,7 +3167,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
@@ -3014,7 +3249,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -3044,7 +3279,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
@@ -3126,7 +3361,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "For DSE ports",
           "fill": 4,
@@ -3155,7 +3390,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
@@ -3238,7 +3473,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -3267,7 +3502,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
@@ -3350,7 +3585,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -3380,7 +3615,7 @@
           "lines": false,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
@@ -3462,7 +3697,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -3491,7 +3726,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
@@ -3601,7 +3836,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -3631,7 +3866,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": true,
           "pointradius": 5,
@@ -3713,7 +3948,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -3743,7 +3978,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "minSpan": 4,
+          "maxPerRow": 6,
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
@@ -3825,6 +4060,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3846,9 +4082,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 1000000,
@@ -3879,7 +4121,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -3927,9 +4169,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 1000,
@@ -3960,7 +4208,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -4008,9 +4256,15 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 1000,
@@ -4041,7 +4295,7 @@
         }
       ],
       "maxDataPoints": 100,
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
       "postfix": "",
@@ -4093,7 +4347,13 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 6,
         "w": 12,
@@ -4167,9 +4427,15 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Basic memory usage",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 4,
       "gridPos": {
         "h": 7,
@@ -4193,9 +4459,10 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "minSpan": 4,
+      "maxPerRow": 6,
       "nullPointMode": "null",
       "percentage": false,
+      "pluginVersion": "7.4.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4295,7 +4562,7 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 16,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [
     "dse"
@@ -4303,13 +4570,36 @@
   "templating": {
     "list": [
       {
+        "current": {
+          "selected": false,
+          "text": "prometheus",
+          "value": "prometheus"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Datasource",
+        "multi": false,
+        "name": "DS_PROMETHEUS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
         "auto": false,
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
+          "selected": false,
           "text": "1m",
           "value": "1m"
         },
+        "description": null,
+        "error": null,
         "hide": 0,
         "label": "Rate",
         "name": "rate",
@@ -4378,18 +4668,24 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
-          "text": "10.101.32.94",
-          "value": "10.101.32.94"
+          "selected": true,
+          "text": "10.101.32.39",
+          "value": "10.101.32.39"
         },
-        "datasource": "prometheus",
+        "datasource": "${DS_PROMETHEUS}",
+        "definition": "",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Host:",
         "multi": false,
         "name": "host",
         "options": [],
-        "query": "label_values(collectd_collectd_queue_length{}, instance)",
+        "query": {
+          "query": "label_values(collectd_collectd_queue_length{}, instance)",
+          "refId": "prometheus-host-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -4434,5 +4730,5 @@
   "timezone": "browser",
   "title": "DSE System & Node Metrics",
   "uid": "eNNm2Lciz",
-  "version": 1
+  "version": 2
 }
