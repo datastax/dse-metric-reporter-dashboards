@@ -21,7 +21,7 @@
   "links": [],
   "panels": [
     {
-      "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/content/graphics/logo/DS-logo-2019-White.png\"/></a>",
+      "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/2020-12/datastax-logotype-negative.png\"/></a>",
       "datasource": null,
       "fieldConfig": {
         "defaults": {
@@ -39,7 +39,7 @@
       "links": [],
       "mode": "html",
       "options": {
-        "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/content/graphics/logo/DS-logo-2019-White.png\"/></a>",
+        "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/2020-12/datastax-logotype-negative.png\"/></a>",
         "mode": "html"
       },
       "pluginVersion": "7.1.0",
