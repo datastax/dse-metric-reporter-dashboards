@@ -2,7 +2,7 @@ version: "3"
 services:
   prometheus:
     container_name: dse-metric-dashboards_prometheus_1
-    image: "prom/prometheus:v2.17.1"
+    image: "prom/prometheus:v2.25.2"
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -16,7 +16,7 @@ services:
       - "./prometheus/tg_dse.json:/etc/prometheus/tg_dse.json"
   grafana:
     container_name: dse-metric-dashboards_grafana_1
-    image: "grafana/grafana:5.3.2"
+    image: "grafana/grafana:7.4.5"
     ports:
       - "3000:3000"
     environment:
