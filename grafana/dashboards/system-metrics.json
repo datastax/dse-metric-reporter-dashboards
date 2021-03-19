@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 1860,
   "graphTooltip": 0,
-  "iteration": 1616179585960,
+  "iteration": 1616180561367,
   "links": [],
   "panels": [
     {
@@ -1255,22 +1255,27 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
+          "$$hashKey": "object:403",
           "alias": "Busy Iowait",
           "color": "#890F02"
         },
         {
+          "$$hashKey": "object:404",
           "alias": "Idle",
           "color": "#7EB26D"
         },
         {
+          "$$hashKey": "object:405",
           "alias": "Busy System",
           "color": "#EAB839"
         },
         {
+          "$$hashKey": "object:406",
           "alias": "Busy User",
           "color": "#0A437C"
         },
         {
+          "$$hashKey": "object:407",
           "alias": "Busy Other",
           "color": "#6D1F62"
         }
@@ -1351,6 +1356,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:438",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -1359,6 +1365,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:439",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -4584,6 +4591,7 @@
         "name": "DS_PROMETHEUS",
         "options": [],
         "query": "prometheus",
+        "queryValue": "",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -4668,25 +4676,56 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "${DS_PROMETHEUS}",
+        "definition": "label_values(collectd_collectd_queue_length{}, cluster)",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "Cluster",
+        "multi": false,
+        "name": "cluster",
+        "options": [],
+        "query": {
+          "query": "label_values(collectd_collectd_queue_length{}, cluster)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
           "text": "10.101.32.39",
           "value": "10.101.32.39"
         },
         "datasource": "${DS_PROMETHEUS}",
-        "definition": "",
+        "definition": "label_values(collectd_collectd_queue_length{cluster=~\"$cluster\"}, instance)",
         "description": null,
         "error": null,
         "hide": 0,
         "includeAll": false,
-        "label": "Host:",
+        "label": "Host",
         "multi": false,
         "name": "host",
         "options": [],
         "query": {
-          "query": "label_values(collectd_collectd_queue_length{}, instance)",
-          "refId": "prometheus-host-Variable-Query"
+          "query": "label_values(collectd_collectd_queue_length{cluster=~\"$cluster\"}, instance)",
+          "refId": "StandardVariableQuery"
         },
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 1,
@@ -4730,5 +4769,5 @@
   "timezone": "browser",
   "title": "DSE System & Node Metrics",
   "uid": "eNNm2Lciz",
-  "version": 2
+  "version": 4
 }
