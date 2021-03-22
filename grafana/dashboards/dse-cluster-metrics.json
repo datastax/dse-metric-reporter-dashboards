@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1616179421721,
+  "iteration": 1616441926572,
   "links": [],
   "panels": [
     {
@@ -4184,13 +4184,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
+          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 8,
             "x": 0,
-            "y": 10
+            "y": 54
           },
+          "hiddenSeries": false,
           "id": 62,
           "legend": {
             "avg": false,
@@ -4205,7 +4213,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.4.5",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4215,8 +4227,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "dse_jvm_memory_pool_used{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", dse=\"jvm.memory.pools.g1_eden_space.used\"}",
+              "expr": "dse_jvm_memory_pool_used{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", pool_name=\"g1_eden_space\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{ instance }}",
               "refId": "A"
@@ -4224,6 +4237,7 @@
           ],
           "thresholds": [],
           "timeFrom": null,
+          "timeRegions": [],
           "timeShift": null,
           "title": "JVM G1 Eden Space Used / node",
           "tooltip": {
@@ -4241,6 +4255,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:149",
               "format": "bytes",
               "label": null,
               "logBase": 1,
@@ -4249,6 +4264,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:150",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4268,13 +4284,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
+          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 8,
             "x": 8,
-            "y": 10
+            "y": 54
           },
+          "hiddenSeries": false,
           "id": 63,
           "legend": {
             "avg": false,
@@ -4289,7 +4313,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.4.5",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4299,8 +4327,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "dse_jvm_memory_pool_used{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", dse=\"jvm.memory.pools.g1_old_gen.used\"}",
+              "expr": "dse_jvm_memory_pool_used{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", pool_name=\"g1_old_gen\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{ instance }}",
               "refId": "A"
@@ -4308,6 +4337,7 @@
           ],
           "thresholds": [],
           "timeFrom": null,
+          "timeRegions": [],
           "timeShift": null,
           "title": "JVM G1 Old Gen Used / node",
           "tooltip": {
@@ -4325,6 +4355,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:204",
               "format": "bytes",
               "label": null,
               "logBase": 1,
@@ -4333,6 +4364,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:205",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4352,13 +4384,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
+          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 8,
             "x": 16,
-            "y": 10
+            "y": 54
           },
+          "hiddenSeries": false,
           "id": 64,
           "legend": {
             "avg": false,
@@ -4373,7 +4413,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.4.5",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4383,8 +4427,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "dse_jvm_memory_pool_used{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", dse=\"jvm.memory.pools.g1_survivor_space.used\"}",
+              "expr": "dse_jvm_memory_pool_used{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", pool_name=\"g1_survivor_space\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{ instance }}",
               "refId": "A"
@@ -4392,6 +4437,7 @@
           ],
           "thresholds": [],
           "timeFrom": null,
+          "timeRegions": [],
           "timeShift": null,
           "title": "JVM G1 Survivor Space / node",
           "tooltip": {
@@ -4409,6 +4455,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:259",
               "format": "bytes",
               "label": null,
               "logBase": 1,
@@ -4417,6 +4464,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:260",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4436,13 +4484,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
+          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 8,
             "x": 0,
-            "y": 19
+            "y": 63
           },
+          "hiddenSeries": false,
           "id": 65,
           "legend": {
             "avg": false,
@@ -4457,7 +4513,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.4.5",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4467,8 +4527,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(dse_jvm_gc_time{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", dse=\"jvm.gc.g1_young_generation.time\"}[$rate])",
+              "expr": "increase(dse_jvm_gc_time{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", collector_type=\"g1_young_generation\"}[$rate])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{ instance }}",
               "refId": "A"
@@ -4476,6 +4537,7 @@
           ],
           "thresholds": [],
           "timeFrom": null,
+          "timeRegions": [],
           "timeShift": null,
           "title": "JVM GC Young Gen / node / $rate",
           "tooltip": {
@@ -4493,6 +4555,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:314",
               "format": "ms",
               "label": null,
               "logBase": 1,
@@ -4501,6 +4564,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:315",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4520,13 +4584,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
+          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 8,
             "x": 8,
-            "y": 19
+            "y": 63
           },
+          "hiddenSeries": false,
           "id": 66,
           "legend": {
             "avg": false,
@@ -4541,7 +4613,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.4.5",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4551,8 +4627,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(dse_jvm_gc_time{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", dse=\"jvm.gc.g1_old_generation.time\"}[$rate])",
+              "expr": "increase(dse_jvm_gc_time{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", collector_type=\"g1_old_generation\"}[$rate])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{ instance }}",
               "refId": "A"
@@ -4560,6 +4637,7 @@
           ],
           "thresholds": [],
           "timeFrom": null,
+          "timeRegions": [],
           "timeShift": null,
           "title": "JVM GC Old Gen / node / $rate",
           "tooltip": {
@@ -4577,6 +4655,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:369",
               "format": "ms",
               "label": null,
               "logBase": 1,
@@ -4585,6 +4664,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:370",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4604,13 +4684,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
+          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 8,
             "x": 16,
-            "y": 19
+            "y": 63
           },
+          "hiddenSeries": false,
           "id": 67,
           "legend": {
             "avg": false,
@@ -4625,7 +4713,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.4.5",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4635,8 +4727,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(dse_jvm_gc_count{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", dse=\"jvm.gc.g1_old_generation.count\"}[$rate])",
+              "expr": "increase(dse_jvm_gc_count{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", collector_type=\"g1_old_generation\"}[$rate])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{ instance }}",
               "refId": "A"
@@ -4644,6 +4737,7 @@
           ],
           "thresholds": [],
           "timeFrom": null,
+          "timeRegions": [],
           "timeShift": null,
           "title": "JVM GC Old Gen Count / node / $rate",
           "tooltip": {
@@ -4661,6 +4755,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:424",
               "format": "none",
               "label": null,
               "logBase": 1,
@@ -4669,6 +4764,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:425",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4688,13 +4784,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
+          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 8,
             "x": 0,
-            "y": 28
+            "y": 72
           },
+          "hiddenSeries": false,
           "id": 68,
           "legend": {
             "avg": false,
@@ -4709,7 +4813,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.4.5",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4719,8 +4827,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(dse_jvm_gc_count{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", dse=\"jvm.gc.g1_young_generation.count\"}[$rate])",
+              "expr": "increase(dse_jvm_gc_count{instance=~\"$instance\", cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\", collector_type=\"g1_young_generation\"}[$rate])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{ instance }}",
               "refId": "A"
@@ -4728,6 +4837,7 @@
           ],
           "thresholds": [],
           "timeFrom": null,
+          "timeRegions": [],
           "timeShift": null,
           "title": "JVM GC Old Gen Count / node / $rate",
           "tooltip": {
@@ -4745,6 +4855,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:479",
               "format": "none",
               "label": null,
               "logBase": 1,
@@ -4753,6 +4864,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:480",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -7317,7 +7429,7 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -7410,5 +7522,5 @@
   "timezone": "",
   "title": "DSE Cluster",
   "uid": "MLPRcY2iz",
-  "version": 5
+  "version": 2
 }

@@ -302,7 +302,7 @@ scrape_configs:
      - source_labels: ["dse"]
        regex: jvm\.memory\.pools\.(\w+)\.(\w+)
        target_label: pool_name
-       replacement: ${2}
+       replacement: ${1}
      - source_labels: ["dse"]
        regex: jvm\.memory\.pools\.(\w+)\.(\w+)
        target_label: __name__
