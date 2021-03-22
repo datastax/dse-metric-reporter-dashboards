@@ -423,7 +423,7 @@ spec:
                    "valueName": "avg"
                 },
                 {
-                   "content": "<a href=\"https://cassandra.apache.org\" target=\"new\"><img src=\"https://cassandra.apache.org/img/cassandra_logo.png\"/></a>",
+                   "content": "<a href=\"https://www.datastax.com\" target=\"new\"><img src=\"https://www.datastax.com/sites/default/files/2020-12/datastax-logotype-negative.png\"/></a>",
                    "datasource": null,
                    "gridPos": { },
                    "id": 7,

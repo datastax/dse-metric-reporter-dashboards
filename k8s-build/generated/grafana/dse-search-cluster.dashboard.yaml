@@ -11,17 +11,16 @@ spec:
     \ --\",\n        \"enable\": true,\n        \"hide\": true,\n        \"iconColor\"\
     : \"rgba(0, 211, 255, 1)\",\n        \"name\": \"Annotations & Alerts\",\n   \
     \     \"type\": \"dashboard\"\n      }\n    ]\n  },\n  \"editable\": true,\n \
-    \ \"gnetId\": null,\n  \"graphTooltip\": 0,\n  \"id\": 1,\n  \"iteration\": 1607475746783,\n\
-    \  \"links\": [],\n  \"panels\": [\n    {\n      \"content\": \"<a href=\\\"https://www.datastax.com\\\
-    \" target=\\\"new\\\"><img src=\\\"https://www.datastax.com/sites/default/files/content/graphics/logo/DS-logo-2019-White.png\\\
-    \"/></a>\",\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"\
-    defaults\": {\n          \"custom\": {}\n        },\n        \"overrides\": []\n\
-    \      },\n      \"gridPos\": {\n        \"h\": 3,\n        \"w\": 4,\n      \
-    \  \"x\": 9,\n        \"y\": 0\n      },\n      \"id\": 131,\n      \"links\"\
-    : [],\n      \"mode\": \"html\",\n      \"options\": {\n        \"content\": \"\
-    <a href=\\\"https://www.datastax.com\\\" target=\\\"new\\\"><img src=\\\"https://www.datastax.com/sites/default/files/content/graphics/logo/DS-logo-2019-White.png\\\
+    \ \"gnetId\": null,\n  \"graphTooltip\": 0,\n  \"iteration\": 1616182636783,\n\
+    \  \"links\": [],\n  \"panels\": [\n    {\n      \"datasource\": null,\n     \
+    \ \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {}\n    \
+    \    },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"\
+    h\": 3,\n        \"w\": 4,\n        \"x\": 10,\n        \"y\": 0\n      },\n \
+    \     \"id\": 131,\n      \"links\": [],\n      \"options\": {\n        \"content\"\
+    : \"<a href=\\\"https://www.datastax.com\\\" target=\\\"new\\\"><img src=\\\"\
+    https://www.datastax.com/sites/default/files/2020-12/datastax-logotype-negative.png\\\
     \"/></a>\",\n        \"mode\": \"html\"\n      },\n      \"pluginVersion\": \"\
-    7.1.0\",\n      \"title\": \"\",\n      \"transparent\": true,\n      \"type\"\
+    7.4.5\",\n      \"title\": \"\",\n      \"transparent\": true,\n      \"type\"\
     : \"text\"\n    },\n    {\n      \"collapsed\": false,\n      \"datasource\":\
     \ null,\n      \"gridPos\": {\n        \"h\": 1,\n        \"w\": 24,\n       \
     \ \"x\": 0,\n        \"y\": 3\n      },\n      \"id\": 4,\n      \"panels\": [],\n\
@@ -291,15 +290,13 @@ spec:
     \ \"collapsed\": false,\n      \"datasource\": null,\n      \"gridPos\": {\n \
     \       \"h\": 1,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\": 7\n \
     \     },\n      \"id\": 147,\n      \"panels\": [],\n      \"title\": \"Read Me\"\
-    ,\n      \"type\": \"row\"\n    },\n    {\n      \"content\": \"\\n# Read Me \\\
-    n\\n### Search  Metrics \\n#### This dashboard provides the following informations\
-    \ :\\n* __Search advance metrics__\\n  * __Query Metrics__ : Queries into the\
-    \ index\\n   * __retrieve__   : Time spent by a node to retrieve a single row\
-    \ from the database\\n   * __coordinate__ : Time spent by the coordinator node\
-    \ to distribute the query and gather/process results from shard\\n   * __execute__\
-    \    : Time spent by a single shard to execute the actual Lucene index query \\\
-    n   * __enqueue__ : Comprises the time spent by a query request waiting for a\
-    \ thread to execute. (Available in 6.x)\\n * __Update Metrics__ : End to end overview\
+    ,\n      \"type\": \"row\"\n    },\n    {\n      \"datasource\": null,\n     \
+    \ \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {}\n    \
+    \    },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"\
+    h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\": 8\n      },\n \
+    \     \"id\": 143,\n      \"options\": {\n        \"content\": \"\\n# Read Me\
+    \ \\n\\n### Search  Metrics \\n#### This dashboard provides the following informations\
+    \ :\\n* __Search advance metrics__\\n * __Update Metrics__ : End to end overview\
     \ of indexing pipeline\\n   * __execute__ : Comprising the time spent to actually\
     \ execute the index update on Lucene.\\n   * __prepare__ : Comprising the time\
     \ spent preparing the actual index update.\\n   * __queue__ : Comprising the time\
@@ -308,35 +305,7 @@ spec:
     \ (Available only for http)\\n *__Merge Metrics__ : Lucene segment merges\\n \
     \  * __warm__ : How long it takes to warm up segments to speed up cold queries.\\\
     n   * __init__ : How long it takes to initialize the merge process.\\n   * __execute__\
-    \ : How long it takes to execute the merge process.\\n *__Commit Metrics__ : Flushing\
-    \ indexpool and Executing commit on RAM buffer\\n   * __flush__ : Comprising the\
-    \ time spent by flushing the async indexing queue.\\n   * __execute__ : Comprising\
-    \ the time spent by actually executing the commit on the index.\\n\\n *  __Search\
-    \ Index Pool Metrics__: For 6.x versions IndexPool Metrics are only useful while\
-    \ Reindexing\\n   * __BackPressure Pause Nanos__ : The last backpressure pause\\\
-    n   * __Processed Tasks__ :  A running total of all indexing tasks (Added irate,\
-    \ so value shows in graph is incremental)\\n   * __Incoming/Outgoing Rate__ :\
-    \ Incoming/Outgoing Indexing Partition and Row tasks per minute\\n   * __Queue\
-    \ Size__ : Partition and Row indexing tasks combined \\n   * __Reindex %__ : Reindex\
-    \ Progress\\n   * __Task Processing time Nanos__ : Last or currently processing\
-    \ task time\\n *__Stall Metrics__ : Index workers stolen for Lucene flushing and\
-    \ merging (Not avaialable from DSE 6.x version)\\t \\n   * __flush__\\n   * __merge__\"\
-    ,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\"\
-    : {\n          \"custom\": {}\n        },\n        \"overrides\": []\n      },\n\
-    \      \"gridPos\": {\n        \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n\
-    \        \"y\": 8\n      },\n      \"id\": 143,\n      \"mode\": \"markdown\"\
-    ,\n      \"options\": {\n        \"content\": \"\\n# Read Me \\n\\n### Search\
-    \  Metrics \\n#### This dashboard provides the following informations :\\n* __Search\
-    \ advance metrics__\\n * __Update Metrics__ : End to end overview of indexing\
-    \ pipeline\\n   * __execute__ : Comprising the time spent to actually execute\
-    \ the index update on Lucene.\\n   * __prepare__ : Comprising the time spent preparing\
-    \ the actual index update.\\n   * __queue__ : Comprising the time spent by the\
-    \ index update task into the index pool.\\n   * __write__ : Comprising the time\
-    \ spent to convert the search document and write it into the database (Available\
-    \ only for http)\\n *__Merge Metrics__ : Lucene segment merges\\n   * __warm__\
-    \ : How long it takes to warm up segments to speed up cold queries.\\n   * __init__\
-    \ : How long it takes to initialize the merge process.\\n   * __execute__ : How\
-    \ long it takes to execute the merge process.\\n * __Query Metrics__ : Queries\
+    \ : How long it takes to execute the merge process.\\n * __Query Metrics__ : Queries\
     \ into the index\\n   * __retrieve__   : Time spent by a node to retrieve a single\
     \ row from the database\\n   * __coordinate__ : Time spent by the coordinator\
     \ node to distribute the query and gather/process results from shard\\n   * __execute__\
@@ -355,7 +324,7 @@ spec:
     \   * __Task Processing time Nanos__ : Last or currently processing task time\\\
     n *__Stall Metrics__ : Index workers stolen for Lucene flushing and merging (Not\
     \ avaialable from DSE 6.x version)\\t \\n   * __flush__\\n   * __merge__\",\n\
-    \        \"mode\": \"markdown\"\n      },\n      \"pluginVersion\": \"7.1.0\"\
+    \        \"mode\": \"markdown\"\n      },\n      \"pluginVersion\": \"7.4.5\"\
     ,\n      \"timeFrom\": null,\n      \"timeShift\": null,\n      \"title\": \"\
     Search Read Me\",\n      \"type\": \"text\"\n    },\n    {\n      \"collapsed\"\
     : false,\n      \"datasource\": null,\n      \"gridPos\": {\n        \"h\": 1,\n\
@@ -363,8 +332,8 @@ spec:
     id\": 167,\n      \"panels\": [],\n      \"title\": \"Search Query Metrics\",\n\
     \      \"type\": \"row\"\n    },\n    {\n      \"aliasColors\": {},\n      \"\
     bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"\
-    datasource\": \"Prometheus\",\n      \"description\": \" * __Query Metrics__ :\
-    \ Queries into the index\\n   * __coordinate__ : Time spent by the coordinator\
+    datasource\": \"${DS_PROMETHEUS}\",\n      \"description\": \" * __Query Metrics__\
+    \ : Queries into the index\\n   * __coordinate__ : Time spent by the coordinator\
     \ node to distribute the query and gather/process results from shard\\n   \",\n\
     \      \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n\
     \          \"links\": []\n        },\n        \"overrides\": []\n      },\n  \
@@ -375,14 +344,15 @@ spec:
     \        \"max\": true,\n        \"min\": false,\n        \"rightSide\": true,\n\
     \        \"show\": true,\n        \"total\": false,\n        \"values\": true\n\
     \      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\"\
-    : \"null\",\n      \"options\": {\n        \"dataLinks\": []\n      },\n     \
-    \ \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\"\
+    : \"null\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n\
+    \      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
     : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
     : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
     : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_query_metrics_coordinate{instance=~\\\
     \"$instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\
     \", keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
-    \"}\",\n          \"hide\": false,\n          \"legendFormat\": \"{{$by}}_coordinate_{{$keyspace}}_{{$table}}_{{$percentile}}ile\"\
+    \"}\",\n          \"hide\": false,\n          \"interval\": \"\",\n          \"\
+    legendFormat\": \"{{$by}}_coordinate_{{$keyspace}}_{{$table}}_{{$percentile}}ile\"\
     ,\n          \"refId\": \"A\"\n        }\n      ],\n      \"thresholds\": [],\n\
     \      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n\
     \      \"title\": \"Query_Coordinate_Metrics_%ile\",\n      \"tooltip\": {\n \
@@ -390,27 +360,28 @@ spec:
     \n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\"\
     : null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\"\
     : true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n   \
-    \       \"format\": \"\xB5s\",\n          \"label\": null,\n          \"logBase\"\
-    : 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\":\
-    \ true\n        },\n        {\n          \"format\": \"\xB5s\",\n          \"\
-    label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n        \
-    \  \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\"\
-    : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
-    \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \" * __Query Metrics__ : Queries into the index\\n    * __execute__\
-    \    : Time spent by a single shard to execute the actual Lucene index query \"\
-    ,\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n\
-    \          \"links\": []\n        },\n        \"overrides\": []\n      },\n  \
-    \    \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"\
-    h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\": 19\n      },\n\
-    \      \"hiddenSeries\": false,\n      \"id\": 163,\n      \"legend\": {\n   \
-    \     \"alignAsTable\": true,\n        \"avg\": true,\n        \"current\": true,\n\
-    \        \"max\": true,\n        \"min\": false,\n        \"rightSide\": true,\n\
-    \        \"show\": true,\n        \"total\": false,\n        \"values\": true\n\
-    \      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\"\
-    : \"null\",\n      \"options\": {\n        \"dataLinks\": []\n      },\n     \
-    \ \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\"\
+    \       \"$$hashKey\": \"object:1568\",\n          \"format\": \"\xB5s\",\n  \
+    \        \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n\
+    \          \"min\": null,\n          \"show\": true\n        },\n        {\n \
+    \         \"$$hashKey\": \"object:1569\",\n          \"format\": \"\xB5s\",\n\
+    \          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n\
+    \          \"min\": null,\n          \"show\": true\n        }\n      ],\n   \
+    \   \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n  \
+    \    }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n  \
+    \    \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\"\
+    ,\n      \"description\": \" * __Query Metrics__ : Queries into the index\\n \
+    \   * __execute__    : Time spent by a single shard to execute the actual Lucene\
+    \ index query \",\n      \"fieldConfig\": {\n        \"defaults\": {\n       \
+    \   \"custom\": {},\n          \"links\": []\n        },\n        \"overrides\"\
+    : []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\"\
+    : {\n        \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\":\
+    \ 19\n      },\n      \"hiddenSeries\": false,\n      \"id\": 163,\n      \"legend\"\
+    : {\n        \"alignAsTable\": true,\n        \"avg\": true,\n        \"current\"\
+    : true,\n        \"max\": true,\n        \"min\": false,\n        \"rightSide\"\
+    : true,\n        \"show\": true,\n        \"total\": false,\n        \"values\"\
+    : true\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\"\
+    : \"null\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n\
+    \      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
     : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
     : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
     : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_query_metrics_execute{instance=~\\\
@@ -431,20 +402,20 @@ spec:
     \  \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\"\
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
     \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \" * __Query Metrics__ : Queries into the index\\n   * __retrieve__\
-    \   : Time spent by a node to retrieve a single row from the database\",\n   \
-    \   \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n \
-    \         \"links\": []\n        },\n        \"overrides\": []\n      },\n   \
-    \   \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \" * __Query Metrics__ : Queries into the index\\n   *\
+    \ __retrieve__   : Time spent by a node to retrieve a single row from the database\"\
+    ,\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n\
+    \          \"links\": []\n        },\n        \"overrides\": []\n      },\n  \
+    \    \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"\
     h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\": 24\n      },\n\
     \      \"hiddenSeries\": false,\n      \"id\": 161,\n      \"legend\": {\n   \
     \     \"alignAsTable\": true,\n        \"avg\": true,\n        \"current\": true,\n\
     \        \"max\": true,\n        \"min\": false,\n        \"rightSide\": true,\n\
     \        \"show\": true,\n        \"total\": false,\n        \"values\": true\n\
     \      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\"\
-    : \"null\",\n      \"options\": {\n        \"dataLinks\": []\n      },\n     \
-    \ \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\"\
+    : \"null\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n\
+    \      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
     : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
     : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
     : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_query_metrics_retrieve{instance=~\\\
@@ -465,20 +436,20 @@ spec:
     \  \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\"\
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
     \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \" * __Query Metrics__ : Queries into the index\\n   * __Enqueue__\
-    \ : Comprises the time spent by a query request waiting for a thread to execute.\\\
-    n\\n   \",\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\"\
-    : {},\n          \"links\": []\n        },\n        \"overrides\": []\n      },\n\
-    \      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n      \
-    \  \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\": 29\n     \
-    \ },\n      \"hiddenSeries\": false,\n      \"id\": 189,\n      \"legend\": {\n\
-    \        \"alignAsTable\": true,\n        \"avg\": true,\n        \"current\"\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \" * __Query Metrics__ : Queries into the index\\n   *\
+    \ __Enqueue__ : Comprises the time spent by a query request waiting for a thread\
+    \ to execute.\\n\\n   \",\n      \"fieldConfig\": {\n        \"defaults\": {\n\
+    \          \"custom\": {},\n          \"links\": []\n        },\n        \"overrides\"\
+    : []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\"\
+    : {\n        \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\":\
+    \ 29\n      },\n      \"hiddenSeries\": false,\n      \"id\": 189,\n      \"legend\"\
+    : {\n        \"alignAsTable\": true,\n        \"avg\": true,\n        \"current\"\
     : true,\n        \"max\": true,\n        \"min\": false,\n        \"rightSide\"\
     : true,\n        \"show\": true,\n        \"total\": false,\n        \"values\"\
     : true\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\"\
-    : \"null\",\n      \"options\": {\n        \"dataLinks\": []\n      },\n     \
-    \ \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\"\
+    : \"null\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n\
+    \      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
     : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
     : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
     : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_query_metrics_enqueue{instance=~\\\
@@ -507,8 +478,8 @@ spec:
     \        \"y\": 34\n      },\n      \"id\": 187,\n      \"panels\": [],\n    \
     \  \"title\": \"Search Commit Metrics\",\n      \"type\": \"row\"\n    },\n  \
     \  {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \" * __Commit Metrics__ : Flushing indexpool and Executing\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \" * __Commit Metrics__ : Flushing indexpool and Executing\
     \ commit on RAM buffer\\n   * __execute__ : Comprising the time spent by actually\
     \ executing the commit on the index.\",\n      \"fieldConfig\": {\n        \"\
     defaults\": {\n          \"custom\": {},\n          \"links\": []\n        },\n\
@@ -520,11 +491,11 @@ spec:
     \ false,\n        \"rightSide\": true,\n        \"show\": true,\n        \"total\"\
     : false,\n        \"values\": true\n      },\n      \"lines\": true,\n      \"\
     linewidth\": 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n  \
-    \      \"dataLinks\": []\n      },\n      \"percentage\": false,\n      \"pluginVersion\"\
-    : \"7.1.3\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\"\
-    : \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n    \
-    \  \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n  \
-    \      {\n          \"expr\": \"dse_solr_metric_commit_metrics_execute{instance=~\\\
+    \      \"alertThreshold\": true\n      },\n      \"percentage\": false,\n    \
+    \  \"pluginVersion\": \"7.4.5\",\n      \"pointradius\": 2,\n      \"points\"\
+    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
+    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
+    \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_commit_metrics_execute{instance=~\\\
     \"$instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\
     \", keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
     \"}\",\n          \"hide\": false,\n          \"legendFormat\": \"{{$by}}_coordinate_{{$keyspace}}_{{$table}}_{{$percentile}}%ile\"\
@@ -542,8 +513,8 @@ spec:
     \  \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\"\
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
     \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \" * __Commit Metrics__ : Flushing indexpool and Executing\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \" * __Commit Metrics__ : Flushing indexpool and Executing\
     \ commit on RAM buffer\\n   * __flush__ : Comprising the time spent by flushing\
     \ the async indexing queue.\\n   \",\n      \"fieldConfig\": {\n        \"defaults\"\
     : {\n          \"custom\": {},\n          \"links\": []\n        },\n        \"\
@@ -554,8 +525,8 @@ spec:
     \        \"current\": true,\n        \"max\": true,\n        \"min\": false,\n\
     \        \"rightSide\": true,\n        \"show\": true,\n        \"total\": false,\n\
     \        \"values\": true\n      },\n      \"lines\": true,\n      \"linewidth\"\
-    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"dataLinks\"\
-    : []\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\"\
+    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"alertThreshold\"\
+    : true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\"\
     ,\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"\
     flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"\
     stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n       \
@@ -581,26 +552,26 @@ spec:
     \ 47\n      },\n      \"id\": 181,\n      \"panels\": [],\n      \"title\": \"\
     Search Merge Metrics\",\n      \"type\": \"row\"\n    },\n    {\n      \"aliasColors\"\
     : {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n\
-    \      \"datasource\": \"Prometheus\",\n      \"description\": \" * __Merge Metrics__\
-    \ : Lucene segment merges\\n   * __warm__ : How long it takes to warm up segments\
-    \ to speed up cold queries.\",\n      \"fieldConfig\": {\n        \"defaults\"\
-    : {\n          \"custom\": {},\n          \"links\": []\n        },\n        \"\
-    overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n  \
-    \    \"gridPos\": {\n        \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n\
-    \        \"y\": 48\n      },\n      \"hiddenSeries\": false,\n      \"id\": 179,\n\
-    \      \"legend\": {\n        \"alignAsTable\": true,\n        \"avg\": true,\n\
-    \        \"current\": true,\n        \"max\": true,\n        \"min\": false,\n\
-    \        \"rightSide\": true,\n        \"show\": true,\n        \"total\": false,\n\
-    \        \"values\": true\n      },\n      \"lines\": true,\n      \"linewidth\"\
-    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"dataLinks\"\
-    : []\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\"\
-    ,\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"\
-    flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"\
-    stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n       \
-    \ {\n          \"expr\": \"dse_solr_metric_merge_metrics_warm{instance=~\\\"$instance\\\
-    \", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\", keyspace=~\\\
-    \"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\"}\",\n   \
-    \       \"legendFormat\": \"{{$by}}_init_{{$keyspace}}_{{$table}}_{{$percentile}}%ile\"\
+    \      \"datasource\": \"${DS_PROMETHEUS}\",\n      \"description\": \" * __Merge\
+    \ Metrics__ : Lucene segment merges\\n   * __warm__ : How long it takes to warm\
+    \ up segments to speed up cold queries.\",\n      \"fieldConfig\": {\n       \
+    \ \"defaults\": {\n          \"custom\": {},\n          \"links\": []\n      \
+    \  },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\"\
+    : 0,\n      \"gridPos\": {\n        \"h\": 5,\n        \"w\": 24,\n        \"\
+    x\": 0,\n        \"y\": 48\n      },\n      \"hiddenSeries\": false,\n      \"\
+    id\": 179,\n      \"legend\": {\n        \"alignAsTable\": true,\n        \"avg\"\
+    : true,\n        \"current\": true,\n        \"max\": true,\n        \"min\":\
+    \ false,\n        \"rightSide\": true,\n        \"show\": true,\n        \"total\"\
+    : false,\n        \"values\": true\n      },\n      \"lines\": true,\n      \"\
+    linewidth\": 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n  \
+    \      \"alertThreshold\": true\n      },\n      \"percentage\": false,\n    \
+    \  \"pluginVersion\": \"7.4.5\",\n      \"pointradius\": 2,\n      \"points\"\
+    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
+    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
+    \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_merge_metrics_warm{instance=~\\\
+    \"$instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\
+    \", keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
+    \"}\",\n          \"legendFormat\": \"{{$by}}_init_{{$keyspace}}_{{$table}}_{{$percentile}}%ile\"\
     ,\n          \"refId\": \"A\"\n        }\n      ],\n      \"thresholds\": [],\n\
     \      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n\
     \      \"title\": \"Merge_Warm_Metrics_%ile\",\n      \"tooltip\": {\n       \
@@ -615,23 +586,23 @@ spec:
     \  \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\"\
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
     \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \" * __Merge Metrics__ : Lucene segment merges\\n   * __init__\
-    \ : How long it takes to initialize the merge process.\\n   \",\n      \"fieldConfig\"\
-    : {\n        \"defaults\": {\n          \"custom\": {},\n          \"links\":\
-    \ []\n        },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n  \
-    \    \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 5,\n        \"\
-    w\": 24,\n        \"x\": 0,\n        \"y\": 53\n      },\n      \"hiddenSeries\"\
-    : false,\n      \"id\": 177,\n      \"legend\": {\n        \"alignAsTable\": true,\n\
-    \        \"avg\": true,\n        \"current\": true,\n        \"max\": true,\n\
-    \        \"min\": false,\n        \"rightSide\": true,\n        \"show\": true,\n\
-    \        \"total\": false,\n        \"values\": true\n      },\n      \"lines\"\
-    : true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null\",\n      \"\
-    options\": {\n        \"dataLinks\": []\n      },\n      \"percentage\": false,\n\
-    \      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\": 2,\n      \"points\"\
-    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
-    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
-    \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_merge_metrics_init{instance=~\\\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \" * __Merge Metrics__ : Lucene segment merges\\n   *\
+    \ __init__ : How long it takes to initialize the merge process.\\n   \",\n   \
+    \   \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n \
+    \         \"links\": []\n        },\n        \"overrides\": []\n      },\n   \
+    \   \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"\
+    h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\": 53\n      },\n\
+    \      \"hiddenSeries\": false,\n      \"id\": 177,\n      \"legend\": {\n   \
+    \     \"alignAsTable\": true,\n        \"avg\": true,\n        \"current\": true,\n\
+    \        \"max\": true,\n        \"min\": false,\n        \"rightSide\": true,\n\
+    \        \"show\": true,\n        \"total\": false,\n        \"values\": true\n\
+    \      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\"\
+    : \"null\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n\
+    \      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
+    : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
+    : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
+    : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_merge_metrics_init{instance=~\\\
     \"$instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\
     \", keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
     \"}\",\n          \"legendFormat\": \"{{$by}}_init_{{$keyspace}}_{{$table}}_{{$percentile}}%ile\"\
@@ -649,9 +620,9 @@ spec:
     \  \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\"\
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
     \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \" * __Merge Metrics__ : Lucene segment merges\\n   * __execute__\
-    \ : How long it takes to execute the merge process.\",\n      \"fieldConfig\"\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \" * __Merge Metrics__ : Lucene segment merges\\n   *\
+    \ __execute__ : How long it takes to execute the merge process.\",\n      \"fieldConfig\"\
     : {\n        \"defaults\": {\n          \"custom\": {},\n          \"links\":\
     \ []\n        },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n  \
     \    \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 5,\n        \"\
@@ -661,11 +632,11 @@ spec:
     \        \"min\": false,\n        \"rightSide\": true,\n        \"show\": true,\n\
     \        \"total\": false,\n        \"values\": true\n      },\n      \"lines\"\
     : true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null\",\n      \"\
-    options\": {\n        \"dataLinks\": []\n      },\n      \"percentage\": false,\n\
-    \      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\": 2,\n      \"points\"\
-    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
-    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
-    \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_merge_metrics_execute{instance=~\\\
+    options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\"\
+    : false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\": 2,\n   \
+    \   \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
+    : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
+    : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_merge_metrics_execute{instance=~\\\
     \"$instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\
     \", keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
     \"}\",\n          \"hide\": false,\n          \"legendFormat\": \"{{$by}}_init_{{$keyspace}}_{{$table}}_{{$percentile}}%ile\"\
@@ -687,26 +658,27 @@ spec:
     \ 63\n      },\n      \"id\": 159,\n      \"panels\": [],\n      \"title\": \"\
     Search Update Metrics\",\n      \"type\": \"row\"\n    },\n    {\n      \"aliasColors\"\
     : {},\n      \"bars\": false,\n      \"cacheTimeout\": null,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \"* __Update Metrics__ : End to end overview of indexing pipeline\\\
-    n   * __write__ : Comprising the time spent to convert the search document and\
-    \ write it into the database (Available only for http)\",\n      \"fieldConfig\"\
-    : {\n        \"defaults\": {\n          \"custom\": {},\n          \"links\":\
-    \ []\n        },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n  \
-    \    \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 6,\n        \"\
-    w\": 24,\n        \"x\": 0,\n        \"y\": 64\n      },\n      \"hiddenSeries\"\
-    : false,\n      \"id\": 157,\n      \"legend\": {\n        \"alignAsTable\": true,\n\
-    \        \"avg\": true,\n        \"current\": true,\n        \"max\": true,\n\
-    \        \"min\": false,\n        \"rightSide\": true,\n        \"show\": true,\n\
-    \        \"total\": false,\n        \"values\": true\n      },\n      \"lines\"\
-    : true,\n      \"linewidth\": 1,\n      \"links\": [],\n      \"nullPointMode\"\
-    : \"null\",\n      \"options\": {\n        \"dataLinks\": []\n      },\n     \
-    \ \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\"\
-    : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
-    : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
-    : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_update_metrics_write{instance=~\\\
-    \"$instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\
-    \", keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \"* __Update Metrics__ : End to end overview of indexing\
+    \ pipeline\\n   * __write__ : Comprising the time spent to convert the search\
+    \ document and write it into the database (Available only for http)\",\n     \
+    \ \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n   \
+    \       \"links\": []\n        },\n        \"overrides\": []\n      },\n     \
+    \ \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\"\
+    : 6,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\": 64\n      },\n   \
+    \   \"hiddenSeries\": false,\n      \"id\": 157,\n      \"legend\": {\n      \
+    \  \"alignAsTable\": true,\n        \"avg\": true,\n        \"current\": true,\n\
+    \        \"max\": true,\n        \"min\": false,\n        \"rightSide\": true,\n\
+    \        \"show\": true,\n        \"total\": false,\n        \"values\": true\n\
+    \      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"links\": [],\n\
+    \      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"alertThreshold\"\
+    : true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\"\
+    ,\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"\
+    flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"\
+    stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n       \
+    \ {\n          \"expr\": \"dse_solr_metric_update_metrics_write{instance=~\\\"\
+    $instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\"\
+    , keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
     \"}\",\n          \"hide\": false,\n          \"legendFormat\": \"{{$by}}_merge_{{$keyspace}}_{{$table}}_{{$percentile}}%ile\"\
     ,\n          \"refId\": \"A\"\n        },\n        {\n          \"refId\": \"\
     C\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n\
@@ -723,26 +695,26 @@ spec:
     \ true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n \
     \       \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n\
     \      \"bars\": false,\n      \"cacheTimeout\": null,\n      \"dashLength\":\
-    \ 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \"* __Update Metrics__ : End to end overview of indexing pipeline\\\
-    n   * __queue__ : Comprising the time spent by the index update task into the\
-    \ index pool.\\n \",\n      \"fieldConfig\": {\n        \"defaults\": {\n    \
-    \      \"custom\": {},\n          \"links\": []\n        },\n        \"overrides\"\
-    : []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\"\
-    : {\n        \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\":\
-    \ 70\n      },\n      \"hiddenSeries\": false,\n      \"id\": 155,\n      \"legend\"\
-    : {\n        \"alignAsTable\": true,\n        \"avg\": true,\n        \"current\"\
-    : true,\n        \"max\": true,\n        \"min\": false,\n        \"rightSide\"\
-    : true,\n        \"show\": true,\n        \"total\": false,\n        \"values\"\
-    : true\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"links\"\
-    : [],\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"dataLinks\"\
-    : []\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\"\
-    ,\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"\
-    flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"\
-    stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n       \
-    \ {\n          \"expr\": \"dse_solr_metric_update_metrics_queue{instance=~\\\"\
-    $instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\"\
-    , keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
+    \ 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \"* __Update Metrics__ : End to end overview of indexing\
+    \ pipeline\\n   * __queue__ : Comprising the time spent by the index update task\
+    \ into the index pool.\\n \",\n      \"fieldConfig\": {\n        \"defaults\"\
+    : {\n          \"custom\": {},\n          \"links\": []\n        },\n        \"\
+    overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n  \
+    \    \"gridPos\": {\n        \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n\
+    \        \"y\": 70\n      },\n      \"hiddenSeries\": false,\n      \"id\": 155,\n\
+    \      \"legend\": {\n        \"alignAsTable\": true,\n        \"avg\": true,\n\
+    \        \"current\": true,\n        \"max\": true,\n        \"min\": false,\n\
+    \        \"rightSide\": true,\n        \"show\": true,\n        \"total\": false,\n\
+    \        \"values\": true\n      },\n      \"lines\": true,\n      \"linewidth\"\
+    : 1,\n      \"links\": [],\n      \"nullPointMode\": \"null\",\n      \"options\"\
+    : {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n\
+    \      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\": 2,\n      \"points\"\
+    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
+    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
+    \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_update_metrics_queue{instance=~\\\
+    \"$instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\
+    \", keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
     \"}\",\n          \"hide\": false,\n          \"legendFormat\": \"{{$by}}_merge_{{$keyspace}}_{{$table}}_{{$percentile}}%ile\"\
     ,\n          \"refId\": \"B\"\n        }\n      ],\n      \"thresholds\": [],\n\
     \      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n\
@@ -759,8 +731,8 @@ spec:
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
     \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"cacheTimeout\"\
     : null,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\"\
-    : \"Prometheus\",\n      \"description\": \"* __Update Metrics__ : End to end\
-    \ overview of indexing pipeline\\n   * __prepare__ : Comprising the time spent\
+    : \"${DS_PROMETHEUS}\",\n      \"description\": \"* __Update Metrics__ : End to\
+    \ end overview of indexing pipeline\\n   * __prepare__ : Comprising the time spent\
     \ preparing the actual index update.\",\n      \"fieldConfig\": {\n        \"\
     defaults\": {\n          \"custom\": {},\n          \"links\": []\n        },\n\
     \        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\"\
@@ -771,8 +743,8 @@ spec:
     \ false,\n        \"rightSide\": true,\n        \"show\": true,\n        \"total\"\
     : false,\n        \"values\": true\n      },\n      \"lines\": true,\n      \"\
     linewidth\": 1,\n      \"links\": [],\n      \"nullPointMode\": \"null\",\n  \
-    \    \"options\": {\n        \"dataLinks\": []\n      },\n      \"percentage\"\
-    : false,\n      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\": 2,\n   \
+    \    \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\"\
+    : false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\": 2,\n   \
     \   \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
     : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
     : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_update_metrics_prepare{instance=~\\\
@@ -794,8 +766,8 @@ spec:
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
     \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"cacheTimeout\"\
     : null,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\"\
-    : \"Prometheus\",\n      \"description\": \"* __Update Metrics__ : End to end\
-    \ overview of indexing pipeline\\n   * __execute__ : Comprising the time spent\
+    : \"${DS_PROMETHEUS}\",\n      \"description\": \"* __Update Metrics__ : End to\
+    \ end overview of indexing pipeline\\n   * __execute__ : Comprising the time spent\
     \ to actually execute the index update on Lucene.\",\n      \"fieldConfig\": {\n\
     \        \"defaults\": {\n          \"custom\": {},\n          \"links\": []\n\
     \        },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"\
@@ -806,8 +778,8 @@ spec:
     \      \"min\": false,\n        \"rightSide\": true,\n        \"show\": true,\n\
     \        \"total\": false,\n        \"values\": true\n      },\n      \"lines\"\
     : true,\n      \"linewidth\": 1,\n      \"links\": [],\n      \"nullPointMode\"\
-    : \"null\",\n      \"options\": {\n        \"dataLinks\": []\n      },\n     \
-    \ \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\"\
+    : \"null\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n\
+    \      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
     : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
     : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
     : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_update_metrics_execute{instance=~\\\
@@ -833,21 +805,21 @@ spec:
     Search IndexPool Metrics(For 6.x IndexPool Metrics are only useful while reindexing)\"\
     ,\n      \"type\": \"row\"\n    },\n    {\n      \"aliasColors\": {},\n      \"\
     bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"\
-    datasource\": \"Prometheus\",\n      \"description\": \"BackPressure Pause Nanos:\
-    \ The last backpressure pause.\\n\",\n      \"fieldConfig\": {\n        \"defaults\"\
-    : {\n          \"custom\": {},\n          \"links\": []\n        },\n        \"\
-    overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n  \
-    \    \"gridPos\": {\n        \"h\": 7,\n        \"w\": 12,\n        \"x\": 0,\n\
-    \        \"y\": 86\n      },\n      \"hiddenSeries\": false,\n      \"id\": 127,\n\
-    \      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n \
-    \       \"max\": false,\n        \"min\": false,\n        \"show\": true,\n  \
-    \      \"total\": false,\n        \"values\": false\n      },\n      \"lines\"\
-    : true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null\",\n      \"\
-    options\": {\n        \"dataLinks\": []\n      },\n      \"percentage\": false,\n\
-    \      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\": 2,\n      \"points\"\
-    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
-    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
-    \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_core_table_backpressure_pause_nanos{instance=~\\\
+    datasource\": \"${DS_PROMETHEUS}\",\n      \"description\": \"BackPressure Pause\
+    \ Nanos: The last backpressure pause.\\n\",\n      \"fieldConfig\": {\n      \
+    \  \"defaults\": {\n          \"custom\": {},\n          \"links\": []\n     \
+    \   },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\"\
+    : 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 12,\n        \"\
+    x\": 0,\n        \"y\": 86\n      },\n      \"hiddenSeries\": false,\n      \"\
+    id\": 127,\n      \"legend\": {\n        \"avg\": false,\n        \"current\"\
+    : false,\n        \"max\": false,\n        \"min\": false,\n        \"show\":\
+    \ true,\n        \"total\": false,\n        \"values\": false\n      },\n    \
+    \  \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null\"\
+    ,\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"\
+    percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
+    : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
+    : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
+    : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_core_table_backpressure_pause_nanos{instance=~\\\
     \"$instance\\\",cluster=~\\\"$cluster\\\",dc=~\\\"$dc\\\",rack=~\\\"$rack\\\"\
     ,keyspace=~\\\"$keyspace\\\",table=~\\\"$table\\\"}\",\n          \"hide\": false,\n\
     \          \"legendFormat\": \"{{$by}}_{{$keyspace}}.{{$table}}\",\n         \
@@ -868,22 +840,22 @@ spec:
     \ true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n \
     \       \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n\
     \      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n\
-    \      \"datasource\": \"Prometheus\",\n      \"description\": \"Processed Tasks\
-    \ : A running total of all indexing tasks (Added irate, so value shows in the\
-    \ graph are incremental value)\\n\",\n      \"fieldConfig\": {\n        \"defaults\"\
-    : {\n          \"custom\": {},\n          \"links\": []\n        },\n        \"\
-    overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n  \
-    \    \"gridPos\": {\n        \"h\": 7,\n        \"w\": 11,\n        \"x\": 12,\n\
-    \        \"y\": 86\n      },\n      \"hiddenSeries\": false,\n      \"id\": 133,\n\
-    \      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n \
-    \       \"max\": false,\n        \"min\": false,\n        \"show\": true,\n  \
-    \      \"total\": false,\n        \"values\": false\n      },\n      \"lines\"\
-    : true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null\",\n      \"\
-    options\": {\n        \"dataLinks\": []\n      },\n      \"percentage\": false,\n\
-    \      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\": 2,\n      \"points\"\
-    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
-    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
-    \      \"targets\": [\n        {\n          \"expr\": \"irate(dse_solr_core_table_processed_tasks{instance=~\\\
+    \      \"datasource\": \"${DS_PROMETHEUS}\",\n      \"description\": \"Processed\
+    \ Tasks : A running total of all indexing tasks (Added irate, so value shows in\
+    \ the graph are incremental value)\\n\",\n      \"fieldConfig\": {\n        \"\
+    defaults\": {\n          \"custom\": {},\n          \"links\": []\n        },\n\
+    \        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\"\
+    : 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 11,\n        \"\
+    x\": 12,\n        \"y\": 86\n      },\n      \"hiddenSeries\": false,\n      \"\
+    id\": 133,\n      \"legend\": {\n        \"avg\": false,\n        \"current\"\
+    : false,\n        \"max\": false,\n        \"min\": false,\n        \"show\":\
+    \ true,\n        \"total\": false,\n        \"values\": false\n      },\n    \
+    \  \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null\"\
+    ,\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"\
+    percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
+    : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
+    : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
+    : false,\n      \"targets\": [\n        {\n          \"expr\": \"irate(dse_solr_core_table_processed_tasks{instance=~\\\
     \"$instance\\\",cluster=~\\\"$cluster\\\",dc=~\\\"$dc\\\",rack=~\\\"$rack\\\"\
     ,keyspace=~\\\"$keyspace\\\",table=~\\\"$table\\\"}[5m]) # 5.1.x/6.0.x metric\"\
     ,\n          \"hide\": false,\n          \"legendFormat\": \"{{$by}}_{{$keyspace}}.{{table}}\"\
@@ -905,7 +877,7 @@ spec:
     \          \"min\": null,\n          \"show\": true\n        }\n      ],\n   \
     \   \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n  \
     \    }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n  \
-    \    \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\"\
+    \    \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\"\
     ,\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n\
     \          \"links\": []\n        },\n        \"overrides\": []\n      },\n  \
     \    \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"\
@@ -914,8 +886,8 @@ spec:
     \     \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n\
     \        \"min\": false,\n        \"show\": true,\n        \"total\": false,\n\
     \        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\"\
-    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"dataLinks\"\
-    : []\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\"\
+    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"alertThreshold\"\
+    : true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\"\
     ,\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"\
     flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"\
     stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n       \
@@ -937,8 +909,8 @@ spec:
     \ true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n \
     \       \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n\
     \      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n\
-    \      \"datasource\": \"Prometheus\",\n      \"description\": \"Queue Size :\
-    \ Partition and Row indexing tasks combined\\n\",\n      \"fieldConfig\": {\n\
+    \      \"datasource\": \"${DS_PROMETHEUS}\",\n      \"description\": \"Queue Size\
+    \ : Partition and Row indexing tasks combined\\n\",\n      \"fieldConfig\": {\n\
     \        \"defaults\": {\n          \"custom\": {},\n          \"links\": []\n\
     \        },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"\
     fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 11,\n\
@@ -947,9 +919,9 @@ spec:
     current\": false,\n        \"max\": false,\n        \"min\": false,\n        \"\
     show\": true,\n        \"total\": false,\n        \"values\": false\n      },\n\
     \      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"\
-    null\",\n      \"options\": {\n        \"dataLinks\": []\n      },\n      \"percentage\"\
-    : false,\n      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\": 2,\n   \
-    \   \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
+    null\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n  \
+    \    \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\"\
+    : 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
     : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
     : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_core_table_queue_size{instance=~\\\
     \"$instance\\\",cluster=~\\\"$cluster\\\",dc=~\\\"$dc\\\",rack=~\\\"$rack\\\"\
@@ -973,18 +945,18 @@ spec:
     : null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n \
     \       \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n   \
     \ {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \"Task Processing time : Last or currently processing task\
-    \ time\\n\",\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"\
-    custom\": {},\n          \"links\": []\n        },\n        \"overrides\": []\n\
-    \      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\":\
-    \ {\n        \"h\": 6,\n        \"w\": 11,\n        \"x\": 12,\n        \"y\"\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \"Task Processing time : Last or currently processing\
+    \ task time\\n\",\n      \"fieldConfig\": {\n        \"defaults\": {\n       \
+    \   \"custom\": {},\n          \"links\": []\n        },\n        \"overrides\"\
+    : []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\"\
+    : {\n        \"h\": 6,\n        \"w\": 11,\n        \"x\": 12,\n        \"y\"\
     : 99\n      },\n      \"hiddenSeries\": false,\n      \"id\": 141,\n      \"legend\"\
     : {\n        \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n\
     \        \"min\": false,\n        \"show\": true,\n        \"total\": false,\n\
     \        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\"\
-    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"dataLinks\"\
-    : []\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\"\
+    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"alertThreshold\"\
+    : true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\"\
     ,\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"\
     flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"\
     stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n       \
@@ -1013,7 +985,7 @@ spec:
     \          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"\
     align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"\
     aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"\
-    dashes\": false,\n      \"datasource\": \"Prometheus\",\n      \"description\"\
+    dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n      \"description\"\
     : \"Incoming/Outgoing Rate : Incoming/Outgoing Indexing Partition and Row tasks\
     \ per minute\\n\",\n      \"fieldConfig\": {\n        \"defaults\": {\n      \
     \    \"custom\": {},\n          \"links\": []\n        },\n        \"overrides\"\
@@ -1024,11 +996,11 @@ spec:
     max\": false,\n        \"min\": false,\n        \"show\": true,\n        \"total\"\
     : false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"\
     linewidth\": 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n  \
-    \      \"dataLinks\": []\n      },\n      \"percentage\": false,\n      \"pluginVersion\"\
-    : \"7.1.3\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\"\
-    : \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n    \
-    \  \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n  \
-    \      {\n          \"expr\": \"dse_solr_core_table_incoming_rate{instance=~\\\
+    \      \"alertThreshold\": true\n      },\n      \"percentage\": false,\n    \
+    \  \"pluginVersion\": \"7.4.5\",\n      \"pointradius\": 2,\n      \"points\"\
+    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
+    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
+    \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_core_table_incoming_rate{instance=~\\\
     \"$instance\\\",cluster=~\\\"$cluster\\\",dc=~\\\"$dc\\\",rack=~\\\"$rack\\\"\
     ,keyspace=~\\\"$keyspace\\\",table=~\\\"$table\\\"} \",\n          \"hide\": false,\n\
     \          \"legendFormat\": \"{{$by}}_{{$keyspace}}.{{table}}\",\n          \"\
@@ -1051,8 +1023,8 @@ spec:
     \       \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n   \
     \ {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"cacheTimeout\"\
     : null,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\"\
-    : \"Prometheus\",\n      \"description\": \"Reindex % : Reindex Progress\",\n\
-    \      \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n\
+    : \"${DS_PROMETHEUS}\",\n      \"description\": \"Reindex % : Reindex Progress\"\
+    ,\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"custom\": {},\n\
     \          \"links\": []\n        },\n        \"overrides\": []\n      },\n  \
     \    \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"\
     h\": 6,\n        \"w\": 12,\n        \"x\": 0,\n        \"y\": 106\n      },\n\
@@ -1061,9 +1033,9 @@ spec:
     \        \"min\": false,\n        \"show\": true,\n        \"total\": false,\n\
     \        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\"\
     : 1,\n      \"links\": [],\n      \"nullPointMode\": \"null\",\n      \"options\"\
-    : {\n        \"dataLinks\": []\n      },\n      \"percentage\": false,\n     \
-    \ \"pluginVersion\": \"7.1.3\",\n      \"pointradius\": 2,\n      \"points\":\
-    \ false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
+    : {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n\
+    \      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\": 2,\n      \"points\"\
+    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
     \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
     \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_reindex_metrics_progress_percentage{instance=~\\\
     \"$instance\\\",cluster=~\\\"$cluster\\\",dc=~\\\"$dc\\\",rack=~\\\"$rack\\\"\
@@ -1090,19 +1062,19 @@ spec:
     \ 173,\n      \"panels\": [],\n      \"title\": \"Search Stall Metrics (Not available\
     \ in 6.x)\",\n      \"type\": \"row\"\n    },\n    {\n      \"aliasColors\": {},\n\
     \      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n\
-    \      \"datasource\": \"Prometheus\",\n      \"description\": \" * __Stall Metrics__\
-    \ : Index workers stolen for Lucene flushing and merging (gone in 6.0)     \\\
-    n   * __flush__\\n\",\n      \"fieldConfig\": {\n        \"defaults\": {\n   \
-    \       \"custom\": {},\n          \"links\": []\n        },\n        \"overrides\"\
-    : []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\"\
-    : {\n        \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\":\
-    \ 113\n      },\n      \"hiddenSeries\": false,\n      \"id\": 171,\n      \"\
-    legend\": {\n        \"alignAsTable\": true,\n        \"avg\": true,\n       \
-    \ \"current\": true,\n        \"max\": true,\n        \"min\": false,\n      \
-    \  \"rightSide\": true,\n        \"show\": true,\n        \"total\": false,\n\
+    \      \"datasource\": \"${DS_PROMETHEUS}\",\n      \"description\": \" * __Stall\
+    \ Metrics__ : Index workers stolen for Lucene flushing and merging (gone in 6.0)\
+    \     \\n   * __flush__\\n\",\n      \"fieldConfig\": {\n        \"defaults\"\
+    : {\n          \"custom\": {},\n          \"links\": []\n        },\n        \"\
+    overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n  \
+    \    \"gridPos\": {\n        \"h\": 5,\n        \"w\": 24,\n        \"x\": 0,\n\
+    \        \"y\": 113\n      },\n      \"hiddenSeries\": false,\n      \"id\": 171,\n\
+    \      \"legend\": {\n        \"alignAsTable\": true,\n        \"avg\": true,\n\
+    \        \"current\": true,\n        \"max\": true,\n        \"min\": false,\n\
+    \        \"rightSide\": true,\n        \"show\": true,\n        \"total\": false,\n\
     \        \"values\": true\n      },\n      \"lines\": true,\n      \"linewidth\"\
-    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"dataLinks\"\
-    : []\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.1.3\"\
+    : 1,\n      \"nullPointMode\": \"null\",\n      \"options\": {\n        \"alertThreshold\"\
+    : true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.4.5\"\
     ,\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"\
     flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"\
     stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n       \
@@ -1124,23 +1096,23 @@ spec:
     \  \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\"\
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n\
     \    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\"\
-    : 10,\n      \"dashes\": false,\n      \"datasource\": \"Prometheus\",\n     \
-    \ \"description\": \" * __Stall Metrics__ : Index workers stolen for Lucene flushing\
-    \ and merging (gone in 6.0)     \\n   * __merge__\",\n      \"fieldConfig\": {\n\
-    \        \"defaults\": {\n          \"custom\": {},\n          \"links\": []\n\
-    \        },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"\
-    fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 5,\n        \"w\": 24,\n\
-    \        \"x\": 0,\n        \"y\": 118\n      },\n      \"hiddenSeries\": false,\n\
-    \      \"id\": 169,\n      \"legend\": {\n        \"alignAsTable\": true,\n  \
-    \      \"avg\": true,\n        \"current\": true,\n        \"max\": true,\n  \
-    \      \"min\": false,\n        \"rightSide\": true,\n        \"show\": true,\n\
+    : 10,\n      \"dashes\": false,\n      \"datasource\": \"${DS_PROMETHEUS}\",\n\
+    \      \"description\": \" * __Stall Metrics__ : Index workers stolen for Lucene\
+    \ flushing and merging (gone in 6.0)     \\n   * __merge__\",\n      \"fieldConfig\"\
+    : {\n        \"defaults\": {\n          \"custom\": {},\n          \"links\":\
+    \ []\n        },\n        \"overrides\": []\n      },\n      \"fill\": 1,\n  \
+    \    \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 5,\n        \"\
+    w\": 24,\n        \"x\": 0,\n        \"y\": 118\n      },\n      \"hiddenSeries\"\
+    : false,\n      \"id\": 169,\n      \"legend\": {\n        \"alignAsTable\": true,\n\
+    \        \"avg\": true,\n        \"current\": true,\n        \"max\": true,\n\
+    \        \"min\": false,\n        \"rightSide\": true,\n        \"show\": true,\n\
     \        \"total\": false,\n        \"values\": true\n      },\n      \"lines\"\
     : true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null\",\n      \"\
-    options\": {\n        \"dataLinks\": []\n      },\n      \"percentage\": false,\n\
-    \      \"pluginVersion\": \"7.1.3\",\n      \"pointradius\": 2,\n      \"points\"\
-    : false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n    \
-    \  \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n\
-    \      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_stall_metrics_merge{instance=~\\\
+    options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\"\
+    : false,\n      \"pluginVersion\": \"7.4.5\",\n      \"pointradius\": 2,\n   \
+    \   \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\"\
+    : [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\"\
+    : false,\n      \"targets\": [\n        {\n          \"expr\": \"dse_solr_metric_stall_metrics_merge{instance=~\\\
     \"$instance\\\", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\
     \", keyspace=~\\\"$keyspace\\\", table=~\\\"$table\\\",quantile=~\\\"$percentile\\\
     \"}\",\n          \"hide\": false,\n          \"legendFormat\": \"{{$by}}_merge_{{$keyspace}}_{{$table}}_{{$percentile}}%ile\"\
@@ -1157,126 +1129,141 @@ spec:
     label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n        \
     \  \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\"\
     : {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    }\n\
-    \  ],\n  \"refresh\": false,\n  \"schemaVersion\": 22,\n  \"style\": \"dark\"\
+    \  ],\n  \"refresh\": false,\n  \"schemaVersion\": 27,\n  \"style\": \"dark\"\
     ,\n  \"tags\": [\n    \"dse\"\n  ],\n  \"templating\": {\n    \"list\": [\n  \
-    \    {\n        \"current\": {\n          \"selected\": true,\n          \"text\"\
-    : \"Prometheus\",\n          \"value\": \"Prometheus\"\n        },\n        \"\
-    hide\": 0,\n        \"includeAll\": false,\n        \"label\": null,\n       \
-    \ \"multi\": false,\n        \"name\": \"DS_PROMETHEUS\",\n        \"options\"\
-    : [],\n        \"query\": \"prometheus\",\n        \"refresh\": 1,\n        \"\
-    regex\": \"\",\n        \"skipUrlSync\": false,\n        \"type\": \"datasource\"\
-    \n      },\n      {\n        \"allValue\": null,\n        \"current\": {\n   \
-    \       \"selected\": true,\n          \"text\": \"Node\",\n          \"value\"\
-    : \"instance\"\n        },\n        \"hide\": 0,\n        \"includeAll\": false,\n\
+    \    {\n        \"current\": {\n          \"selected\": false,\n          \"text\"\
+    : \"prometheus\",\n          \"value\": \"prometheus\"\n        },\n        \"\
+    description\": null,\n        \"error\": null,\n        \"hide\": 0,\n       \
+    \ \"includeAll\": false,\n        \"label\": \"Datasource\",\n        \"multi\"\
+    : false,\n        \"name\": \"DS_PROMETHEUS\",\n        \"options\": [],\n   \
+    \     \"query\": \"prometheus\",\n        \"queryValue\": \"\",\n        \"refresh\"\
+    : 1,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n        \"type\"\
+    : \"datasource\"\n      },\n      {\n        \"allValue\": null,\n        \"current\"\
+    : {\n          \"selected\": false,\n          \"text\": \"cluster\",\n      \
+    \    \"value\": \"cluster\"\n        },\n        \"description\": null,\n    \
+    \    \"error\": null,\n        \"hide\": 0,\n        \"includeAll\": false,\n\
     \        \"label\": \"Group By\",\n        \"multi\": false,\n        \"name\"\
-    : \"by\",\n        \"options\": [\n          {\n            \"selected\": false,\n\
-    \            \"text\": \"Cluster\",\n            \"value\": \"cluster\"\n    \
+    : \"by\",\n        \"options\": [\n          {\n            \"selected\": true,\n\
+    \            \"text\": \"cluster\",\n            \"value\": \"cluster\"\n    \
     \      },\n          {\n            \"selected\": false,\n            \"text\"\
-    : \"DC\",\n            \"value\": \"dc\"\n          },\n          {\n        \
-    \    \"selected\": false,\n            \"text\": \"Rack\",\n            \"value\"\
-    : \"rack\"\n          },\n          {\n            \"selected\": true,\n     \
-    \       \"text\": \"Node\",\n            \"value\": \"instance\"\n          }\n\
-    \        ],\n        \"query\": \"cluster,dc,rack,instance\",\n        \"skipUrlSync\"\
-    : false,\n        \"type\": \"custom\"\n      },\n      {\n        \"allValue\"\
-    : null,\n        \"current\": {\n          \"selected\": true,\n          \"text\"\
-    : \"5m\",\n          \"value\": \"5m\"\n        },\n        \"hide\": 0,\n   \
-    \     \"includeAll\": false,\n        \"label\": \"Rate\",\n        \"multi\"\
-    : false,\n        \"name\": \"rate\",\n        \"options\": [\n          {\n \
-    \           \"selected\": false,\n            \"text\": \"1m\",\n            \"\
-    value\": \"1m\"\n          },\n          {\n            \"selected\": true,\n\
-    \            \"text\": \"5m\",\n            \"value\": \"5m\"\n          },\n\
-    \          {\n            \"selected\": false,\n            \"text\": \"10m\"\
-    ,\n            \"value\": \"10m\"\n          },\n          {\n            \"selected\"\
-    : false,\n            \"text\": \"30m\",\n            \"value\": \"30m\"\n   \
-    \       },\n          {\n            \"selected\": false,\n            \"text\"\
-    : \"1h\",\n            \"value\": \"1h\"\n          },\n          {\n        \
-    \    \"selected\": false,\n            \"text\": \"6h\",\n            \"value\"\
-    : \"6h\"\n          },\n          {\n            \"selected\": false,\n      \
-    \      \"text\": \"12h\",\n            \"value\": \"12h\"\n          }\n     \
-    \   ],\n        \"query\": \"1m,5m,10m,30m,1h,6h,12h\",\n        \"skipUrlSync\"\
-    : false,\n        \"type\": \"custom\"\n      },\n      {\n        \"allValue\"\
-    : \".*\",\n        \"current\": {\n          \"text\": \"685\",\n          \"\
-    value\": \"685\"\n        },\n        \"datasource\": \"${DS_PROMETHEUS}\",\n\
-    \        \"definition\": \"\",\n        \"hide\": 0,\n        \"includeAll\":\
-    \ true,\n        \"index\": -1,\n        \"label\": \"Cluster\",\n        \"multi\"\
+    : \"dc\",\n            \"value\": \"dc\"\n          },\n          {\n        \
+    \    \"selected\": false,\n            \"text\": \"rack\",\n            \"value\"\
+    : \"rack\"\n          },\n          {\n            \"selected\": false,\n    \
+    \        \"text\": \"instance\",\n            \"value\": \"instance\"\n      \
+    \    }\n        ],\n        \"query\": \"cluster,dc,rack,instance\",\n       \
+    \ \"queryValue\": \"\",\n        \"skipUrlSync\": false,\n        \"type\": \"\
+    custom\"\n      },\n      {\n        \"allValue\": null,\n        \"current\"\
+    : {\n          \"selected\": false,\n          \"text\": \"5m\",\n          \"\
+    value\": \"5m\"\n        },\n        \"description\": null,\n        \"error\"\
+    : null,\n        \"hide\": 0,\n        \"includeAll\": false,\n        \"label\"\
+    : \"Rate\",\n        \"multi\": false,\n        \"name\": \"rate\",\n        \"\
+    options\": [\n          {\n            \"selected\": false,\n            \"text\"\
+    : \"1m\",\n            \"value\": \"1m\"\n          },\n          {\n        \
+    \    \"selected\": true,\n            \"text\": \"5m\",\n            \"value\"\
+    : \"5m\"\n          },\n          {\n            \"selected\": false,\n      \
+    \      \"text\": \"10m\",\n            \"value\": \"10m\"\n          },\n    \
+    \      {\n            \"selected\": false,\n            \"text\": \"30m\",\n \
+    \           \"value\": \"30m\"\n          },\n          {\n            \"selected\"\
+    : false,\n            \"text\": \"1h\",\n            \"value\": \"1h\"\n     \
+    \     },\n          {\n            \"selected\": false,\n            \"text\"\
+    : \"6h\",\n            \"value\": \"6h\"\n          },\n          {\n        \
+    \    \"selected\": false,\n            \"text\": \"12h\",\n            \"value\"\
+    : \"12h\"\n          }\n        ],\n        \"query\": \"1m,5m,10m,30m,1h,6h,12h\"\
+    ,\n        \"queryValue\": \"\",\n        \"skipUrlSync\": false,\n        \"\
+    type\": \"custom\"\n      },\n      {\n        \"allValue\": \".*\",\n       \
+    \ \"current\": {\n          \"selected\": false,\n          \"text\": \"jb68\"\
+    ,\n          \"value\": \"jb68\"\n        },\n        \"datasource\": \"${DS_PROMETHEUS}\"\
+    ,\n        \"definition\": \"label_values(collectd_cpu_total, cluster)\",\n  \
+    \      \"description\": null,\n        \"error\": null,\n        \"hide\": 0,\n\
+    \        \"includeAll\": true,\n        \"label\": \"Cluster\",\n        \"multi\"\
     : false,\n        \"name\": \"cluster\",\n        \"options\": [],\n        \"\
-    query\": \"label_values(collectd_cpu_total, cluster)\",\n        \"refresh\":\
-    \ 2,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n        \"sort\"\
+    query\": {\n          \"query\": \"label_values(collectd_cpu_total, cluster)\"\
+    ,\n          \"refId\": \"StandardVariableQuery\"\n        },\n        \"refresh\"\
+    : 2,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n        \"sort\"\
     : 0,\n        \"tagValuesQuery\": \"\",\n        \"tags\": [],\n        \"tagsQuery\"\
     : \"\",\n        \"type\": \"query\",\n        \"useTags\": false\n      },\n\
     \      {\n        \"allValue\": \".*\",\n        \"current\": {\n          \"\
-    selected\": false,\n          \"text\": \"All\",\n          \"value\": \"$__all\"\
-    \n        },\n        \"datasource\": \"${DS_PROMETHEUS}\",\n        \"definition\"\
-    : \"\",\n        \"hide\": 0,\n        \"includeAll\": true,\n        \"index\"\
-    : -1,\n        \"label\": \"DataCenter\",\n        \"multi\": false,\n       \
-    \ \"name\": \"dc\",\n        \"options\": [],\n        \"query\": \"label_values(collectd_cpu_total,\
-    \ dc)\",\n        \"refresh\": 2,\n        \"regex\": \"\",\n        \"skipUrlSync\"\
+    selected\": false,\n          \"text\": \"SearchAnalytics\",\n          \"value\"\
+    : \"SearchAnalytics\"\n        },\n        \"datasource\": \"${DS_PROMETHEUS}\"\
+    ,\n        \"definition\": \"label_values(collectd_cpu_total{cluster=~\\\"$cluster\\\
+    \"}, dc)\",\n        \"description\": null,\n        \"error\": null,\n      \
+    \  \"hide\": 0,\n        \"includeAll\": true,\n        \"label\": \"DataCenter\"\
+    ,\n        \"multi\": false,\n        \"name\": \"dc\",\n        \"options\":\
+    \ [],\n        \"query\": {\n          \"query\": \"label_values(collectd_cpu_total{cluster=~\\\
+    \"$cluster\\\"}, dc)\",\n          \"refId\": \"StandardVariableQuery\"\n    \
+    \    },\n        \"refresh\": 2,\n        \"regex\": \"\",\n        \"skipUrlSync\"\
     : false,\n        \"sort\": 0,\n        \"tagValuesQuery\": \"\",\n        \"\
     tags\": [],\n        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n    \
     \    \"useTags\": false\n      },\n      {\n        \"allValue\": \".*\",\n  \
     \      \"current\": {\n          \"selected\": false,\n          \"text\": \"\
     All\",\n          \"value\": \"$__all\"\n        },\n        \"datasource\": \"\
-    ${DS_PROMETHEUS}\",\n        \"definition\": \"\",\n        \"hide\": 0,\n   \
-    \     \"includeAll\": true,\n        \"index\": -1,\n        \"label\": \"Rack\"\
-    ,\n        \"multi\": false,\n        \"name\": \"rack\",\n        \"options\"\
-    : [],\n        \"query\": \"label_values(collectd_cpu_total{instance=~\\\"$instance\\\
-    \", cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\"}, rack)\",\n        \"refresh\"\
-    : 2,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n        \"sort\"\
-    : 0,\n        \"tagValuesQuery\": \"\",\n        \"tags\": [],\n        \"tagsQuery\"\
-    : \"\",\n        \"type\": \"query\",\n        \"useTags\": false\n      },\n\
-    \      {\n        \"allValue\": \".*\",\n        \"current\": {\n          \"\
-    text\": \"venmo_loadtest\",\n          \"value\": [\n            \"venmo_loadtest\"\
-    \n          ]\n        },\n        \"datasource\": \"${DS_PROMETHEUS}\",\n   \
-    \     \"definition\": \"\",\n        \"hide\": 0,\n        \"includeAll\": true,\n\
-    \        \"index\": -1,\n        \"label\": \"Keyspace\",\n        \"multi\":\
-    \ true,\n        \"name\": \"keyspace\",\n        \"options\": [],\n        \"\
-    query\": \"label_values(dse_table_read_latency{cluster=~\\\"$cluster\\\"}, keyspace)\"\
-    ,\n        \"refresh\": 2,\n        \"regex\": \"\",\n        \"skipUrlSync\"\
+    ${DS_PROMETHEUS}\",\n        \"definition\": \"label_values(collectd_cpu_total{cluster=~\\\
+    \"$cluster\\\", dc=~\\\"$dc\\\"}, rack)\",\n        \"description\": null,\n \
+    \       \"error\": null,\n        \"hide\": 0,\n        \"includeAll\": true,\n\
+    \        \"label\": \"Rack\",\n        \"multi\": false,\n        \"name\": \"\
+    rack\",\n        \"options\": [],\n        \"query\": {\n          \"query\":\
+    \ \"label_values(collectd_cpu_total{cluster=~\\\"$cluster\\\", dc=~\\\"$dc\\\"\
+    }, rack)\",\n          \"refId\": \"StandardVariableQuery\"\n        },\n    \
+    \    \"refresh\": 2,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n\
+    \        \"sort\": 0,\n        \"tagValuesQuery\": \"\",\n        \"tags\": [],\n\
+    \        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n        \"useTags\"\
+    : false\n      },\n      {\n        \"allValue\": \".*\",\n        \"current\"\
+    : {\n          \"selected\": false,\n          \"text\": \"All\",\n          \"\
+    value\": \"$__all\"\n        },\n        \"datasource\": \"${DS_PROMETHEUS}\"\
+    ,\n        \"definition\": \"label_values(collectd_cpu_total{cluster=~\\\"$cluster\\\
+    \", dc=~\\\"$dc\\\", rack=~\\\"$rack\\\"}, instance)\",\n        \"description\"\
+    : null,\n        \"error\": null,\n        \"hide\": 0,\n        \"includeAll\"\
+    : true,\n        \"label\": \"Node\",\n        \"multi\": true,\n        \"name\"\
+    : \"instance\",\n        \"options\": [],\n        \"query\": {\n          \"\
+    query\": \"label_values(collectd_cpu_total{cluster=~\\\"$cluster\\\", dc=~\\\"\
+    $dc\\\", rack=~\\\"$rack\\\"}, instance)\",\n          \"refId\": \"StandardVariableQuery\"\
+    \n        },\n        \"refresh\": 1,\n        \"regex\": \"\",\n        \"skipUrlSync\"\
     : false,\n        \"sort\": 0,\n        \"tagValuesQuery\": \"\",\n        \"\
     tags\": [],\n        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n    \
     \    \"useTags\": false\n      },\n      {\n        \"allValue\": \".*\",\n  \
-    \      \"current\": {\n          \"text\": \"transaction_summary_by_transaction_id\"\
-    ,\n          \"value\": [\n            \"transaction_summary_by_transaction_id\"\
-    \n          ]\n        },\n        \"datasource\": \"${DS_PROMETHEUS}\",\n   \
-    \     \"definition\": \"\",\n        \"hide\": 0,\n        \"includeAll\": true,\n\
-    \        \"index\": -1,\n        \"label\": \"Table\",\n        \"multi\": true,\n\
-    \        \"name\": \"table\",\n        \"options\": [],\n        \"query\": \"\
-    label_values(dse_table_read_latency{keyspace=~\\\"$keyspace\\\"}, table)\",\n\
-    \        \"refresh\": 2,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n\
-    \        \"sort\": 1,\n        \"tagValuesQuery\": \"\",\n        \"tags\": [],\n\
+    \      \"current\": {\n          \"selected\": false,\n          \"text\": \"\
+    All\",\n          \"value\": \"$__all\"\n        },\n        \"datasource\": \"\
+    ${DS_PROMETHEUS}\",\n        \"definition\": \"label_values(dse_table_read_latency{cluster=~\\\
+    \"$cluster\\\"}, keyspace)\",\n        \"description\": null,\n        \"error\"\
+    : null,\n        \"hide\": 0,\n        \"includeAll\": true,\n        \"label\"\
+    : \"Keyspace\",\n        \"multi\": true,\n        \"name\": \"keyspace\",\n \
+    \       \"options\": [],\n        \"query\": {\n          \"query\": \"label_values(dse_table_read_latency{cluster=~\\\
+    \"$cluster\\\"}, keyspace)\",\n          \"refId\": \"StandardVariableQuery\"\n\
+    \        },\n        \"refresh\": 2,\n        \"regex\": \"\",\n        \"skipUrlSync\"\
+    : false,\n        \"sort\": 0,\n        \"tagValuesQuery\": \"\",\n        \"\
+    tags\": [],\n        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n    \
+    \    \"useTags\": false\n      },\n      {\n        \"allValue\": \".*\",\n  \
+    \      \"current\": {\n          \"selected\": false,\n          \"text\": \"\
+    All\",\n          \"value\": \"$__all\"\n        },\n        \"datasource\": \"\
+    ${DS_PROMETHEUS}\",\n        \"definition\": \"label_values(dse_table_read_latency{cluster=~\\\
+    \"$cluster\\\", keyspace=~\\\"$keyspace\\\"}, table)\",\n        \"description\"\
+    : null,\n        \"error\": null,\n        \"hide\": 0,\n        \"includeAll\"\
+    : true,\n        \"label\": \"Table\",\n        \"multi\": true,\n        \"name\"\
+    : \"table\",\n        \"options\": [],\n        \"query\": {\n          \"query\"\
+    : \"label_values(dse_table_read_latency{cluster=~\\\"$cluster\\\", keyspace=~\\\
+    \"$keyspace\\\"}, table)\",\n          \"refId\": \"StandardVariableQuery\"\n\
+    \        },\n        \"refresh\": 2,\n        \"regex\": \"\",\n        \"skipUrlSync\"\
+    : false,\n        \"sort\": 1,\n        \"tagValuesQuery\": \"\",\n        \"\
+    tags\": [],\n        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n    \
+    \    \"useTags\": true\n      },\n      {\n        \"allValue\": null,\n     \
+    \   \"current\": {\n          \"selected\": false,\n          \"text\": \".999\"\
+    ,\n          \"value\": \".999\"\n        },\n        \"datasource\": \"${DS_PROMETHEUS}\"\
+    ,\n        \"definition\": \"label_values(dse_solr_metric_query_metrics_coordinate,\
+    \ quantile)\",\n        \"description\": null,\n        \"error\": null,\n   \
+    \     \"hide\": 0,\n        \"includeAll\": false,\n        \"label\": \"Percentile\"\
+    ,\n        \"multi\": false,\n        \"name\": \"percentile\",\n        \"options\"\
+    : [],\n        \"query\": {\n          \"query\": \"label_values(dse_solr_metric_query_metrics_coordinate,\
+    \ quantile)\",\n          \"refId\": \"StandardVariableQuery\"\n        },\n \
+    \       \"refresh\": 2,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n\
+    \        \"sort\": 4,\n        \"tagValuesQuery\": \"\",\n        \"tags\": [],\n\
     \        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n        \"useTags\"\
-    : true\n      },\n      {\n        \"allValue\": \".*\",\n        \"current\"\
-    : {\n          \"text\": \"All\",\n          \"value\": [\n            \"$__all\"\
-    \n          ]\n        },\n        \"datasource\": \"${DS_PROMETHEUS}\",\n   \
-    \     \"definition\": \"\",\n        \"hide\": 0,\n        \"includeAll\": true,\n\
-    \        \"index\": -1,\n        \"label\": null,\n        \"multi\": true,\n\
-    \        \"name\": \"instance\",\n        \"options\": [],\n        \"query\"\
-    : \"label_values(collectd_cpu_total{cluster=~\\\"$cluster\\\"}, instance)\",\n\
-    \        \"refresh\": 1,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n\
-    \        \"sort\": 0,\n        \"tagValuesQuery\": \"\",\n        \"tags\": [],\n\
-    \        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n        \"useTags\"\
-    : false\n      },\n      {\n        \"allValue\": null,\n        \"current\":\
-    \ {\n          \"selected\": false,\n          \"text\": \".90\",\n          \"\
-    value\": \".90\"\n        },\n        \"hide\": 0,\n        \"includeAll\": false,\n\
-    \        \"label\": \"%ile\",\n        \"multi\": false,\n        \"name\": \"\
-    percentile\",\n        \"options\": [\n          {\n            \"selected\":\
-    \ false,\n            \"text\": \".50\",\n            \"value\": \".50\"\n   \
-    \       },\n          {\n            \"selected\": false,\n            \"text\"\
-    : \".75\",\n            \"value\": \".75\"\n          },\n          {\n      \
-    \      \"selected\": true,\n            \"text\": \".90\",\n            \"value\"\
-    : \".90\"\n          },\n          {\n            \"selected\": false,\n     \
-    \       \"text\": \".95\",\n            \"value\": \".95\"\n          },\n   \
-    \       {\n            \"selected\": false,\n            \"text\": \".99\",\n\
-    \            \"value\": \".99\"\n          }\n        ],\n        \"query\": \"\
-    .50,.75,.90,.95,.99\",\n        \"queryValue\": \"\",\n        \"skipUrlSync\"\
-    : false,\n        \"type\": \"custom\"\n      }\n    ]\n  },\n  \"time\": {\n\
-    \    \"from\": \"2020-12-09T01:21:49.182Z\",\n    \"to\": \"2020-12-09T01:44:44.547Z\"\
-    \n  },\n  \"timepicker\": {\n    \"refresh_intervals\": [\n      \"5s\",\n   \
-    \   \"10s\",\n      \"30s\",\n      \"1m\",\n      \"5m\",\n      \"15m\",\n \
-    \     \"30m\",\n      \"1h\",\n      \"2h\",\n      \"1d\"\n    ],\n    \"time_options\"\
-    : [\n      \"5m\",\n      \"15m\",\n      \"1h\",\n      \"6h\",\n      \"12h\"\
-    ,\n      \"24h\",\n      \"2d\",\n      \"7d\",\n      \"30d\"\n    ]\n  },\n\
-    \  \"timezone\": \"\",\n  \"title\": \"DSE Search Cluster\",\n  \"uid\": \"MLPRcY2iz1\"\
-    ,\n  \"variables\": {\n    \"list\": []\n  },\n  \"version\": 3\n} \n"
+    : false\n      }\n    ]\n  },\n  \"time\": {\n    \"from\": \"now-30m\",\n   \
+    \ \"to\": \"now\"\n  },\n  \"timepicker\": {\n    \"refresh_intervals\": [\n \
+    \     \"5s\",\n      \"10s\",\n      \"30s\",\n      \"1m\",\n      \"5m\",\n\
+    \      \"15m\",\n      \"30m\",\n      \"1h\",\n      \"2h\",\n      \"1d\"\n\
+    \    ],\n    \"time_options\": [\n      \"5m\",\n      \"15m\",\n      \"1h\"\
+    ,\n      \"6h\",\n      \"12h\",\n      \"24h\",\n      \"2d\",\n      \"7d\"\
+    ,\n      \"30d\"\n    ]\n  },\n  \"timezone\": \"\",\n  \"title\": \"DSE Search\
+    \ Cluster\",\n  \"uid\": \"MLPRcY2iz1\",\n  \"version\": 5\n}"
   name: dse-search-cluster.json
   url: https://raw.githubusercontent.com/datastax/dse-metric-reporter-dashboards/master/grafana/dashboards/dse-search-cluster.json

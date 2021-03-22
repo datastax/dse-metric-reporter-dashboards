@@ -315,7 +315,7 @@ spec:
       - dse
       targetLabel: __name__
     - regex: jvm\.memory\.pools\.(\w+)\.(\w+)
-      replacement: ${2}
+      replacement: ${1}
       sourceLabels:
       - dse
       targetLabel: pool_name
