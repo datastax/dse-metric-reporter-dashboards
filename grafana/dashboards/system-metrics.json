@@ -1979,7 +1979,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(collectd_disk_disk_octets_read_total{instance=\"$host\",disk=~\".*\\\\d+\"}[$rate])",
+          "expr": "irate(collectd_disk_disk_octets_read_total{instance=\"$host\",disk=~\".*\"}[$rate])",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -1988,7 +1988,7 @@
           "step": 240
         },
         {
-          "expr": "irate(collectd_disk_disk_octets_write_total{instance=\"$host\",disk=~\".*\\\\d+\"}[$rate])",
+          "expr": "irate(collectd_disk_disk_octets_write_total{instance=\"$host\",disk=~\".*\"}[$rate])",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -2101,7 +2101,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(collectd_disk_disk_ops_read_total{instance=\"$host\",disk=~\".*\\\\d+\"}[$rate])",
+          "expr": "irate(collectd_disk_disk_ops_read_total{instance=\"$host\",disk=~\".*\"}[$rate])",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -2110,7 +2110,7 @@
           "step": 240
         },
         {
-          "expr": "irate(collectd_disk_disk_ops_write_total{instance=\"$host\",disk=~\".*\\\\d+\"}[$rate])",
+          "expr": "irate(collectd_disk_disk_ops_write_total{instance=\"$host\",disk=~\".*\"}[$rate])",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -2314,7 +2314,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(collectd_disk_disk_io_time_weighted_io_time_total{instance=\"$host\",disk=~\".*[0-9]+\"}[$rate]) / 1000",
+          "expr": "irate(collectd_disk_disk_io_time_weighted_io_time_total{instance=\"$host\",disk=~\".*\"}[$rate]) / 1000",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -2407,7 +2407,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "-irate(collectd_disk_disk_time_read_total{instance='$host',disk=~\".*[0-9]+\"}[$rate])",
+          "expr": "-irate(collectd_disk_disk_time_read_total{instance='$host',disk=~\".*\"}[$rate])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -2415,7 +2415,7 @@
           "refId": "A"
         },
         {
-          "expr": "irate(collectd_disk_disk_time_write_total{instance='$host',disk=~\".*[0-9]+\"}[$rate])",
+          "expr": "irate(collectd_disk_disk_time_write_total{instance='$host',disk=~\".*\"}[$rate])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{disk}} - Writes",
