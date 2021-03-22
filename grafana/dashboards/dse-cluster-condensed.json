@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1616183545911,
+  "iteration": 1616451977314,
   "links": [],
   "panels": [
     {
@@ -101,8 +101,9 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "count(dse_compaction_completed_tasks{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"} >= 0) or vector(0)",
+          "expr": "count(up{job=\"dse\"} == 1)",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "",
           "refId": "A"
@@ -188,8 +189,9 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "count(absent(sum(rate(dse_compaction_completed_tasks{cluster=~\"$cluster\", dc=~\"$dc\", rack=~\"$rack\"}[2m])))) OR vector(0)",
+          "expr": "count(up{job=\"dse\"}) - count(up{job=\"dse\"} == 1)",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "",
           "refId": "A"
@@ -1938,5 +1940,5 @@
   "timezone": "",
   "title": "DSE Cluster Condensed",
   "uid": "MLPRcY2izdw",
-  "version": 2
+  "version": 1
 }
